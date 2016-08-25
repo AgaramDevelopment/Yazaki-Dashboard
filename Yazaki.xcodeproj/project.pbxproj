@@ -40,6 +40,8 @@
 		186670821CACE456001C349A /* EMpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186670811CACE456001C349A /* EMpTableViewCell.m */; };
 		1866708B1CACEA68001C349A /* testing2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866708A1CACEA68001C349A /* testing2.m */; };
 		1866708E1CAD209B001C349A /* NOTOKPiechartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866708D1CAD209B001C349A /* NOTOKPiechartVC.m */; };
+		1880C98E1D6F204B0042733E /* DashBoardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880C98C1D6F204B0042733E /* DashBoardCell.m */; };
+		1880C98F1D6F204B0042733E /* DashBoardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1880C98D1D6F204B0042733E /* DashBoardCell.xib */; };
 		1882BE3A1CA253B900D25D68 /* RAJDHANI-LIGHT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE361CA253B900D25D68 /* RAJDHANI-LIGHT.TTF */; };
 		1882BE3B1CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE371CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF */; };
 		1882BE3C1CA253B900D25D68 /* RAJDHANI-REGULAR.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE381CA253B900D25D68 /* RAJDHANI-REGULAR.TTF */; };
@@ -126,6 +128,9 @@
 		1866708A1CACEA68001C349A /* testing2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = testing2.m; path = ../testing2.m; sourceTree = "<group>"; };
 		1866708C1CAD209B001C349A /* NOTOKPiechartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOTOKPiechartVC.h; path = ../NOTOKPiechartVC.h; sourceTree = "<group>"; };
 		1866708D1CAD209B001C349A /* NOTOKPiechartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOTOKPiechartVC.m; path = ../NOTOKPiechartVC.m; sourceTree = "<group>"; };
+		1880C98B1D6F204B0042733E /* DashBoardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardCell.h; sourceTree = "<group>"; };
+		1880C98C1D6F204B0042733E /* DashBoardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardCell.m; sourceTree = "<group>"; };
+		1880C98D1D6F204B0042733E /* DashBoardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashBoardCell.xib; sourceTree = "<group>"; };
 		1882BE361CA253B900D25D68 /* RAJDHANI-LIGHT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-LIGHT.TTF"; path = "Custome Fonts/RAJDHANI-LIGHT.TTF"; sourceTree = "<group>"; };
 		1882BE371CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-MEDIUM.TTF"; path = "Custome Fonts/RAJDHANI-MEDIUM.TTF"; sourceTree = "<group>"; };
 		1882BE381CA253B900D25D68 /* RAJDHANI-REGULAR.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-REGULAR.TTF"; path = "Custome Fonts/RAJDHANI-REGULAR.TTF"; sourceTree = "<group>"; };
@@ -215,6 +220,7 @@
 		1863D5C51CA10D7700D2F625 /* Yazaki */ = {
 			isa = PBXGroup;
 			children = (
+				1880C98A1D6F1FF40042733E /* CustomDashCell */,
 				188F5B1C1CA3C26800035964 /* QuartzCore.framework */,
 				1863D5EF1CA1163500D2F625 /* IMAGES */,
 				1863D5EC1CA10F0800D2F625 /* LoginVC.h */,
@@ -298,6 +304,16 @@
 				1863D5F51CA1164800D2F625 /* login_logo.png */,
 			);
 			name = IMAGES;
+			sourceTree = "<group>";
+		};
+		1880C98A1D6F1FF40042733E /* CustomDashCell */ = {
+			isa = PBXGroup;
+			children = (
+				1880C98B1D6F204B0042733E /* DashBoardCell.h */,
+				1880C98C1D6F204B0042733E /* DashBoardCell.m */,
+				1880C98D1D6F204B0042733E /* DashBoardCell.xib */,
+			);
+			name = CustomDashCell;
 			sourceTree = "<group>";
 		};
 		1882BE351CA2538D00D25D68 /* Custom Font */ = {
@@ -400,6 +416,7 @@
 				1863D5D21CA10D7700D2F625 /* Main.storyboard in Resources */,
 				CED1B5611CCDFC61001D54B3 /* Icon-Small.png in Resources */,
 				1863D5F91CA1164800D2F625 /* ico_pwd.png in Resources */,
+				1880C98F1D6F204B0042733E /* DashBoardCell.xib in Resources */,
 				CE67D9C21CD341F20042E4DB /* Icon-83.5@2x.png in Resources */,
 				CED1B5621CCDFC61001D54B3 /* Icon-Small@2x.png in Resources */,
 				CED1B55F1CCDFC61001D54B3 /* Icon-76.png in Resources */,
@@ -456,6 +473,7 @@
 				1866708B1CACEA68001C349A /* testing2.m in Sources */,
 				1863D5C91CA10D7700D2F625 /* main.m in Sources */,
 				186230D61CABF13D001088C3 /* CatdetailsTableViewCell.m in Sources */,
+				1880C98E1D6F204B0042733E /* DashBoardCell.m in Sources */,
 				186173BA1CA4F89A002A51DA /* MCSliceLayer.m in Sources */,
 				186173A91CA4F796002A51DA /* PieChartTest.m in Sources */,
 			);
