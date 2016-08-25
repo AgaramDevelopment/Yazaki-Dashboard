@@ -8,7 +8,13 @@
 
 #import "testingvc.h"
 #import "testing2.h"
+#import "CustomNavigationVC.h"
+#import "DashboardVC.h"
 @interface testingvc ()
+{
+    CustomNavigationVC *objCustomNavigation;
+}
+
 @property (strong, nonatomic) NSMutableArray *TestingArray;
 @end
 
@@ -19,7 +25,7 @@
 @synthesize Todate;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self customnavigationmethod];
     NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/CATEGORYDETAILS/%@/%@/%@/%@",category,STATUS,fromDate,Todate];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -41,8 +47,7 @@
         test.passcategory=category;
         test.passfromDate=fromDate;
         test.passTodate= Todate;
-        [test setModalPresentationStyle:UIModalPresentationFullScreen];
-        [self presentViewController:test animated:NO completion:nil];
+      [self presentViewController:test animated:NO completion:nil];
         // do nothing
     }
         
@@ -95,6 +100,10 @@
     return cell;
 }
 
+
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -111,9 +120,30 @@
     test.passcategory=category;
     test.passfromDate=fromDate;
     test.passTodate= Todate;
-    [test setModalPresentationStyle:UIModalPresentationFullScreen];
-    [self presentViewController:test animated:NO completion:nil];
+[self presentViewController:test animated:NO completion:nil];
 //[[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
+}
+
+
+-(void)customnavigationmethod
+{
+    objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
+    [self.view addSubview:objCustomNavigation.view];
+    objCustomNavigation.lbl_titleName.text=@"";
+    [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+-(IBAction)Back_BtnAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(IBAction)Home_Btn:(id)sender
+{
+    DashboardVC *initView = [[DashboardVC alloc]init];
+    initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
+    [self.navigationController pushViewController:initView animated:YES];
 }
 
 

@@ -8,8 +8,11 @@
 
 #import "DashboardVC.h"
 #import "AppDelegate.h"
+#import "CustomNavigationVC.h"
 @interface DashboardVC ()
-
+{
+    CustomNavigationVC *objCustomNavigation;
+}
 @end
 
 @implementation DashboardVC
@@ -20,7 +23,10 @@
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(150, 225, 20, 30)];
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     spinner.color = [UIColor blackColor];
-    [self.view addSubview:spinner];  // Do any additional setup after loading the view.
+    [self.view addSubview:spinner];
+    [self customnavigationmethod];
+    [objCustomNavigation.Home_Btn setHidden:YES];
+    // Do any additional setup after loading the view.
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -44,14 +50,28 @@
 }
 */
 
+-(void)customnavigationmethod
+{
+    objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
+    [self.view addSubview:objCustomNavigation.view];
+    objCustomNavigation.lbl_titleName.text=@"CANTEEN";
+    [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+-(IBAction)Back_BtnAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)Canteen_btn:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    
+  
+   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     
     UITabBarController *initView =  (UITabBarController*)[storyboard instantiateViewControllerWithIdentifier:@"Homevc"];
-    
-    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-    
-    [self presentViewController:initView animated:NO completion:nil];
+    [self.navigationController pushViewController:initView animated:YES];
 }
 @end

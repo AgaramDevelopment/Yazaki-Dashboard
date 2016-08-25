@@ -11,6 +11,7 @@
 @interface AppDelegate ()
 {
     UIActivityIndicatorView *mySpinner;
+     UINavigationController *navigationController;
 }
 @end
 
@@ -19,6 +20,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIViewController *initViewController;
+    
+    
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+        
+        initViewController = [storyBoard instantiateViewControllerWithIdentifier:@"loginvc"];
+  navigationController = [[UINavigationController alloc] initWithRootViewController:initViewController];
+    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    navigationController.navigationBarHidden = YES;
+    _window.rootViewController = navigationController;
+    //[_window addSubview:navigationController.view];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
