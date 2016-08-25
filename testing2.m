@@ -8,7 +8,13 @@
 
 #import "testing2.h"
 #import "EMpTableViewCell.h"
+#import "CustomNavigationVC.h"
+#import "DashboardVC.h"
 @interface testing2 ()
+{
+    CustomNavigationVC *objCustomNavigation;
+}
+
 @property (strong, nonatomic) NSMutableArray *TestingArray;
 @end
 
@@ -21,6 +27,7 @@
 @synthesize passcategory1;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self customnavigationmethod];
     
     NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/EMPLOYEEDETAILS/%@/%@/%@/%@/%@",passSTATUS,passcategory,passcatID,passfromDate,passTodate];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -82,5 +89,26 @@
     return cell;
 }
 
+
+-(void)customnavigationmethod
+{
+    objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
+    [self.view addSubview:objCustomNavigation.view];
+    objCustomNavigation.lbl_titleName.text=@"";
+    [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+-(IBAction)Back_BtnAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(IBAction)Home_Btn:(id)sender
+{
+    DashboardVC *initView = [[DashboardVC alloc]init];
+    initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
+    [self.navigationController pushViewController:initView animated:YES];
+}
 
 @end

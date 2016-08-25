@@ -9,7 +9,12 @@
 #import "PieChartTest.h"
 #import "testingvc.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CustomNavigationVC.h"
+#import "DashboardVC.h"
 @interface PieChartTest ()
+{
+ CustomNavigationVC *objCustomNavigation;
+}
 @property (strong, nonatomic) NSMutableArray *values;
 @property (strong, nonatomic) NSMutableArray *testARYY;
 @property (strong, nonatomic) NSMutableArray *labels;
@@ -28,7 +33,8 @@
 @synthesize str2;
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
+    
+    [self customnavigationmethod];
     NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/SESSION/%@/%@/%@",dictObject,str1,str2];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -144,7 +150,26 @@
 
 
 
+-(void)customnavigationmethod
+{
+    objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
+    [self.view addSubview:objCustomNavigation.view];
+    objCustomNavigation.lbl_titleName.text=@"";
+    [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+-(IBAction)Back_BtnAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
+-(IBAction)Home_Btn:(id)sender
+{
+    DashboardVC *initView = [[DashboardVC alloc]init];
+    initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
+    [self.navigationController pushViewController:initView animated:YES];
+}
 
 
 
@@ -194,8 +219,8 @@
     destViewController.STATUS =dictObject;
     destViewController.fromDate=str1;
     destViewController.Todate=str2;
-    [destViewController setModalPresentationStyle:UIModalPresentationFullScreen];
     [self presentViewController:destViewController animated:NO completion:nil];
+
     
     });
 }

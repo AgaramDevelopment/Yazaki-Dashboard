@@ -9,7 +9,12 @@
 #import "HOMEVC.h"
 #import "PieChartTest.h"
 #import "NOTOKPiechartVC.h"
+#import "CustomNavigationVC.h"
+#import "DashboardVC.h"
 @interface HOMEVC ()
+{
+    CustomNavigationVC *objCustomNavigation;
+}
 @property (nonatomic,strong) NSMutableArray *ResultHolderArray;
 @property (nonatomic,strong) NSDictionary *myslot;
 @end
@@ -17,6 +22,7 @@
 @implementation HOMEVC
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self customnavigationmethod];
     
     datepicker=[[UIDatePicker alloc]init];
     datepicker1=[[UIDatePicker alloc]init];
@@ -97,6 +103,30 @@
     
     
 }
+
+-(IBAction)Back_BtnAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)customnavigationmethod
+{
+    objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
+    [self.view addSubview:objCustomNavigation.view];
+    objCustomNavigation.lbl_titleName.text=@"";
+    [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+     [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
+
+
+-(IBAction)Home_Btn:(id)sender
+{
+    DashboardVC *initView = [[DashboardVC alloc]init];
+    initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
+    [self.navigationController pushViewController:initView animated:YES];
+}
+
 //Another Dte Picker Tool for Todate Picker
 -(void) ShowSelectedDate1
 {  NSDateFormatter *formatter1=[[NSDateFormatter alloc]init];

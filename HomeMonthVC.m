@@ -9,7 +9,12 @@
 #import "HomeMonthVC.h"
 #import "PieChartTest.h"
 #import "NOTOKPiechartVC.h"
+#import "CustomNavigationVC.h"
+#import "DashboardVC.h"
 @interface HomeMonthVC ()
+{
+    CustomNavigationVC *objCustomNavigation;
+}
 @property (nonatomic,strong) NSMutableArray *ResultHolderArray;
 @end
 
@@ -17,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self customnavigationmethod];
     datepicker=[[UIDatePicker alloc]init];
     datepicker1=[[UIDatePicker alloc]init];
     
@@ -153,6 +159,29 @@
     [self viewDidLoad];
 }
 
+-(void)customnavigationmethod
+{
+    objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
+    [self.view addSubview:objCustomNavigation.view];
+    objCustomNavigation.lbl_titleName.text=@"";
+    [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+      [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+-(IBAction)Back_BtnAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(IBAction)Home_Btn:(id)sender
+{
+DashboardVC *initView = [[DashboardVC alloc]init];
+initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
+[self.navigationController pushViewController:initView animated:YES];
+}
+
+
+
 - (IBAction)red_Month_btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
@@ -165,10 +194,11 @@
     NSString *test =[NSString stringWithFormat:@"%@",[self.notOk_lbl text]];
     initView.dictObject = test;
     
-    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-    [self presentViewController:initView animated:NO completion:nil];
+    [self.navigationController pushViewController:initView animated:YES];
     
 }
+
+
 - (IBAction)Green_Month_btn:(id)sender {
     
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
@@ -182,7 +212,7 @@
     NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
     initView.dictObject = test;
     
-    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-    [self presentViewController:initView animated:NO completion:nil];
+   [self.navigationController pushViewController:initView animated:YES];
+    
 }
 @end

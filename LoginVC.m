@@ -10,8 +10,12 @@
 #import "HOMEVC.h"
 #import "DashboardVC.h"
 #import "AppDelegate.h"
+#import "CustomNavigationVC.h"
 
 @interface LoginVC ()
+{
+    CustomNavigationVC *objCustomNavigation;
+}
 @end
 
 @implementation LoginVC
@@ -71,7 +75,9 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-  
+    [self customnavigationmethod];
+    [objCustomNavigation.Home_Btn setHidden:YES];
+     [objCustomNavigation.Btn_Back setHidden:YES];
     
 }
 
@@ -87,22 +93,15 @@
 -(void)moveToView{
     
     
+    DashboardVC *initView = [[DashboardVC alloc]init];
+    initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
+    [self.navigationController pushViewController:initView animated:YES];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    
-    DashboardVC *initView =  (DashboardVC*)[storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
-    
-    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-    
-    [self presentViewController:initView animated:NO completion:nil];
+
 }
 
 
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    [self moveToView];
-//}
+
 
 
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{
@@ -111,12 +110,23 @@
     [alertDialog show];
 }
 
+-(void)customnavigationmethod
+{
+    objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
+    [self.view addSubview:objCustomNavigation.view];
+    objCustomNavigation.lbl_titleName.text=@"";
+    [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+
 - (void) alertView1:(UIAlertView *)alertView1 didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginVC *initView =  (LoginVC*)[storyboard instantiateViewControllerWithIdentifier:@"loginvc"];
-    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-    [self presentViewController:initView animated:NO completion:nil];
+ 
+//    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    LoginVC *initView =  (LoginVC*)[storyboard instantiateViewControllerWithIdentifier:@"loginvc"];
+//    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
+//    [self presentViewController:initView animated:NO completion:nil];
 }
 
 
