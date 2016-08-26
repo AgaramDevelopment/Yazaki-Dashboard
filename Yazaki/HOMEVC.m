@@ -187,8 +187,7 @@
     
     NSString *test =[NSString stringWithFormat:@"%@",[self.Ok_lbl text]];
     initView.dictObject = test;
-    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-    [self presentViewController:initView animated:NO completion:nil];
+    [self.navigationController pushViewController:initView animated:YES];
 }
 
 - (IBAction)red_btn:(id)sender {
@@ -203,8 +202,7 @@
     NSString *test =[NSString stringWithFormat:@"%@",[self.notOk_lbl text]];
     initView.dictObject = test;
     
-    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-    [self presentViewController:initView animated:NO completion:nil];
+   [self.navigationController pushViewController:initView animated:YES];
     
 }
 

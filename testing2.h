@@ -22,4 +22,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *category_lbl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+
 @end

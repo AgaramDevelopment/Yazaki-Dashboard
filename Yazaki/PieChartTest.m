@@ -219,7 +219,7 @@
     destViewController.STATUS =dictObject;
     destViewController.fromDate=str1;
     destViewController.Todate=str2;
-    [self presentViewController:destViewController animated:NO completion:nil];
+   [self.navigationController pushViewController:destViewController animated:YES];
 
     
     });

@@ -120,7 +120,7 @@
     test.passcategory=category;
     test.passfromDate=fromDate;
     test.passTodate= Todate;
-[self presentViewController:test animated:NO completion:nil];
+ [self.navigationController pushViewController:test animated:YES];
 //[[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
 }
 

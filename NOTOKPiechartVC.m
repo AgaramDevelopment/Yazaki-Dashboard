@@ -279,7 +279,9 @@
         test.passcategory=item;
         test.passfromDate=str1;
         test.passTodate= str2;
-       [self presentViewController:test animated:NO completion:nil];
+   [self.navigationController pushViewController:test animated:YES];
+        
+        
         
     }
     
@@ -294,7 +296,7 @@
        destViewController.STATUS =dictObject;
        destViewController.fromDate=str1;
        destViewController.Todate=str2;
-       [self presentViewController:destViewController animated:NO completion:nil];
+       [self.navigationController pushViewController:destViewController animated:YES];
     }
         });
 }
