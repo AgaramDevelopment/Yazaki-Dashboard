@@ -16,6 +16,7 @@
 @property(strong,nonatomic)NSString *passfromDate;
 @property(strong,nonatomic)NSString *passTodate;
 @property(strong,nonatomic)NSString *passcategory1;
+@property(strong,nonatomic)NSString *selectPlantCode;
 
 @property (weak, nonatomic) IBOutlet UILabel *status_lbl;
 @property (weak, nonatomic) IBOutlet UILabel *session_lbl;

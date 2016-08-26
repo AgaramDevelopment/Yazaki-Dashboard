@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeMonthVC : UIViewController
+@interface HomeMonthVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 {
     UIDatePicker * datepicker;

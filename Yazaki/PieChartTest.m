@@ -35,7 +35,7 @@
     [super viewDidLoad];
     
     [self customnavigationmethod];
-    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/SESSION/%@/%@/%@",dictObject,str1,str2];
+    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/CANTEEN/SESSION/%@/%@/%@/%@",dictObject,_selectPlantCode,str1,str2];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -219,6 +219,7 @@
     destViewController.STATUS =dictObject;
     destViewController.fromDate=str1;
     destViewController.Todate=str2;
+     destViewController.selectPlantCode=_selectPlantCode;
    [self.navigationController pushViewController:destViewController animated:YES];
 
     

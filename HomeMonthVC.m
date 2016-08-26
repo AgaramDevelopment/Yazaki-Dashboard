@@ -14,11 +14,13 @@
 @interface HomeMonthVC ()
 {
     CustomNavigationVC *objCustomNavigation;
+    NSString *selectPlantCode;
 }
-@property (nonatomic,strong) NSMutableArray *ResultHolderArray;
+
 @property (nonatomic,strong) NSDictionary*ResultHolderDict;
 @property (nonatomic,strong) NSMutableArray *planArray;
 @property (nonatomic,strong) NSDictionary *myslot;
+@property (nonatomic,strong) NSDictionary *planDict;
 
 
 @end
@@ -29,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
+    _planArray=[[NSMutableArray alloc]init];
     datepicker=[[UIDatePicker alloc]init];
     datepicker1=[[UIDatePicker alloc]init];
     
@@ -144,7 +147,7 @@
 - (IBAction)GenerateMonth_Btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
-    NSString *baseURL = [NSString stringWithFormat:@"http://182.74.23.195:8094/YazakiService.svc/CANTEEN/INITIALIZE/%@/%@",userUpdate,userUpdate1];
+    NSString *baseURL = [NSString stringWithFormat:@"http://182.74.23.195:8094/YazakiService.svc/CANTEEN/INITIALIZE/%@/%@/%@",selectPlantCode,userUpdate,userUpdate1];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -211,7 +214,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     NOTOKPiechartVC *initView =  (NOTOKPiechartVC*)[storyboard instantiateViewControllerWithIdentifier:@"NOTOKPIE"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-    
+    initView.selectPlantCode=selectPlantCode;
     NSString *test =[NSString stringWithFormat:@"%@",[self.notOk_lbl text]];
     initView.dictObject = test;
     
@@ -229,7 +232,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-    
+    initView.selectPlantCode=selectPlantCode;
     NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
     initView.dictObject = test;
     
@@ -247,4 +250,56 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     else
         self.tableView.hidden=YES;
 }
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [_planArray count];
+}
+
+
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"MyIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:MyIdentifier];
+    }
+    
+   _planDict=[_planArray objectAtIndex:indexPath.row];
+    cell.textLabel.text =[_planDict objectForKey:@"PLANTNAME"];
+       return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    self.plant_lbl.text =cell.textLabel.text;
+    _planDict=[_planArray objectAtIndex:indexPath.row];
+    selectPlantCode= self.plant_lbl.text;
+    selectPlantCode=[_planDict objectForKey:@"PLANTCODE"];
+    
+    self.tableView.hidden=YES;
+  
+    
+}
+
+
+
+
 @end

@@ -14,10 +14,12 @@
 @interface HOMEVC ()
 {
     CustomNavigationVC *objCustomNavigation;
+      NSString *selectPlantCode;
 }
 @property (nonatomic,strong) NSMutableArray *planArray;
 @property (nonatomic,strong) NSDictionary *myslot;
 @property (nonatomic,strong) NSDictionary *ResultHolderDict;
+@property (nonatomic,strong) NSDictionary *planDict;
 
 @end
 
@@ -230,4 +232,54 @@
     else
         self.tableView.hidden=YES;
 }
+
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [_planArray count];
+}
+
+
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"MyIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:MyIdentifier];
+    }
+    
+    _planDict=[_planArray objectAtIndex:indexPath.row];
+    cell.textLabel.text =[_planDict objectForKey:@"PLANTNAME"];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    self.plant_lbl.text =cell.textLabel.text;
+    _planDict=[_planArray objectAtIndex:indexPath.row];
+    selectPlantCode= self.plant_lbl.text;
+    selectPlantCode=[_planDict objectForKey:@"PLANTCODE"];
+    
+    self.tableView.hidden=YES;
+    
+    
+}
+
 @end
