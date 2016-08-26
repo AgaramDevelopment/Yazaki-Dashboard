@@ -15,21 +15,27 @@
 @interface HOMEVC ()
 {
     CustomNavigationVC *objCustomNavigation;
+      NSString *selectPlantCode;
 }
-@property (nonatomic,strong) NSMutableArray *ResultHolderArray;
+@property (nonatomic,strong) NSMutableArray *planArray;
 @property (nonatomic,strong) NSDictionary *myslot;
+@property (nonatomic,strong) NSDictionary *ResultHolderDict;
+@property (nonatomic,strong) NSDictionary *planDict;
+
 @end
 
 @implementation HOMEVC
+@synthesize ResultHolderDict;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
-    
+    self.tableView.hidden=YES;
     datepicker=[[UIDatePicker alloc]init];
     datepicker1=[[UIDatePicker alloc]init];
     datepicker.datePickerMode=UIDatePickerModeDate;
     datepicker1.datePickerMode=UIDatePickerModeDate;
     
+    _planArray=[[NSMutableArray alloc]init];
     [self.Fromdate_txt setInputView:datepicker];
     [self.Todate_txt setInputView:datepicker1];
     
@@ -70,13 +76,22 @@
     NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     if (responseData != nil) {
 
-    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
-    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
-    self.Ok_lbl.text=[myslot valueForKey:@"NAME"];
-    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
-    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
-    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
+   ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+        
+   NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
+    NSDictionary *myslot=[temp objectAtIndex:0];
+        
+    NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
+     NSDictionary *myslot1=[temp1 objectAtIndex:0];
+        
+    self.Ok_lbl.text=[myslot objectForKey:@"NAME"];
+    self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
+    self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
+    self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
+        
+   
+        
+       _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
     }
     
     
@@ -144,7 +159,7 @@
 - (IBAction)generate_btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_Fromdate_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Todate_txt text]];
-    NSString *baseURL = [NSString stringWithFormat:@"http://182.74.23.195:8094/YazakiService.svc/INITIALIZE/%@/%@",userUpdate,userUpdate1];
+    NSString *baseURL = [NSString stringWithFormat:@"http://182.74.23.195:8094/YazakiService.svc/CANTEEN/INITIALIZE/%@/%@",userUpdate,userUpdate1];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -188,8 +203,7 @@
     
     NSString *test =[NSString stringWithFormat:@"%@",[self.Ok_lbl text]];
     initView.dictObject = test;
-    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-    [self presentViewController:initView animated:NO completion:nil];
+    [self.navigationController pushViewController:initView animated:YES];
 }
 
 - (IBAction)red_btn:(id)sender {
@@ -204,8 +218,68 @@
     NSString *test =[NSString stringWithFormat:@"%@",[self.notOk_lbl text]];
     initView.dictObject = test;
     
-    [initView setModalPresentationStyle:UIModalPresentationFullScreen];
-    [self presentViewController:initView animated:NO completion:nil];
+   [self.navigationController pushViewController:initView animated:YES];
+    
+}
+
+- (IBAction)Plant_touch_btn:(id)sender {
+    
+    
+    if (self.tableView.hidden ==YES) {
+        
+        self.tableView.hidden=NO;
+        
+    }
+    else
+        self.tableView.hidden=YES;
+}
+
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [_planArray count];
+}
+
+
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"MyIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:MyIdentifier];
+    }
+    
+    _planDict=[_planArray objectAtIndex:indexPath.row];
+    cell.textLabel.text =[_planDict objectForKey:@"PLANTNAME"];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    self.plant_lbl.text =cell.textLabel.text;
+    _planDict=[_planArray objectAtIndex:indexPath.row];
+    selectPlantCode= self.plant_lbl.text;
+    selectPlantCode=[_planDict objectForKey:@"PLANTCODE"];
+    
+    self.tableView.hidden=YES;
+    
     
 }
 

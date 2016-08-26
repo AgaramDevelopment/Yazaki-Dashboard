@@ -35,7 +35,7 @@
     [super viewDidLoad];
     [self customnavigationmethod];
     
-    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/SESSION/%@/%@/%@",dictObject,str1,str2];
+    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/CANTEEN/SESSION/%@/%@/%@/%@",dictObject,_selectPlantCode,str1,str2];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -279,7 +279,10 @@
         test.passcategory=item;
         test.passfromDate=str1;
         test.passTodate= str2;
-       [self presentViewController:test animated:NO completion:nil];
+         test.selectPlantCode=_selectPlantCode;
+   [self.navigationController pushViewController:test animated:YES];
+        
+        
         
     }
     
@@ -294,7 +297,9 @@
        destViewController.STATUS =dictObject;
        destViewController.fromDate=str1;
        destViewController.Todate=str2;
-       [self presentViewController:destViewController animated:NO completion:nil];
+        destViewController.selectPlantCode=_selectPlantCode;
+
+       [self.navigationController pushViewController:destViewController animated:YES];
     }
         });
 }

@@ -54,7 +54,7 @@
         
         else{
             
-            UIAlertView *alert2=[[UIAlertView alloc]initWithTitle:@"Login Failed" message:@"Incorrect Uername/Password" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+            UIAlertView *alert2=[[UIAlertView alloc]initWithTitle:@"Login Failed" message:@"Incorrect Uername/Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
             [delegate hideLoading];
             

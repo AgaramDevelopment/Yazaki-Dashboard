@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeMonthVC : UIViewController
+@interface HomeMonthVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 {
     UIDatePicker * datepicker;
@@ -33,5 +33,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *CountValues_Red_lbl;
 - (IBAction)Green_Month_btn:(id)sender;
+- (IBAction)touch_plant_btn:(id)sender;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *plant_lbl;
 
 @end

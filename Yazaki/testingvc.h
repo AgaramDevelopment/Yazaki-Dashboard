@@ -17,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *status_lbl;
 @property (weak, nonatomic) IBOutlet UILabel *Session_lbl;
+@property(strong,nonatomic)NSString *selectPlantCode;
 @end

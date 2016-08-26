@@ -15,21 +15,30 @@
 @interface HomeMonthVC ()
 {
     CustomNavigationVC *objCustomNavigation;
+    NSString *selectPlantCode;
 }
-@property (nonatomic,strong) NSMutableArray *ResultHolderArray;
+
+@property (nonatomic,strong) NSDictionary*ResultHolderDict;
+@property (nonatomic,strong) NSMutableArray *planArray;
+@property (nonatomic,strong) NSDictionary *myslot;
+@property (nonatomic,strong) NSDictionary *planDict;
+
+
 @end
 
 @implementation HomeMonthVC
+@synthesize ResultHolderDict;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
+    _planArray=[[NSMutableArray alloc]init];
     datepicker=[[UIDatePicker alloc]init];
     datepicker1=[[UIDatePicker alloc]init];
     
     datepicker.datePickerMode=UIDatePickerModeDate;
     datepicker1.datePickerMode=UIDatePickerModeDate;
-    
+     self.tableView.hidden=YES;
     
     
     // [self.ok_lbl.text:datepicker];
@@ -124,16 +133,31 @@
     
     NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     if (responseData != nil) {
+        
+        ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+        
+        NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
+        NSDictionary *myslot=[temp objectAtIndex:0];
+        
+        NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
+        NSDictionary *myslot1=[temp1 objectAtIndex:0];
+        
+        self.ok_lbl.text=[myslot objectForKey:@"NAME"];
+        self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
+        self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
+        self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
+        _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
  
-    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
-    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
-    
-    self.ok_lbl.text=[myslot valueForKey:@"NAME"];
-    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
-    
-    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
-    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
+ 
+//    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+//    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
+//    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
+//    
+//    self.ok_lbl.text=[myslot valueForKey:@"NAME"];
+//    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
+//    
+//    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
+//    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
     
     }
     else{
@@ -175,7 +199,7 @@
 - (IBAction)GenerateMonth_Btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
-    NSString *baseURL = [NSString stringWithFormat:@"http://182.74.23.195:8094/YazakiService.svc/INITIALIZE/%@/%@",userUpdate,userUpdate1];
+    NSString *baseURL = [NSString stringWithFormat:@"http://182.74.23.195:8094/YazakiService.svc/CANTEEN/INITIALIZE/%@/%@/%@",selectPlantCode,userUpdate,userUpdate1];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -242,7 +266,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     NOTOKPiechartVC *initView =  (NOTOKPiechartVC*)[storyboard instantiateViewControllerWithIdentifier:@"NOTOKPIE"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-    
+    initView.selectPlantCode=selectPlantCode;
     NSString *test =[NSString stringWithFormat:@"%@",[self.notOk_lbl text]];
     initView.dictObject = test;
     
@@ -260,11 +284,74 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-    
+    initView.selectPlantCode=selectPlantCode;
     NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
     initView.dictObject = test;
     
    [self.navigationController pushViewController:initView animated:YES];
     
 }
+
+- (IBAction)touch_plant_btn:(id)sender {
+    
+    if (self.tableView.hidden ==YES) {
+        
+        self.tableView.hidden=NO;
+        
+    }
+    else
+        self.tableView.hidden=YES;
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [_planArray count];
+}
+
+
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *MyIdentifier = @"MyIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:MyIdentifier];
+    }
+    
+   _planDict=[_planArray objectAtIndex:indexPath.row];
+    cell.textLabel.text =[_planDict objectForKey:@"PLANTNAME"];
+       return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    self.plant_lbl.text =cell.textLabel.text;
+    _planDict=[_planArray objectAtIndex:indexPath.row];
+    selectPlantCode= self.plant_lbl.text;
+    selectPlantCode=[_planDict objectForKey:@"PLANTCODE"];
+    
+    self.tableView.hidden=YES;
+  
+    
+}
+
+
+
+
 @end

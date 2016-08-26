@@ -48,9 +48,9 @@
 		1882BE3F1CA2546600D25D68 /* RAJDHANI-BOLD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE3E1CA2546600D25D68 /* RAJDHANI-BOLD.TTF */; };
 		1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1882BE411CA2911600D25D68 /* HomeMonthVC.m */; };
 		188F5B1D1CA3C26800035964 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188F5B1C1CA3C26800035964 /* QuartzCore.framework */; };
-		CE0F90B01D6EE840003D86CB /* CustomNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0F90AE1D6EE840003D86CB /* CustomNavigationVC.m */; };
-		CE0F90B11D6EE840003D86CB /* CustomNavigationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0F90AF1D6EE840003D86CB /* CustomNavigationVC.xib */; };
 		CE67D9C21CD341F20042E4DB /* Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */; };
+		CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */; };
+		CE7CD4501D6FFD6500EBA627 /* CustomNavigationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */; };
 		CED1B5511CCDF1E9001D54B3 /* app-launcher-3.png in Resources */ = {isa = PBXBuildFile; fileRef = CED1B5501CCDF1E9001D54B3 /* app-launcher-3.png */; };
 		CED1B55B1CCDFC61001D54B3 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = CED1B5521CCDFC61001D54B3 /* Icon-40.png */; };
 		CED1B55C1CCDFC61001D54B3 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED1B5531CCDFC61001D54B3 /* Icon-40@2x.png */; };
@@ -140,10 +140,10 @@
 		1882BE411CA2911600D25D68 /* HomeMonthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeMonthVC.m; path = ../HomeMonthVC.m; sourceTree = "<group>"; };
 		1888384F1D702638007C749E /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		188F5B1C1CA3C26800035964 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CE0F90AD1D6EE840003D86CB /* CustomNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationVC.h; sourceTree = "<group>"; };
-		CE0F90AE1D6EE840003D86CB /* CustomNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationVC.m; sourceTree = "<group>"; };
-		CE0F90AF1D6EE840003D86CB /* CustomNavigationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavigationVC.xib; sourceTree = "<group>"; };
 		CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-83.5@2x.png"; path = "app icon/Icon-83.5@2x.png"; sourceTree = SOURCE_ROOT; };
+		CE7CD44C1D6FFD6500EBA627 /* CustomNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationVC.h; sourceTree = "<group>"; };
+		CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationVC.m; sourceTree = "<group>"; };
+		CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavigationVC.xib; sourceTree = "<group>"; };
 		CED1B5501CCDF1E9001D54B3 /* app-launcher-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-launcher-3.png"; path = "IMAGES/app-launcher-3.png"; sourceTree = SOURCE_ROOT; };
 		CED1B5521CCDFC61001D54B3 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40.png"; path = "app icon/Icon-40.png"; sourceTree = SOURCE_ROOT; };
 		CED1B5531CCDFC61001D54B3 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@2x.png"; path = "app icon/Icon-40@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -326,16 +326,6 @@
 			name = "Custom Font";
 			sourceTree = "<group>";
 		};
-		CE0F90AC1D6EE818003D86CB /* Custome Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				CE0F90AD1D6EE840003D86CB /* CustomNavigationVC.h */,
-				CE0F90AE1D6EE840003D86CB /* CustomNavigationVC.m */,
-				CE0F90AF1D6EE840003D86CB /* CustomNavigationVC.xib */,
-			);
-			name = "Custome Navigation";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -426,13 +416,13 @@
 				CE67D9C21CD341F20042E4DB /* Icon-83.5@2x.png in Resources */,
 				CED1B5621CCDFC61001D54B3 /* Icon-Small@2x.png in Resources */,
 				CED1B55F1CCDFC61001D54B3 /* Icon-76.png in Resources */,
-				CE0F90B11D6EE840003D86CB /* CustomNavigationVC.xib in Resources */,
 				1882BE3B1CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF in Resources */,
 				1863D5F81CA1164800D2F625 /* ico_home_btn.png in Resources */,
 				185274391CA6B3EF0078BF26 /* ico_date.png in Resources */,
 				1882BE3A1CA253B900D25D68 /* RAJDHANI-LIGHT.TTF in Resources */,
 				1882BE3D1CA253B900D25D68 /* RAJDHANI-SEMIBOLD.TTF in Resources */,
 				CED1B5631CCDFC61001D54B3 /* Icon-Small@3x.png in Resources */,
+				CE7CD4501D6FFD6500EBA627 /* CustomNavigationVC.xib in Resources */,
 				CED1B55C1CCDFC61001D54B3 /* Icon-40@2x.png in Resources */,
 				CED1B55E1CCDFC61001D54B3 /* Icon-60@3x.png in Resources */,
 				1863D5F71CA1164800D2F625 /* ico_calendar.png in Resources */,
@@ -467,6 +457,7 @@
 				186230D31CABDFE3001088C3 /* testingvc.m in Sources */,
 				186173B81CA4F89A002A51DA /* MCNewCustomLayeredView.m in Sources */,
 				1866708E1CAD209B001C349A /* NOTOKPiechartVC.m in Sources */,
+				CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */,
 				1863D5CC1CA10D7700D2F625 /* AppDelegate.m in Sources */,
 				1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */,
 				1863D5EE1CA10F0800D2F625 /* LoginVC.m in Sources */,
@@ -483,7 +474,6 @@
 				186230D61CABF13D001088C3 /* CatdetailsTableViewCell.m in Sources */,
 				186173BA1CA4F89A002A51DA /* MCSliceLayer.m in Sources */,
 				186173A91CA4F796002A51DA /* PieChartTest.m in Sources */,
-				CE0F90B01D6EE840003D86CB /* CustomNavigationVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

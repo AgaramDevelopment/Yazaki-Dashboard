@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
-    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/CATEGORYDETAILS/%@/%@/%@/%@",category,STATUS,fromDate,Todate];
+    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/CANTEEN/CATEGORYDETAILS/%@/%@/%@/%@",category,STATUS,fromDate,Todate];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -120,7 +120,9 @@
     test.passcategory=category;
     test.passfromDate=fromDate;
     test.passTodate= Todate;
-[self presentViewController:test animated:NO completion:nil];
+    test.selectPlantCode=_selectPlantCode;
+
+ [self.navigationController pushViewController:test animated:YES];
 //[[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
 }
 
