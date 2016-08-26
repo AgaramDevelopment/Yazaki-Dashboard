@@ -11,6 +11,7 @@
 #import "DashboardVC.h"
 #import "AppDelegate.h"
 #import "CustomNavigationVC.h"
+#import "Common.h"
 
 @interface LoginVC ()
 {
@@ -27,7 +28,7 @@
         NSString *userUpdate =[NSString stringWithFormat:@"%@",[Usernamefileld text]];
         NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[PasswordField text]];
         
-        NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/LOGIN/%@/%@",userUpdate,userUpdate1];
+        NSString *baseURL = [NSString stringWithFormat:@"%@/LOGIN/%@/%@",BaseURL,userUpdate,userUpdate1];
         NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         NSURLResponse *response;
@@ -37,15 +38,17 @@
          if (responseData != nil) {
         NSMutableArray *serviceResponse=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
         NSLog(@"got response==%@", serviceResponse);
-        NSDictionary *template=[serviceResponse objectAtIndex:0];
+    
+             
+        NSDictionary *template=[[serviceResponse valueForKey:@"Login_DC"] objectAtIndex:0];
         
         NSString *test=[template objectForKey:@"ValidState"];
         
         NSString *helloString = @"1";
         
         if ([test isEqual:helloString]) {
-          
-            [self moveToView];
+            NSMutableArray * objDashboardArray=[serviceResponse valueForKey:@"DashboardDetails"];
+            [self moveToView:objDashboardArray];
            
         }
         
@@ -90,12 +93,13 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)moveToView{
+-(void)moveToView :(NSMutableArray *) dashBoardCatagory{
     
     
-    DashboardVC *initView = [[DashboardVC alloc]init];
-    initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
-    [self.navigationController pushViewController:initView animated:YES];
+    DashboardVC *dashBoardVC = [[DashboardVC alloc]init];
+    dashBoardVC =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
+    dashBoardVC.dashBoardList=dashBoardCatagory;
+    [self.navigationController pushViewController:dashBoardVC animated:YES];
     
 
 }

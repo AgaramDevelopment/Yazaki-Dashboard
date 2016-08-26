@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DashboardVC : UIViewController
+
+@property (nonatomic,strong) NSMutableArray *dashBoardList;
+
 @property (weak, nonatomic) IBOutlet UIView *CanteenVIew;
 @property (weak, nonatomic) IBOutlet UIImageView *CanteenImageVIew;
 @property (weak, nonatomic) IBOutlet UILabel *Canteen_Label;

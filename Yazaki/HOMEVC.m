@@ -11,6 +11,7 @@
 #import "NOTOKPiechartVC.h"
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
+#import "Common.h"
 @interface HOMEVC ()
 {
     CustomNavigationVC *objCustomNavigation;
@@ -59,7 +60,7 @@
     
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Todate_txt text]];
     
-    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/INITIALIZE/%@/%@",userUpdate,userUpdate1];
+    NSString *baseURL = [NSString stringWithFormat:@"%@/INITIALIZE/%@/%@/%@",BaseURL,userUpdate,@"",userUpdate1];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;

@@ -24,11 +24,10 @@
     
     
     
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+   UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-        
-        initViewController = [storyBoard instantiateViewControllerWithIdentifier:@"loginvc"];
-  navigationController = [[UINavigationController alloc] initWithRootViewController:initViewController];
+   initViewController = [storyBoard instantiateViewControllerWithIdentifier:@"loginvc"];
+   navigationController = [[UINavigationController alloc] initWithRootViewController:initViewController];
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     navigationController.navigationBarHidden = YES;
     _window.rootViewController = navigationController;

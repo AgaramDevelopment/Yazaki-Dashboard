@@ -11,6 +11,7 @@
 #import "NOTOKPiechartVC.h"
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
+#import "Common.h"
 @interface HomeMonthVC ()
 {
     CustomNavigationVC *objCustomNavigation;
@@ -64,7 +65,58 @@
     self.Tomonth_txt.text=[NSString stringWithFormat:@"%@",formattedDate];
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
-    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/INITIALIZE/%@/%@",userUpdate,userUpdate1];
+    
+    NSString *baseURL;
+    if([self.selectType isEqualToString: @"Canteen"])
+    {
+      baseURL = [NSString stringWithFormat:@"%@/%@/INITIALIZE/''/%@/%@",BaseURL,self.selectType,userUpdate,userUpdate1];
+    }
+    
+    else if ([self.selectType isEqualToString: @"Production"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/%@/BOXINITIALIZE/%@/%@",BaseURL,self.selectType,userUpdate,userUpdate1];
+    }
+    
+    else if ([self.selectType isEqualToString: @"Scrap"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/%@/INITIALIZE/%@/%@",BaseURL,self.selectType,userUpdate,userUpdate1];
+    }
+    
+    else if ([self.selectType isEqualToString: @"Efficiency"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/%@/INITIALIZE/%@/%@",BaseURL,self.selectType,userUpdate,userUpdate1];
+    }
+    
+    else if ([self.selectType isEqualToString: @"Quote Management"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/%@/COSTINGINITIALIZE/%@/%@",BaseURL,self.selectType,@"",@""];
+    }
+    
+    else if ([self.selectType isEqualToString: @"Training"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/%@/INITIALIZE/%@/%@",BaseURL,self.selectType,userUpdate,userUpdate1];
+    }
+    
+    else if ([self.selectType isEqualToString: @"Gate Pass"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/%@/INITIALIZE/%@/%@",BaseURL,self.selectType,userUpdate,userUpdate1];
+    }
+    
+    else if ([self.selectType isEqualToString: @"Gift"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/%@/GIFTINITIALIZE",BaseURL,self.selectType];
+    }
+    
+    else if ([self.selectType isEqualToString: @"Project Management"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/%@/INITIALIZE/%@/%@",BaseURL,self.selectType,userUpdate,userUpdate1];
+    }
+    else if ([self.selectType isEqualToString: @"Attendance"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/%@/INITIALIZE/%@/%@",BaseURL,self.selectType,userUpdate,userUpdate1];
+    }
+    
+    
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;

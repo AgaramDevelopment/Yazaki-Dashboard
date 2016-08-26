@@ -14,6 +14,8 @@
     UIDatePicker * datepicker1;
 }
 
+@property(nonatomic,strong) NSString *selectType;
+
 @property (weak, nonatomic) IBOutlet UIImageView *fromdate_img;
 @property (weak, nonatomic) IBOutlet UITextField *Fromdate_txt;
 @property (weak, nonatomic) IBOutlet UIView *FromDateView;

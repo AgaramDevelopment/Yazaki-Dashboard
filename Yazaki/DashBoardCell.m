@@ -10,9 +10,4 @@
 
 @implementation DashBoardCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
 @end

@@ -40,8 +40,7 @@
 		186670821CACE456001C349A /* EMpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186670811CACE456001C349A /* EMpTableViewCell.m */; };
 		1866708B1CACEA68001C349A /* testing2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866708A1CACEA68001C349A /* testing2.m */; };
 		1866708E1CAD209B001C349A /* NOTOKPiechartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866708D1CAD209B001C349A /* NOTOKPiechartVC.m */; };
-		1880C98E1D6F204B0042733E /* DashBoardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880C98C1D6F204B0042733E /* DashBoardCell.m */; };
-		1880C98F1D6F204B0042733E /* DashBoardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1880C98D1D6F204B0042733E /* DashBoardCell.xib */; };
+		1880C9981D6F283E0042733E /* DashBoardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880C9971D6F283E0042733E /* DashBoardCell.m */; };
 		1882BE3A1CA253B900D25D68 /* RAJDHANI-LIGHT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE361CA253B900D25D68 /* RAJDHANI-LIGHT.TTF */; };
 		1882BE3B1CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE371CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF */; };
 		1882BE3C1CA253B900D25D68 /* RAJDHANI-REGULAR.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE381CA253B900D25D68 /* RAJDHANI-REGULAR.TTF */; };
@@ -130,9 +129,8 @@
 		1866708A1CACEA68001C349A /* testing2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = testing2.m; path = ../testing2.m; sourceTree = "<group>"; };
 		1866708C1CAD209B001C349A /* NOTOKPiechartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOTOKPiechartVC.h; path = ../NOTOKPiechartVC.h; sourceTree = "<group>"; };
 		1866708D1CAD209B001C349A /* NOTOKPiechartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOTOKPiechartVC.m; path = ../NOTOKPiechartVC.m; sourceTree = "<group>"; };
-		1880C98B1D6F204B0042733E /* DashBoardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardCell.h; sourceTree = "<group>"; };
-		1880C98C1D6F204B0042733E /* DashBoardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardCell.m; sourceTree = "<group>"; };
-		1880C98D1D6F204B0042733E /* DashBoardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashBoardCell.xib; sourceTree = "<group>"; };
+		1880C9961D6F283E0042733E /* DashBoardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardCell.h; sourceTree = "<group>"; };
+		1880C9971D6F283E0042733E /* DashBoardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardCell.m; sourceTree = "<group>"; };
 		1882BE361CA253B900D25D68 /* RAJDHANI-LIGHT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-LIGHT.TTF"; path = "Custome Fonts/RAJDHANI-LIGHT.TTF"; sourceTree = "<group>"; };
 		1882BE371CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-MEDIUM.TTF"; path = "Custome Fonts/RAJDHANI-MEDIUM.TTF"; sourceTree = "<group>"; };
 		1882BE381CA253B900D25D68 /* RAJDHANI-REGULAR.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-REGULAR.TTF"; path = "Custome Fonts/RAJDHANI-REGULAR.TTF"; sourceTree = "<group>"; };
@@ -140,6 +138,7 @@
 		1882BE3E1CA2546600D25D68 /* RAJDHANI-BOLD.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-BOLD.TTF"; path = "Custome Fonts/RAJDHANI-BOLD.TTF"; sourceTree = "<group>"; };
 		1882BE401CA2911600D25D68 /* HomeMonthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeMonthVC.h; path = ../HomeMonthVC.h; sourceTree = "<group>"; };
 		1882BE411CA2911600D25D68 /* HomeMonthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeMonthVC.m; path = ../HomeMonthVC.m; sourceTree = "<group>"; };
+		1888384F1D702638007C749E /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		188F5B1C1CA3C26800035964 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE0F90AD1D6EE840003D86CB /* CustomNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationVC.h; sourceTree = "<group>"; };
 		CE0F90AE1D6EE840003D86CB /* CustomNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationVC.m; sourceTree = "<group>"; };
@@ -226,7 +225,7 @@
 		1863D5C51CA10D7700D2F625 /* Yazaki */ = {
 			isa = PBXGroup;
 			children = (
-				1880C98A1D6F1FF40042733E /* CustomDashCell */,
+				CE0F90AC1D6EE818003D86CB /* Custome Navigation */,
 				188F5B1C1CA3C26800035964 /* QuartzCore.framework */,
 				1863D5EF1CA1163500D2F625 /* IMAGES */,
 				1863D5EC1CA10F0800D2F625 /* LoginVC.h */,
@@ -249,6 +248,8 @@
 				1866708A1CACEA68001C349A /* testing2.m */,
 				186670801CACE456001C349A /* EMpTableViewCell.h */,
 				186670811CACE456001C349A /* EMpTableViewCell.m */,
+				1880C9961D6F283E0042733E /* DashBoardCell.h */,
+				1880C9971D6F283E0042733E /* DashBoardCell.m */,
 				1863D5D01CA10D7700D2F625 /* Main.storyboard */,
 				1863D5CA1CA10D7700D2F625 /* AppDelegate.h */,
 				1863D5CB1CA10D7700D2F625 /* AppDelegate.m */,
@@ -308,18 +309,9 @@
 				1863D5F31CA1164800D2F625 /* ico_pwd.png */,
 				1863D5F41CA1164800D2F625 /* ico_uname.png */,
 				1863D5F51CA1164800D2F625 /* login_logo.png */,
+				1888384F1D702638007C749E /* Common.h */,
 			);
 			name = IMAGES;
-			sourceTree = "<group>";
-		};
-		1880C98A1D6F1FF40042733E /* CustomDashCell */ = {
-			isa = PBXGroup;
-			children = (
-				1880C98B1D6F204B0042733E /* DashBoardCell.h */,
-				1880C98C1D6F204B0042733E /* DashBoardCell.m */,
-				1880C98D1D6F204B0042733E /* DashBoardCell.xib */,
-			);
-			name = CustomDashCell;
 			sourceTree = "<group>";
 		};
 		1882BE351CA2538D00D25D68 /* Custom Font */ = {
@@ -431,7 +423,6 @@
 				1863D5D21CA10D7700D2F625 /* Main.storyboard in Resources */,
 				CED1B5611CCDFC61001D54B3 /* Icon-Small.png in Resources */,
 				1863D5F91CA1164800D2F625 /* ico_pwd.png in Resources */,
-				1880C98F1D6F204B0042733E /* DashBoardCell.xib in Resources */,
 				CE67D9C21CD341F20042E4DB /* Icon-83.5@2x.png in Resources */,
 				CED1B5621CCDFC61001D54B3 /* Icon-Small@2x.png in Resources */,
 				CED1B55F1CCDFC61001D54B3 /* Icon-76.png in Resources */,
@@ -487,9 +478,9 @@
 				186173B91CA4F89A002A51DA /* MCPieChartView.m in Sources */,
 				1863D5FE1CA13A5500D2F625 /* HOMEVC.m in Sources */,
 				1866708B1CACEA68001C349A /* testing2.m in Sources */,
+				1880C9981D6F283E0042733E /* DashBoardCell.m in Sources */,
 				1863D5C91CA10D7700D2F625 /* main.m in Sources */,
 				186230D61CABF13D001088C3 /* CatdetailsTableViewCell.m in Sources */,
-				1880C98E1D6F204B0042733E /* DashBoardCell.m in Sources */,
 				186173BA1CA4F89A002A51DA /* MCSliceLayer.m in Sources */,
 				186173A91CA4F796002A51DA /* PieChartTest.m in Sources */,
 				CE0F90B01D6EE840003D86CB /* CustomNavigationVC.m in Sources */,

@@ -10,7 +10,11 @@
 
 @interface DashBoardCell : UICollectionViewCell
 
+@property (nonatomic,strong) IBOutlet UIView * common_View;
+
 @property (nonatomic,strong) IBOutlet UIImageView * icon_Img;
-@property (nonatomic,strong) IBOutlet UILabel *iconName_lbl;
+
+@property (nonatomic,strong) IBOutlet UILabel * iconName_Lbl;
+
 
 @end
