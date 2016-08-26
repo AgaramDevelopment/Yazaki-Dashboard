@@ -32,4 +32,8 @@
 - (IBAction)red_btn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *CountValues_Green_lbl;
 @property (weak, nonatomic) IBOutlet UILabel *CountValues_Red_lbl;
+@property (strong, nonatomic) IBOutlet UILabel *plant_lbl;
+- (IBAction)Plant_touch_btn:(id)sender;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 @end

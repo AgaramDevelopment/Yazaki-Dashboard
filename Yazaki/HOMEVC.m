@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
-    
+    self.tableView.hidden=YES;
     datepicker=[[UIDatePicker alloc]init];
     datepicker1=[[UIDatePicker alloc]init];
     datepicker.datePickerMode=UIDatePickerModeDate;
@@ -206,4 +206,15 @@
     
 }
 
+- (IBAction)Plant_touch_btn:(id)sender {
+    
+    
+    if (self.tableView.hidden ==YES) {
+        
+        self.tableView.hidden=NO;
+        
+    }
+    else
+        self.tableView.hidden=YES;
+}
 @end

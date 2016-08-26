@@ -441,6 +441,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="3NZ-P0-AE6"/>
                                                     <constraint firstAttribute="width" constant="194" id="met-SE-Pg7"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="Plant_touch_btn:" destination="R9T-sj-6wA" eventType="touchUpInside" id="124-Mp-Zga"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLg-Sb-F5R">
                                                 <rect key="frame" x="8" y="3" width="155" height="25"/>
@@ -474,6 +477,14 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Klg-o1-sLi">
+                                        <rect key="frame" x="173" y="110" width="194" height="87"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="194" id="EFR-7l-y4b"/>
+                                            <constraint firstAttribute="height" constant="87" id="KC6-ZF-0UO"/>
+                                        </constraints>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -510,7 +521,9 @@
                                     <constraint firstItem="rCt-8I-Bip" firstAttribute="leading" secondItem="BfF-ao-dNp" secondAttribute="leadingMargin" id="gMj-q5-2Wb"/>
                                     <constraint firstItem="EcM-Qh-dps" firstAttribute="top" secondItem="8Ut-Yf-ahu" secondAttribute="bottom" constant="54" id="iAg-pj-2hR"/>
                                     <constraint firstItem="m6U-DW-EBO" firstAttribute="top" secondItem="ljf-EE-8XA" secondAttribute="top" id="mgP-0W-blB"/>
+                                    <constraint firstItem="Klg-o1-sLi" firstAttribute="top" secondItem="BfF-ao-dNp" secondAttribute="top" constant="110" id="oNX-We-6TT"/>
                                     <constraint firstItem="OFz-Lh-5lz" firstAttribute="leading" secondItem="rCt-8I-Bip" secondAttribute="trailing" constant="16" id="pys-SI-eSl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Klg-o1-sLi" secondAttribute="trailing" constant="8" id="wpk-Ou-PeI"/>
                                     <constraint firstItem="beD-ZU-PcZ" firstAttribute="top" secondItem="8Ut-Yf-ahu" secondAttribute="bottom" constant="14" id="xYZ-p1-g68"/>
                                     <constraint firstItem="rCt-8I-Bip" firstAttribute="top" secondItem="BfF-ao-dNp" secondAttribute="top" constant="137" id="yQZ-fP-qyY"/>
                                     <constraint firstItem="fFx-C6-2Az" firstAttribute="top" secondItem="m6U-DW-EBO" secondAttribute="bottom" constant="70" id="yux-Vf-Yba"/>
@@ -541,6 +554,8 @@
                         <outlet property="fromdateMain_lbl" destination="rCt-8I-Bip" id="wMZ-sJ-OlE"/>
                         <outlet property="fromdate_img" destination="wnp-7z-x5c" id="7ku-Gw-71f"/>
                         <outlet property="notOk_lbl" destination="beD-ZU-PcZ" id="Wjw-0h-0yg"/>
+                        <outlet property="plant_lbl" destination="pLg-Sb-F5R" id="gP4-Ow-RKm"/>
+                        <outlet property="tableView" destination="Klg-o1-sLi" id="h8z-4k-zIR"/>
                         <outlet property="todate_img" destination="CXP-3q-Zzb" id="MHg-WZ-ec7"/>
                     </connections>
                 </viewController>
@@ -1250,15 +1265,25 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="odv-j6-RtY">
+                                                <rect key="frame" x="173" y="110" width="194" height="87"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="87" id="Rqc-CN-QPo"/>
+                                                    <constraint firstAttribute="width" constant="194" id="v80-22-CTv"/>
+                                                </constraints>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="9my-hI-ona" firstAttribute="leading" secondItem="U85-ev-vG7" secondAttribute="leading" constant="35" id="0Zd-Rf-j7D"/>
                                             <constraint firstItem="wgj-mQ-H9j" firstAttribute="leading" secondItem="rmr-bi-qNg" secondAttribute="trailing" constant="8" id="1xg-wB-8Ga"/>
+                                            <constraint firstItem="odv-j6-RtY" firstAttribute="top" secondItem="U85-ev-vG7" secondAttribute="top" constant="110" id="22X-ph-dor"/>
                                             <constraint firstItem="GrH-ac-EnW" firstAttribute="leading" secondItem="U85-ev-vG7" secondAttribute="leadingMargin" id="2Ta-p0-ogW"/>
                                             <constraint firstItem="1RK-sV-0gi" firstAttribute="leading" secondItem="Tj9-rA-E4l" secondAttribute="trailing" constant="8" id="37P-fS-0DH"/>
                                             <constraint firstItem="Tj9-rA-E4l" firstAttribute="bottom" secondItem="1RK-sV-0gi" secondAttribute="bottom" id="4og-sC-KlX"/>
                                             <constraint firstAttribute="trailing" secondItem="wgj-mQ-H9j" secondAttribute="trailing" constant="29" id="5aU-lD-zjv"/>
+                                            <constraint firstAttribute="trailing" secondItem="odv-j6-RtY" secondAttribute="trailing" constant="8" id="8gW-ff-Ta2"/>
                                             <constraint firstItem="30Z-Hv-RuB" firstAttribute="top" secondItem="va1-0Q-Qsl" secondAttribute="bottom" constant="30" id="GCe-FG-wfL"/>
                                             <constraint firstItem="Tj9-rA-E4l" firstAttribute="top" secondItem="1RK-sV-0gi" secondAttribute="top" id="GsL-e9-aXN"/>
                                             <constraint firstItem="va1-0Q-Qsl" firstAttribute="top" secondItem="wgj-mQ-H9j" secondAttribute="bottom" constant="14" id="ICN-KV-A1a"/>
@@ -1304,6 +1329,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="S3g-PF-3iP"/>
                                                     <constraint firstAttribute="width" constant="194" id="hFf-P7-40b"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="touch_plant_btn:" destination="Zoa-Yd-cGX" eventType="touchUpInside" id="buo-Ri-GaO"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbp-29-uHy">
                                                 <rect key="frame" x="8" y="3" width="155" height="25"/>
@@ -1384,7 +1412,9 @@
                         <outlet property="greenib_btn" destination="1fl-bB-gP0" id="jUz-de-Kjh"/>
                         <outlet property="notOk_lbl" destination="va1-0Q-Qsl" id="E0p-lV-2hT"/>
                         <outlet property="ok_lbl" destination="Zpz-fx-Fla" id="2B3-Jx-oGg"/>
+                        <outlet property="plant_lbl" destination="nbp-29-uHy" id="Cdi-Aj-32q"/>
                         <outlet property="redib_btn" destination="BA3-JS-V5r" id="mWD-3w-KEl"/>
+                        <outlet property="tableView" destination="odv-j6-RtY" id="LcE-ar-wdx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1t-w3-uZu" userLabel="First Responder" sceneMemberID="firstResponder"/>

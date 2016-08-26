@@ -28,7 +28,7 @@
     
     datepicker.datePickerMode=UIDatePickerModeDate;
     datepicker1.datePickerMode=UIDatePickerModeDate;
-    
+     self.tableView.hidden=YES;
     
     
     // [self.ok_lbl.text:datepicker];
@@ -214,5 +214,16 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     
    [self.navigationController pushViewController:initView animated:YES];
     
+}
+
+- (IBAction)touch_plant_btn:(id)sender {
+    
+    if (self.tableView.hidden ==YES) {
+        
+        self.tableView.hidden=NO;
+        
+    }
+    else
+        self.tableView.hidden=YES;
 }
 @end
