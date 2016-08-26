@@ -16,9 +16,15 @@
     CustomNavigationVC *objCustomNavigation;
 }
 @property (nonatomic,strong) NSMutableArray *ResultHolderArray;
+@property (nonatomic,strong) NSDictionary*ResultHolderDict;
+@property (nonatomic,strong) NSMutableArray *planArray;
+@property (nonatomic,strong) NSDictionary *myslot;
+
+
 @end
 
 @implementation HomeMonthVC
+@synthesize ResultHolderDict;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -72,16 +78,31 @@
     
     NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     if (responseData != nil) {
+        
+        ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+        
+        NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
+        NSDictionary *myslot=[temp objectAtIndex:0];
+        
+        NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
+        NSDictionary *myslot1=[temp1 objectAtIndex:0];
+        
+        self.ok_lbl.text=[myslot objectForKey:@"NAME"];
+        self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
+        self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
+        self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
+        _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
  
-    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
-    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
-    
-    self.ok_lbl.text=[myslot valueForKey:@"NAME"];
-    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
-    
-    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
-    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
+ 
+//    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+//    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
+//    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
+//    
+//    self.ok_lbl.text=[myslot valueForKey:@"NAME"];
+//    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
+//    
+//    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
+//    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
     
     }
     else{
@@ -123,7 +144,7 @@
 - (IBAction)GenerateMonth_Btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
-    NSString *baseURL = [NSString stringWithFormat:@"http://182.74.23.195:8094/YazakiService.svc/CANTEEN/INITIALIZE/""/%@/%@",userUpdate,userUpdate1];
+    NSString *baseURL = [NSString stringWithFormat:@"http://182.74.23.195:8094/YazakiService.svc/CANTEEN/INITIALIZE/%@/%@",userUpdate,userUpdate1];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;

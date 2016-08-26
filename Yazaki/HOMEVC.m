@@ -15,11 +15,14 @@
 {
     CustomNavigationVC *objCustomNavigation;
 }
-@property (nonatomic,strong) NSMutableArray *ResultHolderArray;
+@property (nonatomic,strong) NSMutableArray *planArray;
 @property (nonatomic,strong) NSDictionary *myslot;
+@property (nonatomic,strong) NSDictionary *ResultHolderDict;
+
 @end
 
 @implementation HOMEVC
+@synthesize ResultHolderDict;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
@@ -29,6 +32,7 @@
     datepicker.datePickerMode=UIDatePickerModeDate;
     datepicker1.datePickerMode=UIDatePickerModeDate;
     
+    _planArray=[[NSMutableArray alloc]init];
     [self.Fromdate_txt setInputView:datepicker];
     [self.Todate_txt setInputView:datepicker1];
     
@@ -69,13 +73,22 @@
     NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     if (responseData != nil) {
 
-    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
-    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
-    self.Ok_lbl.text=[myslot valueForKey:@"NAME"];
-    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
-    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
-    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
+   ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+        
+   NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
+    NSDictionary *myslot=[temp objectAtIndex:0];
+        
+    NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
+     NSDictionary *myslot1=[temp1 objectAtIndex:0];
+        
+    self.Ok_lbl.text=[myslot objectForKey:@"NAME"];
+    self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
+    self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
+    self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
+        
+   
+        
+       _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
     }
     
     
