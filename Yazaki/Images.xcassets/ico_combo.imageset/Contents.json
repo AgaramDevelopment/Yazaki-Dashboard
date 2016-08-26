@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ico_calendar.png",
+      "filename" : "ico_cmb-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ico_calendar-1.png",
+      "filename" : "ico_cmb.png",
       "scale" : "2x"
     },
     {
