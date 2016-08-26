@@ -91,7 +91,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-VE-Fnh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_icon" translatesAutoresizingMaskIntoConstraints="NO" id="UX8-VE-Fnh">
                                 <rect key="frame" x="59" y="203" width="250" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="hi1-T8-2sh"/>
@@ -132,14 +132,14 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_uname.png" translatesAutoresizingMaskIntoConstraints="NO" id="WoM-ul-ZD4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_icon" translatesAutoresizingMaskIntoConstraints="NO" id="WoM-ul-ZD4">
                                 <rect key="frame" x="71" y="244" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="YL2-9y-dCt"/>
                                     <constraint firstAttribute="width" constant="25" id="ik8-YD-6SG"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_pwd.png" translatesAutoresizingMaskIntoConstraints="NO" id="YHK-h0-8Gk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password_icon" translatesAutoresizingMaskIntoConstraints="NO" id="YHK-h0-8Gk">
                                 <rect key="frame" x="70" y="287" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="3ja-rD-EMD"/>
@@ -450,7 +450,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="BfF-ao-dNp" secondAttribute="bottom" id="Z36-ae-hzD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Date" image="ico_date.png" id="M5A-E2-6A3"/>
+                    <tabBarItem key="tabBarItem" title="Date" image="tabdate_icon" id="M5A-E2-6A3"/>
                     <navigationItem key="navigationItem" id="ss3-UX-wFC"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
@@ -1223,7 +1223,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="1Ut-C3-vFR" secondAttribute="trailing" constant="-16" id="mzY-02-b7j"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Month" image="TAbico_calendar.png" id="YE9-cc-ToO"/>
+                    <tabBarItem key="tabBarItem" title="Month" image="tabmonth_icon" id="YE9-cc-ToO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
@@ -1601,32 +1601,6 @@
             </objects>
             <point key="canvasLocation" x="2519.5" y="-1007.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="S79-UT-NDl">
-            <objects>
-                <viewController id="hMS-VL-OXN" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jkc-zU-78a"/>
-                        <viewControllerLayoutGuide type="bottom" id="WeL-Xt-fCY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PbL-IV-gSf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u24-ay-Lyi" customClass="testpie">
-                                <rect key="frame" x="16" y="170" width="320" height="300"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kkD-LN-nSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3974.5" y="2235.5"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="tY4-p9-eVo">
             <objects>
@@ -1780,12 +1754,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="TAbico_calendar.png" width="30" height="30"/>
         <image name="ico_calendar.png" width="55" height="55"/>
         <image name="ico_dash_canteen" width="72" height="72"/>
-        <image name="ico_date.png" width="30" height="30"/>
-        <image name="ico_pwd.png" width="44" height="44"/>
-        <image name="ico_uname.png" width="44" height="44"/>
-        <image name="login_logo.png" width="440" height="62"/>
+        <image name="login_icon" width="440" height="62"/>
+        <image name="password_icon" width="44" height="44"/>
+        <image name="tabdate_icon" width="30" height="30"/>
+        <image name="tabmonth_icon" width="30" height="30"/>
+        <image name="user_icon" width="44" height="44"/>
     </resources>
 </document>
