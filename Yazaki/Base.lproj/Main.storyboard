@@ -1237,7 +1237,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9my-hI-ona">
-                                                <rect key="frame" x="35" y="358" width="93" height="88"/>
+                                                <rect key="frame" x="36" y="358" width="93" height="88"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="88" id="QF3-l3-AO9"/>
                                                     <constraint firstAttribute="width" constant="93" id="gQf-fx-9Mn"/>
@@ -1247,7 +1247,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30Z-Hv-RuB">
-                                                <rect key="frame" x="245" y="358" width="93" height="88"/>
+                                                <rect key="frame" x="246" y="358" width="93" height="88"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="88" id="32m-Qf-FnT"/>
                                                     <constraint firstAttribute="width" constant="93" id="giJ-s2-mYA"/>
@@ -1276,7 +1276,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="9my-hI-ona" firstAttribute="leading" secondItem="U85-ev-vG7" secondAttribute="leading" constant="35" id="0Zd-Rf-j7D"/>
+                                            <constraint firstItem="9my-hI-ona" firstAttribute="leading" secondItem="U85-ev-vG7" secondAttribute="leading" constant="36" id="0Zd-Rf-j7D"/>
                                             <constraint firstItem="wgj-mQ-H9j" firstAttribute="leading" secondItem="rmr-bi-qNg" secondAttribute="trailing" constant="8" id="1xg-wB-8Ga"/>
                                             <constraint firstItem="odv-j6-RtY" firstAttribute="top" secondItem="U85-ev-vG7" secondAttribute="top" constant="110" id="22X-ph-dor"/>
                                             <constraint firstItem="GrH-ac-EnW" firstAttribute="leading" secondItem="U85-ev-vG7" secondAttribute="leadingMargin" id="2Ta-p0-ogW"/>
@@ -1309,7 +1309,7 @@
                                             <constraint firstItem="1fl-bB-gP0" firstAttribute="top" secondItem="Tj9-rA-E4l" secondAttribute="bottom" constant="110" id="pbG-0F-csh"/>
                                             <constraint firstAttribute="trailing" secondItem="rmr-bi-qNg" secondAttribute="trailing" constant="98" id="pdc-0d-j7g"/>
                                             <constraint firstItem="GrH-ac-EnW" firstAttribute="top" secondItem="Uii-j7-hRe" secondAttribute="top" id="uWf-mA-Mxp"/>
-                                            <constraint firstAttribute="trailing" secondItem="30Z-Hv-RuB" secondAttribute="trailing" constant="37" id="um2-fb-QB5"/>
+                                            <constraint firstAttribute="trailing" secondItem="30Z-Hv-RuB" secondAttribute="trailing" constant="36" id="um2-fb-QB5"/>
                                             <constraint firstItem="Zpz-fx-Fla" firstAttribute="top" secondItem="Tj9-rA-E4l" secondAttribute="bottom" constant="70" id="wdi-Ae-ZUR"/>
                                         </constraints>
                                     </view>
