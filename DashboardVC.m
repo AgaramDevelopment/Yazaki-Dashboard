@@ -13,6 +13,7 @@
 #import "DashBoardCell.h"
 #import "Common.h"
 #import "HomeMonthVC.h"
+#import "HOMEVC.h"
 
 @interface DashboardVC ()
 {
@@ -77,61 +78,61 @@
     cell.common_View.backgroundColor=[UIColor colorWithRed:(223/255.0f) green:(37/255.0f) blue:(13/255.0f) alpha:1.0f];
     NSString *imgName_Str;
     
-    if([cell.iconName_Lbl.text isEqualToString: @"Canteen"])
+    if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"2"])
     {
         
         imgName_Str = @"canteenImg";
     }
-    else if([cell.iconName_Lbl.text isEqualToString: @"Box Completion"])
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"3"])
     {
         
         imgName_Str = @"productionImg";
     }
     
-    else if([cell.iconName_Lbl.text isEqualToString: @"Scrap"])
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"4"])
     {
                imgName_Str = @"scrapImg";
     }
 
-    else if([cell.iconName_Lbl.text isEqualToString: @"Efficency"])
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"5"])
     {
         
         imgName_Str = @"efficiencyImg";
     }
     
     
-    else if([cell.iconName_Lbl.text isEqualToString: @"QMS"])
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"6"])
     {
         
         imgName_Str = @"quoteIMg";
     }
     
     
-    else if([cell.iconName_Lbl.text isEqualToString: @"Training"])
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"7"])
     {
         
         imgName_Str = @"trainingImg";
     }
     
-    else if([cell.iconName_Lbl.text isEqualToString: @"Gate Pass"])
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"8"])
     {
         
         imgName_Str = @"gatepassImg";
     }
     
-    else if([cell.iconName_Lbl.text isEqualToString: @"Gift"])
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"9"])
     {
         
         imgName_Str = @"giftImg";
     }
     
-    else if([cell.iconName_Lbl.text isEqualToString: @"PM"])
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"10"])
     {
         
         imgName_Str = @"projectImg";
     }
     
-    else if([cell.iconName_Lbl.text isEqualToString: @"Attendance"])
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"12"])
     {
         imgName_Str = @"attendanceImg";
     }
@@ -148,13 +149,14 @@
     
     NSDictionary *list= [dashBoard_Array objectAtIndex:indexPath.row];
     
-    NSString * selectOptionTye= [list valueForKey:@"DISPLAYNAME"];
+    NSString * selectOptionTye= [list valueForKey:@"DASHBOARDID"];
     
     UITabBarController *initView =  (UITabBarController*)[self.storyboard instantiateViewControllerWithIdentifier:@"Homevc"];
 
      HomeMonthVC * destViewController = [initView.viewControllers objectAtIndex:0];
      destViewController.selectType = selectOptionTye;
-    
+    HOMEVC * homeVC =[initView.viewControllers objectAtIndex:0];
+    homeVC.selectType=selectOptionTye;
     [self.navigationController pushViewController:initView animated:YES];
     
 }

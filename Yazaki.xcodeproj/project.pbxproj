@@ -225,7 +225,10 @@
 		1863D5C51CA10D7700D2F625 /* Yazaki */ = {
 			isa = PBXGroup;
 			children = (
-				CE0F90AC1D6EE818003D86CB /* Custome Navigation */,
+				CE7CD44C1D6FFD6500EBA627 /* CustomNavigationVC.h */,
+				CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */,
+				CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */,
+				1880C98A1D6F1FF40042733E /* CustomDashCell */,
 				188F5B1C1CA3C26800035964 /* QuartzCore.framework */,
 				1863D5EF1CA1163500D2F625 /* IMAGES */,
 				1863D5EC1CA10F0800D2F625 /* LoginVC.h */,

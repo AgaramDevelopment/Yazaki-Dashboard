@@ -66,7 +66,56 @@
     
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Todate_txt text]];
     
-    NSString *baseURL = [NSString stringWithFormat:@"%@/INITIALIZE/%@/%@/%@",BaseURL,userUpdate,@"",userUpdate1];
+    NSString *baseURL;
+    if([self.selectType isEqualToString: @"2"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/%@/INITIALIZE/''/%@/%@",BaseURL,self.selectType,userUpdate,userUpdate1];
+    }
+    
+    else if ([self.selectType isEqualToString: @"3"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/%@/%@",BaseURL,userUpdate,userUpdate1];
+    }
+    
+    else if ([self.selectType isEqualToString: @"4"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+    }
+    
+    else if ([self.selectType isEqualToString: @"5"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/EFFICIENCYINITIALIZE",BaseURL];
+    }
+    
+    else if ([self.selectType isEqualToString: @"6"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/QUOTEMANAGEMENT/COSTINGINITIALIZE/%@/%@",BaseURL,@"",@""];
+    }
+    
+    else if ([self.selectType isEqualToString: @"7"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/TRAINING/TRAININGDASHBOARDINITIALIZE",BaseURL];
+    }
+    
+    else if ([self.selectType isEqualToString: @"8"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/INITIALIZEGATEENTRYDASHBOARD/''/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+    }
+    
+    else if ([self.selectType isEqualToString: @"9"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTINITIALIZE",BaseURL];
+    }
+    
+    else if ([self.selectType isEqualToString: @"10"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/PROJECTMANAGEMENT/INITIALIZEPROJECTMANGEMENT",BaseURL];
+    }
+    else if ([self.selectType isEqualToString: @"12"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/Attendance/INITIALIZE/%@/%@",BaseURL,userUpdate,userUpdate1];
+    }
+
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
