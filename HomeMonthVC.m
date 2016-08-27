@@ -78,12 +78,12 @@
     NSString *baseURL;
     if([self.selectType isEqualToString: @"2"])
     {
-      baseURL = [NSString stringWithFormat:@"%@/%@/INITIALIZE/''/%@/%@",BaseURL,self.selectType,userUpdate,userUpdate1];
+      baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
     }
     
     else if ([self.selectType isEqualToString: @"3"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/%@/%@",BaseURL,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
     }
     
     else if ([self.selectType isEqualToString: @"4"])
