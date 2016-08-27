@@ -155,8 +155,10 @@
 
      HomeMonthVC * destViewController = [initView.viewControllers objectAtIndex:0];
      destViewController.selectType = selectOptionTye;
-    HOMEVC * homeVC =[initView.viewControllers objectAtIndex:0];
-    homeVC.selectType=selectOptionTye;
+    
+    //HOMEVC * homeVC =[[HOMEVC alloc]init];
+    //homeVC=[initView.viewControllers objectAtIndex:0];
+    //homeVC.selectType=selectOptionTye;
     [self.navigationController pushViewController:initView animated:YES];
     
 }

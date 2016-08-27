@@ -79,54 +79,110 @@
     if([self.selectType isEqualToString: @"2"])
     {
       baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"3"])
     {
         baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"4"])
     {
         baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"5"])
     {
         baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/EFFICIENCYINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"6"])
     {
         baseURL = [NSString stringWithFormat:@"%@/QUOTEMANAGEMENT/COSTINGINITIALIZE/''/''",BaseURL];
+         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"7"])
     {
         baseURL = [NSString stringWithFormat:@"%@/TRAINING/TRAININGDASHBOARDINITIALIZE",BaseURL];
+         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"8"])
     {
         baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/INITIALIZEGATEENTRYDASHBOARD/''/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"9"])
     {
         baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTINITIALIZE",BaseURL];
+         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"10"])
     {
         baseURL = [NSString stringWithFormat:@"%@/PROJECTMANAGEMENT/INITIALIZEPROJECTMANGEMENT",BaseURL];
+         [self WebserviceMethod:baseURL];
     }
     else if ([self.selectType isEqualToString: @"12"])
     {
         baseURL = [NSString stringWithFormat:@"%@/Attendance/INITIALIZE/%@/%@",BaseURL,userUpdate,userUpdate1];
+         [self WebserviceMethod:baseURL];
     }
     
     
-    NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+//    NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    NSURLResponse *response;
+//    NSError *error;
+//    
+//    NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+//    if (responseData != nil) {
+//        
+//        ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+//        
+//        NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
+//        NSDictionary *myslot=[temp objectAtIndex:0];
+//        
+//        NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
+//        NSDictionary *myslot1=[temp1 objectAtIndex:0];
+//        
+//        self.ok_lbl.text=[myslot objectForKey:@"NAME"];
+//        self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
+//        self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
+//        self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
+//        _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
+// 
+// 
+////    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+////    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
+////    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
+////    
+////    self.ok_lbl.text=[myslot valueForKey:@"NAME"];
+////    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
+////    
+////    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
+////    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
+//    
+//    }
+//    else{
+//        //handle received data
+//        [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
+//        
+//    }
+    
+    
+}
+
+-(void)WebserviceMethod:(NSString *)URL
+{
+   
+    NSURL *url = [NSURL URLWithString:[URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
     NSError *error;
@@ -136,37 +192,109 @@
         
         ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
         
-        NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
-        NSDictionary *myslot=[temp objectAtIndex:0];
+        [self ResponDataValue:ResultHolderDict:self.selectType];
         
-        NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
-        NSDictionary *myslot1=[temp1 objectAtIndex:0];
+//        NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
+//        NSDictionary *myslot=[temp objectAtIndex:0];
+//        
+//        NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
+//        NSDictionary *myslot1=[temp1 objectAtIndex:0];
+//        
+//        self.ok_lbl.text=[myslot objectForKey:@"NAME"];
+//        self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
+//        self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
+//        self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
+//        _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
         
-        self.ok_lbl.text=[myslot objectForKey:@"NAME"];
-        self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
-        self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
-        self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
-        _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
- 
- 
-//    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-//    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
-//    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
-//    
-//    self.ok_lbl.text=[myslot valueForKey:@"NAME"];
-//    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
-//    
-//    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
-//    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
-    
+        
+        
     }
     else{
         //handle received data
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+
+}
+
+-(void)ResponDataValue:(NSDictionary *) responsData:(NSString *) selectOptionType
+{
+    if([selectOptionType isEqualToString: @"2"])
+    {
+        NSArray *temp =   [responsData objectForKey:@"Initialize_Ok"];
+        NSDictionary *myslot=[temp objectAtIndex:0];
+        
+        NSArray *temp1 =   [responsData objectForKey:@"Initialize_NotOk"];
+        NSDictionary *myslot1=[temp1 objectAtIndex:0];
+        
+        self.ok_lbl.text=[myslot objectForKey:@"NAME"];
+        self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
+        self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
+        self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
+        _planArray=[responsData objectForKey:@"PlantDetails"];
+        
+    }
+    
+    else if ([selectOptionType isEqualToString: @"3"])
+    {
+        NSArray *temp =   [responsData objectForKey:@"ACTUALQTY"];
+        
+        self.ok_lbl.text=@"ACTUALQTY";
+       
+        self.CountValues_Green_lbl.text=[temp valueForKey:@"ACTUALQTY"];
+        
+         _planArray=[responsData objectForKey:@"BoxInitializePlant"];
+    }
+    
+    else if ([selectOptionType isEqualToString: @"4"])
+    {
+        NSArray *temp =   [responsData objectForKey:@"ActualQuantitys"];
+    
+        NSDictionary *myslot=[temp objectAtIndex:0];
+        self.ok_lbl.text=@"ACTUALQUANTITY";
+        
+        self.CountValues_Green_lbl.text=[myslot valueForKey:@"ACTUALQUANTITY"];
+        
+        _planArray=[responsData objectForKey:@"DTPlants"];
+        
+        
+    }
+    
+    else if ([selectOptionType isEqualToString: @"5"])
+    {
+       
+    }
+    
+    else if ([selectOptionType isEqualToString: @"6"])
+    {
+        
+    }
+    
+    else if ([selectOptionType isEqualToString: @"7"])
+    {
+        
+    }
+    
+    else if ([selectOptionType isEqualToString: @"8"])
+    {
+    }
+    
+    else if ([selectOptionType isEqualToString: @"9"])
+    {
+         //_planArray=[responsData objectForKey:@"GiftLocation"];
+    }
+    
+    else if ([selectOptionType isEqualToString: @"10"])
+    {
+       
+    }
+    else if ([selectOptionType isEqualToString: @"12"])
+    {
+       
+    }
     
 }
+
 
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{
     UIAlertView *alertDialog = [[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -333,7 +461,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     }
     
    _planDict=[_planArray objectAtIndex:indexPath.row];
-    cell.textLabel.text =[_planDict objectForKey:@"PLANTNAME"];
+    cell.textLabel.text =[_planDict valueForKey:@"PLANTNAME"];
        return cell;
 }
 
@@ -344,7 +472,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     self.plant_lbl.text =cell.textLabel.text;
     _planDict=[_planArray objectAtIndex:indexPath.row];
     selectPlantCode= self.plant_lbl.text;
-    selectPlantCode=[_planDict objectForKey:@"PLANTCODE"];
+    selectPlantCode=[_planDict valueForKey:@"PLANTCODE"];
     
     self.tableView.hidden=YES;
   
