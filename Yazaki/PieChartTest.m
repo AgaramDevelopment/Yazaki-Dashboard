@@ -11,6 +11,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
+#import "ScrapDetailVC.h"
+
+
 @interface PieChartTest ()
 {
  CustomNavigationVC *objCustomNavigation;
@@ -210,7 +213,11 @@
 {      dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    if([self.selectType isEqualToString:@"2"])
+    {
         testingvc *destViewController =  (testingvc*)[storyboard instantiateViewControllerWithIdentifier:@"testing"];
+    
     self.values =   [_serviceResponse objectForKey:@"SESSIONCOUNT"];
     // //destViewController = [CategoryVC.destViewController objectAtIndex:0];
     NSDictionary *sample=[self.values objectAtIndex:index];
@@ -222,7 +229,26 @@
     destViewController.Todate=str2;
      destViewController.selectPlantCode=_selectPlantCode;
    [self.navigationController pushViewController:destViewController animated:YES];
-
+    }
+    else if ([self.selectType isEqualToString:@"4"])
+    {
+        
+        
+        ScrapDetailVC *objScrapDetailVC =  (ScrapDetailVC*)[storyboard instantiateViewControllerWithIdentifier:@"ScrapDetailvc"];
+        
+//        self.values =   [_serviceResponse objectForKey:@"SESSIONCOUNT"];
+//        // //destViewController = [CategoryVC.destViewController objectAtIndex:0];
+//        NSDictionary *sample=[self.values objectAtIndex:index];
+//        NSString*item=[sample objectForKey:@"SESSIONVALUE"];
+        //
+//        destViewController.category = item;
+//        destViewController.STATUS =dictObject;
+//        destViewController.fromDate=str1;
+//        destViewController.Todate=str2;
+//        destViewController.selectPlantCode=_selectPlantCode;
+        [self.navigationController pushViewController:objScrapDetailVC animated:YES];
+        
+    }
     
     });
 }

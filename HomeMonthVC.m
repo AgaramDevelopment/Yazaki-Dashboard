@@ -17,6 +17,7 @@
 {
     CustomNavigationVC *objCustomNavigation;
     NSString *selectPlantCode;
+    BOOL isScrap;
 }
 
 @property (nonatomic,strong) NSDictionary*ResultHolderDict;
@@ -66,11 +67,15 @@
     
     self.redCircle_view.hidden=NO;
     self.greenviewXposition.constant=13;
+    
+    self.redib_btn.backgroundColor=[UIColor colorWithRed:(51/255.0f) green:(188/255.0f) blue:(8/255.0f) alpha:1.0f];
+    
     self.redib_btn.layer.cornerRadius=70;
     self.redib_btn.layer.masksToBounds=YES;
     
     self.greenib_btn.layer.cornerRadius=70;
     self.greenib_btn.layer.masksToBounds=YES;
+    isScrap=NO;
     
     //showing current Month
     
@@ -209,7 +214,7 @@
         
         ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
         
-        [self ResponDataValue:ResultHolderDict:self.selectType];
+        [self ResponDataValue :ResultHolderDict:self.selectType];
     
     }
     else{
@@ -341,13 +346,14 @@
 - (IBAction)GenerateMonth_Btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
-      NSString *baseURL;
-    if([self.selectType isEqualToString: @"2"])
-    {
-        
-          baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,selectPlantCode,userUpdate,userUpdate1];
-        [self WebserviceMethod:baseURL];
-    }
+//      NSString *baseURL;
+//    if([self.selectType isEqualToString: @"2"])
+//    {
+//        
+//          baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,selectPlantCode,userUpdate,userUpdate1];
+//        [self WebserviceMethod:baseURL];
+//    }
+//    
     
     [self CommonWebserviceMethod :userUpdate :userUpdate1];
 
@@ -419,12 +425,82 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
     initView.selectPlantCode=selectPlantCode;
+    initView.selectType     =self.selectType;
     NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
     initView.dictObject = test;
     
    [self.navigationController pushViewController:initView animated:YES];
     
       }
+    
+    else if ([self.selectType isEqualToString:@"4"])
+    {
+        NSString * baseURL;
+        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+        
+        if(isScrap == NO)
+        {
+        
+        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPTYPE/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
+        NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSURLResponse *response;
+        NSError *error;
+        
+        NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if (responseData != nil) {
+            
+            
+            self.redCircle_view.hidden=NO;
+            isScrap=YES;
+            
+            self.redib_btn.backgroundColor=[UIColor colorWithRed:(40/255.0f) green:(113/255.0f) blue:(42/255.0f) alpha:1.0f];
+            
+            self.greenviewXposition.constant=13;
+            
+            ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+            NSArray *temp =   [ResultHolderDict objectForKey:@"Avoidable"];
+            NSDictionary *myslot;
+            if(temp.count > 0)
+            {
+               myslot=[temp objectAtIndex:0];
+            }
+            NSArray *temp1 =   [ResultHolderDict objectForKey:@"unAvoidable"];
+            NSDictionary *myslot1=[temp1 objectAtIndex:0];
+            
+            self.ok_lbl.text=([[myslot objectForKey:@"SESSIONVALUE"] isEqualToString:@""] || [myslot objectForKey:@"SESSIONVALUE"]==nil)?@"Avoidable":[myslot objectForKey:@"SESSIONVALUE"];
+            
+            self.notOk_lbl.text=([[myslot1 objectForKey:@"SESSIONVALUE"] isEqualToString:@""] || [myslot1 objectForKey:@"SESSIONVALUE"]==nil)?@"Un Avoidable":[myslot1 objectForKey:@"SESSIONVALUE"];
+            
+            self.CountValues_Green_lbl.text=([[myslot objectForKey:@"COUNTVALUE"] isEqualToString:@""] || [myslot objectForKey:@"COUNTVALUE"]==nil)?@"0KG":[myslot objectForKey:@"COUNTVALUE"];
+            
+            self.CountValues_Red_lbl.text=([[myslot1 objectForKey:@"COUNTVALUE"]isEqualToString:@""] || [myslot1 objectForKey:@"COUNTVALUE"])?@"0KG":[myslot1 objectForKey:@"COUNTVALUE"];
+            //_planArray=[ResultHolderDict objectForKey:@"SESSIONVALUE"];
+            
+            
+        }
+        else{
+            //handle received data
+            [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
+            
+        }
+        }
+        else{
+            
+            isScrap=NO;
+            PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
+            initView.str1 = userUpdate;
+            initView.str2 = userUpdate1;
+            initView.selectPlantCode=selectPlantCode;
+            initView.selectType     =self.selectType;
+            NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
+            initView.dictObject = test;
+            
+            [self.navigationController pushViewController:initView animated:YES];
+            
+        }
+
+    }
     
     
     
@@ -463,10 +539,6 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     
     return [_planArray count];
 }
-
-
-
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath

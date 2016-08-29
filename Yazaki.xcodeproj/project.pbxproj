@@ -47,6 +47,7 @@
 		1882BE3D1CA253B900D25D68 /* RAJDHANI-SEMIBOLD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE391CA253B900D25D68 /* RAJDHANI-SEMIBOLD.TTF */; };
 		1882BE3F1CA2546600D25D68 /* RAJDHANI-BOLD.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE3E1CA2546600D25D68 /* RAJDHANI-BOLD.TTF */; };
 		1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1882BE411CA2911600D25D68 /* HomeMonthVC.m */; };
+		188E6AEE1D746075001A3D71 /* ScrapDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E6AED1D746075001A3D71 /* ScrapDetailVC.m */; };
 		188F5B1D1CA3C26800035964 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188F5B1C1CA3C26800035964 /* QuartzCore.framework */; };
 		CE67D9C21CD341F20042E4DB /* Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */; };
 		CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */; };
@@ -143,6 +144,8 @@
 		1882BE401CA2911600D25D68 /* HomeMonthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeMonthVC.h; path = ../HomeMonthVC.h; sourceTree = "<group>"; };
 		1882BE411CA2911600D25D68 /* HomeMonthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeMonthVC.m; path = ../HomeMonthVC.m; sourceTree = "<group>"; };
 		1888384F1D702638007C749E /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		188E6AEC1D746075001A3D71 /* ScrapDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapDetailVC.h; sourceTree = "<group>"; };
+		188E6AED1D746075001A3D71 /* ScrapDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapDetailVC.m; sourceTree = "<group>"; };
 		188F5B1C1CA3C26800035964 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-83.5@2x.png"; path = "app icon/Icon-83.5@2x.png"; sourceTree = SOURCE_ROOT; };
 		CE7CD44C1D6FFD6500EBA627 /* CustomNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationVC.h; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 				1863D5D01CA10D7700D2F625 /* Main.storyboard */,
 				1863D5CA1CA10D7700D2F625 /* AppDelegate.h */,
 				1863D5CB1CA10D7700D2F625 /* AppDelegate.m */,
+				188E6AEC1D746075001A3D71 /* ScrapDetailVC.h */,
+				188E6AED1D746075001A3D71 /* ScrapDetailVC.m */,
 				1863D5D31CA10D7700D2F625 /* Images.xcassets */,
 				CED1B5521CCDFC61001D54B3 /* Icon-40.png */,
 				CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */,
@@ -491,6 +496,7 @@
 				1865D42B1CAE3AD4005E792C /* DashboardVC.m in Sources */,
 				186173BB1CA4F89A002A51DA /* MCUtil.m in Sources */,
 				186173B71CA4F89A002A51DA /* MCNewCustomLayer.m in Sources */,
+				188E6AEE1D746075001A3D71 /* ScrapDetailVC.m in Sources */,
 				186173B91CA4F89A002A51DA /* MCPieChartView.m in Sources */,
 				1863D5FE1CA13A5500D2F625 /* HOMEVC.m in Sources */,
 				CE8680C51D745C1300463967 /* ProductionDetilCell.m in Sources */,
