@@ -51,6 +51,10 @@
 		CE67D9C21CD341F20042E4DB /* Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */; };
 		CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */; };
 		CE7CD4501D6FFD6500EBA627 /* CustomNavigationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */; };
+		CE8680BC1D74422900463967 /* ProductionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8680BB1D74422900463967 /* ProductionVC.m */; };
+		CE8680BF1D74496000463967 /* ProdcutionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8680BE1D74496000463967 /* ProdcutionCell.m */; };
+		CE8680C21D74516600463967 /* ProductionDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8680C11D74516600463967 /* ProductionDetailsVC.m */; };
+		CE8680C51D745C1300463967 /* ProductionDetilCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8680C41D745C1300463967 /* ProductionDetilCell.m */; };
 		CED1B5511CCDF1E9001D54B3 /* app-launcher-3.png in Resources */ = {isa = PBXBuildFile; fileRef = CED1B5501CCDF1E9001D54B3 /* app-launcher-3.png */; };
 		CED1B55B1CCDFC61001D54B3 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = CED1B5521CCDFC61001D54B3 /* Icon-40.png */; };
 		CED1B55C1CCDFC61001D54B3 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED1B5531CCDFC61001D54B3 /* Icon-40@2x.png */; };
@@ -144,6 +148,14 @@
 		CE7CD44C1D6FFD6500EBA627 /* CustomNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationVC.h; sourceTree = "<group>"; };
 		CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationVC.m; sourceTree = "<group>"; };
 		CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavigationVC.xib; sourceTree = "<group>"; };
+		CE8680BA1D74422900463967 /* ProductionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductionVC.h; sourceTree = "<group>"; };
+		CE8680BB1D74422900463967 /* ProductionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductionVC.m; sourceTree = "<group>"; };
+		CE8680BD1D74496000463967 /* ProdcutionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProdcutionCell.h; sourceTree = "<group>"; };
+		CE8680BE1D74496000463967 /* ProdcutionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProdcutionCell.m; sourceTree = "<group>"; };
+		CE8680C01D74516600463967 /* ProductionDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductionDetailsVC.h; sourceTree = "<group>"; };
+		CE8680C11D74516600463967 /* ProductionDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductionDetailsVC.m; sourceTree = "<group>"; };
+		CE8680C31D745C1300463967 /* ProductionDetilCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductionDetilCell.h; sourceTree = "<group>"; };
+		CE8680C41D745C1300463967 /* ProductionDetilCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductionDetilCell.m; sourceTree = "<group>"; };
 		CED1B5501CCDF1E9001D54B3 /* app-launcher-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-launcher-3.png"; path = "IMAGES/app-launcher-3.png"; sourceTree = SOURCE_ROOT; };
 		CED1B5521CCDFC61001D54B3 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40.png"; path = "app icon/Icon-40.png"; sourceTree = SOURCE_ROOT; };
 		CED1B5531CCDFC61001D54B3 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@2x.png"; path = "app icon/Icon-40@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -228,9 +240,14 @@
 				CE7CD44C1D6FFD6500EBA627 /* CustomNavigationVC.h */,
 				CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */,
 				CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */,
-				1880C98A1D6F1FF40042733E /* CustomDashCell */,
 				188F5B1C1CA3C26800035964 /* QuartzCore.framework */,
 				1863D5EF1CA1163500D2F625 /* IMAGES */,
+				CE8680BD1D74496000463967 /* ProdcutionCell.h */,
+				CE8680C31D745C1300463967 /* ProductionDetilCell.h */,
+				CE8680C41D745C1300463967 /* ProductionDetilCell.m */,
+				CE8680C01D74516600463967 /* ProductionDetailsVC.h */,
+				CE8680C11D74516600463967 /* ProductionDetailsVC.m */,
+				CE8680BE1D74496000463967 /* ProdcutionCell.m */,
 				1863D5EC1CA10F0800D2F625 /* LoginVC.h */,
 				1863D5ED1CA10F0800D2F625 /* LoginVC.m */,
 				1865D4291CAE3AD4005E792C /* DashboardVC.h */,
@@ -253,6 +270,8 @@
 				186670811CACE456001C349A /* EMpTableViewCell.m */,
 				1880C9961D6F283E0042733E /* DashBoardCell.h */,
 				1880C9971D6F283E0042733E /* DashBoardCell.m */,
+				CE8680BA1D74422900463967 /* ProductionVC.h */,
+				CE8680BB1D74422900463967 /* ProductionVC.m */,
 				1863D5D01CA10D7700D2F625 /* Main.storyboard */,
 				1863D5CA1CA10D7700D2F625 /* AppDelegate.h */,
 				1863D5CB1CA10D7700D2F625 /* AppDelegate.m */,
@@ -462,8 +481,11 @@
 				1866708E1CAD209B001C349A /* NOTOKPiechartVC.m in Sources */,
 				CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */,
 				1863D5CC1CA10D7700D2F625 /* AppDelegate.m in Sources */,
+				CE8680C21D74516600463967 /* ProductionDetailsVC.m in Sources */,
+				CE8680BC1D74422900463967 /* ProductionVC.m in Sources */,
 				1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */,
 				1863D5EE1CA10F0800D2F625 /* LoginVC.m in Sources */,
+				CE8680BF1D74496000463967 /* ProdcutionCell.m in Sources */,
 				186173C41CA53FFD002A51DA /* testpie.m in Sources */,
 				186670821CACE456001C349A /* EMpTableViewCell.m in Sources */,
 				1865D42B1CAE3AD4005E792C /* DashboardVC.m in Sources */,
@@ -471,6 +493,7 @@
 				186173B71CA4F89A002A51DA /* MCNewCustomLayer.m in Sources */,
 				186173B91CA4F89A002A51DA /* MCPieChartView.m in Sources */,
 				1863D5FE1CA13A5500D2F625 /* HOMEVC.m in Sources */,
+				CE8680C51D745C1300463967 /* ProductionDetilCell.m in Sources */,
 				1866708B1CACEA68001C349A /* testing2.m in Sources */,
 				1880C9981D6F283E0042733E /* DashBoardCell.m in Sources */,
 				1863D5C91CA10D7700D2F625 /* main.m in Sources */,

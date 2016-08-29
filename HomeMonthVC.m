@@ -12,6 +12,7 @@
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
 #import "Common.h"
+#import "ProductionVC.h"
 @interface HomeMonthVC ()
 {
     CustomNavigationVC *objCustomNavigation;
@@ -414,6 +415,18 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
    [self.navigationController pushViewController:initView animated:YES];
     
       }
+    
+    
+    
+    if([self.selectType isEqualToString: @"3"]){
+        
+        ProductionVC *initView =  (ProductionVC*)[storyboard instantiateViewControllerWithIdentifier:@"Productionvc"];
+        initView.FromStr = userUpdate;
+        initView.ToStr = userUpdate1;
+        initView.selectPlantCode=selectPlantCode;
+       [self.navigationController pushViewController:initView animated:YES];
+        
+    }
     
     
 }
