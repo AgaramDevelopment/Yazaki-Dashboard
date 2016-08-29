@@ -38,6 +38,8 @@
 - (IBAction)Plant_touch_btn:(id)sender;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong,nonatomic) IBOutlet UIButton * redib_Btn;
+@property (strong,nonatomic) IBOutlet UIButton *greenib_Btn;
 
 @property (strong,nonatomic) IBOutlet UIView * greenCircle_view;
 @property (strong,nonatomic) IBOutlet UIView * redCircle_view;
