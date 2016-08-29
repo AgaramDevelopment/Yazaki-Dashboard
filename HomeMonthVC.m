@@ -192,6 +192,8 @@
         baseURL = [NSString stringWithFormat:@"%@/Attendance/INITIALIZE/%@/%@",BaseURL,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
+    
+    
 }
 
 -(void)WebserviceMethod:(NSString *)URL
@@ -339,6 +341,13 @@
 - (IBAction)GenerateMonth_Btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
+      NSString *baseURL;
+    if([self.selectType isEqualToString: @"2"])
+    {
+        
+          baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,selectPlantCode,userUpdate,userUpdate1];
+        [self WebserviceMethod:baseURL];
+    }
     
     [self CommonWebserviceMethod :userUpdate :userUpdate1];
 
@@ -357,6 +366,7 @@
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
     [self.view addSubview:objCustomNavigation.view];
     objCustomNavigation.lbl_titleName.text=@"";
+    [objCustomNavigation.Logout_Btn setHidden:YES];
     [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
       [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];
     

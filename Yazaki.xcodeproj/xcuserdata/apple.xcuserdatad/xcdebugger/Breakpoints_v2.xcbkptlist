@@ -379,41 +379,9 @@
             timestampString = "494148356.168286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "-ResponDataValue::"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeMonthVC.m"
-            timestampString = "494148356.168286"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "248"
             endingLineNumber = "248"
             landmarkName = "-ResponDataValue::"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeMonthVC.m"
-            timestampString = "494148356.168286"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "-WebserviceMethod:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -430,22 +398,6 @@
             startingLineNumber = "82"
             endingLineNumber = "82"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeMonthVC.m"
-            timestampString = "494148356.168286"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
-            landmarkName = "-ResponDataValue::"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -477,39 +429,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "430"
             endingLineNumber = "430"
-            landmarkName = "-Green_Month_btn:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeMonthVC.m"
-            timestampString = "494148356.168286"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "-CommonWebserviceMethod::"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HomeMonthVC.m"
-            timestampString = "494153165.869027"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "384"
-            endingLineNumber = "384"
-            landmarkName = "-ClearMonth_btn:"
+            landmarkName = "-touch_plant_btn:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

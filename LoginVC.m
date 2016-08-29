@@ -81,6 +81,7 @@
     [self customnavigationmethod];
     [objCustomNavigation.Home_Btn setHidden:YES];
      [objCustomNavigation.Btn_Back setHidden:YES];
+    [objCustomNavigation.Logout_Btn setHidden:YES];
     
 }
 
@@ -120,6 +121,7 @@
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
     [self.view addSubview:objCustomNavigation.view];
     objCustomNavigation.lbl_titleName.text=@"";
+    [objCustomNavigation.Logout_Btn setHidden:YES];
     [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
     
 }
