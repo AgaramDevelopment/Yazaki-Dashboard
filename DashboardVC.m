@@ -14,6 +14,7 @@
 #import "Common.h"
 #import "HomeMonthVC.h"
 #import "HOMEVC.h"
+#import "LoginVC.h"
 
 @interface DashboardVC ()
 {
@@ -33,6 +34,9 @@
     [self.view addSubview:spinner];
     [self customnavigationmethod];
     [objCustomNavigation.Home_Btn setHidden:YES];
+    [objCustomNavigation.Btn_Back setHidden:YES];
+    [objCustomNavigation.Logout_Btn addTarget:self action:@selector(didClickLogoutBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
     dashBoard_Array =[[NSMutableArray alloc]init];
     dashBoard_Array =self.dashBoardList;
    
@@ -61,9 +65,9 @@
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    if(IS_OS_5_OR_LATER)
+    if(IS_IPHONE5)
     {
-        return UIEdgeInsetsMake(10,10, 10, 20);
+        return UIEdgeInsetsMake(20,10, 10, 20);
     }
     else
     {
@@ -171,6 +175,15 @@
     
 }
 
+-(IBAction)didClickLogoutBtnAction:(id)sender
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"LoginUserRecord"];
+    
+    LoginVC * objLoginvc = [[LoginVC alloc]init];
+    objLoginvc =  (LoginVC *)[self.storyboard instantiateViewControllerWithIdentifier:@"loginvc"];
+    [self.navigationController pushViewController:objLoginvc animated:YES];
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

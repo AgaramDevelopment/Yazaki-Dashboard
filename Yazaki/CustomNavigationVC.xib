@@ -8,12 +8,16 @@
         <mutableArray key="RAJDHANI-BOLD.TTF">
             <string>Rajdhani-Bold</string>
         </mutableArray>
+        <mutableArray key="RAJDHANI-SEMIBOLD.TTF">
+            <string>Rajdhani-Semibold</string>
+        </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomNavigationVC">
             <connections>
                 <outlet property="Btn_Back" destination="b6T-ea-VN1" id="gTY-tF-rVa"/>
                 <outlet property="Home_Btn" destination="Mng-b3-Sa3" id="iUQ-yR-fzm"/>
+                <outlet property="Logout_Btn" destination="W7d-3X-fdR" id="aWt-sq-b47"/>
                 <outlet property="lbl_titleName" destination="MOp-tB-bJb" id="OEP-o1-FWo"/>
                 <outlet property="mainView" destination="R1c-e7-RKk" id="BRQ-B9-bUV"/>
                 <outlet property="view" destination="iN0-l3-epB" id="aH1-TW-H7g"/>
@@ -27,6 +31,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1c-e7-RKk">
                     <rect key="frame" x="0.0" y="0.0" width="568" height="65"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7d-3X-fdR">
+                            <rect key="frame" x="485" y="18" width="75" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="0yN-5F-9c7"/>
+                                <constraint firstAttribute="height" constant="40" id="u42-kM-9KS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="20"/>
+                            <state key="normal" title="Logout">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6T-ea-VN1">
                             <rect key="frame" x="10" y="26" width="35" height="28"/>
                             <constraints>
@@ -58,12 +73,15 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="MOp-tB-bJb" secondAttribute="trailing" constant="81" id="3I4-ww-QZg"/>
                         <constraint firstItem="b6T-ea-VN1" firstAttribute="leading" secondItem="R1c-e7-RKk" secondAttribute="leading" constant="10" id="3KM-Hz-a1h"/>
+                        <constraint firstItem="W7d-3X-fdR" firstAttribute="top" secondItem="R1c-e7-RKk" secondAttribute="top" constant="18" id="7Zv-0F-0na"/>
                         <constraint firstItem="b6T-ea-VN1" firstAttribute="top" secondItem="R1c-e7-RKk" secondAttribute="top" constant="26" id="BZu-i5-sOd"/>
                         <constraint firstItem="MOp-tB-bJb" firstAttribute="top" secondItem="R1c-e7-RKk" secondAttribute="top" constant="25" id="EHh-GT-C0z"/>
                         <constraint firstAttribute="bottom" secondItem="b6T-ea-VN1" secondAttribute="bottom" constant="11" id="EsL-xY-2Mu"/>
                         <constraint firstAttribute="height" constant="65" id="NWu-It-jPg"/>
                         <constraint firstAttribute="bottom" secondItem="MOp-tB-bJb" secondAttribute="bottom" constant="8" id="UPF-X5-lbY"/>
                         <constraint firstAttribute="trailing" secondItem="Mng-b3-Sa3" secondAttribute="trailing" constant="18" id="aTm-UQ-xJD"/>
+                        <constraint firstAttribute="trailing" secondItem="W7d-3X-fdR" secondAttribute="trailing" constant="8" id="eDb-lb-uXk"/>
+                        <constraint firstAttribute="bottom" secondItem="W7d-3X-fdR" secondAttribute="bottom" constant="7" id="euU-F6-mKv"/>
                         <constraint firstItem="Mng-b3-Sa3" firstAttribute="top" secondItem="R1c-e7-RKk" secondAttribute="top" constant="26" id="nrc-g5-jg1"/>
                         <constraint firstItem="MOp-tB-bJb" firstAttribute="leading" secondItem="R1c-e7-RKk" secondAttribute="leading" constant="81" id="qKW-h7-Y81"/>
                     </constraints>
