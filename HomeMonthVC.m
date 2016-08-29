@@ -239,7 +239,13 @@
     {
         NSArray *temp =   [responsData objectForKey:@"ACTUALQTY"];
         
-        self.ok_lbl.text=@"ACTUALQTY";
+        if(temp.count == 1)
+        {
+            self.redCircle_view.hidden=YES;
+            self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+        }
+
+         self.ok_lbl.text=@"TOTAL QUANTITY";
        
         self.CountValues_Green_lbl.text=[temp valueForKey:@"ACTUALQTY"];
         
@@ -334,33 +340,7 @@
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
     
     [self CommonWebserviceMethod :userUpdate :userUpdate1];
-//    NSString *baseURL = [NSString stringWithFormat:@"http://182.74.23.195:8094/YazakiService.svc/CANTEEN/INITIALIZE/%@/%@/%@",selectPlantCode,userUpdate,userUpdate1];
-//    NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    NSURLResponse *response;
-//    NSError *error;
-//    
-//    NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-//    if (responseData != nil) {
-//
-//    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-//    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
-//    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
-//    
-//    self.ok_lbl.text=[myslot valueForKey:@"NAME"];
-//    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
-//    
-//    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
-//    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
-//    }
-//    
-//    else{
-//        //handle received data
-//
-//            //handle received data
-//            [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
-//       
-//    }
+
 
 }
 
