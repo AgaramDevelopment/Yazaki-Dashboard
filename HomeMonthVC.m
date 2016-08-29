@@ -369,6 +369,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+    if([self.selectType isEqualToString: @"2"]){
+    
     NOTOKPiechartVC *initView =  (NOTOKPiechartVC*)[storyboard instantiateViewControllerWithIdentifier:@"NOTOKPIE"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
@@ -377,6 +379,9 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     initView.dictObject = test;
     
     [self.navigationController pushViewController:initView animated:YES];
+    }
+    
+    
     
 }
 
@@ -387,6 +392,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+      if([self.selectType isEqualToString: @"2"]){
+    
     PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
@@ -395,6 +402,9 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     initView.dictObject = test;
     
    [self.navigationController pushViewController:initView animated:YES];
+    
+      }
+    
     
 }
 

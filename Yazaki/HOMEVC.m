@@ -366,29 +366,31 @@
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Todate_txt text]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
+     if([self.selectType isEqualToString: @"2"]){
+        PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-    
+             initView.selectPlantCode=selectPlantCode;
     NSString *test =[NSString stringWithFormat:@"%@",[self.Ok_lbl text]];
     initView.dictObject = test;
-  
     [self.navigationController pushViewController:initView animated:YES];
+     }
+    
 }
 
 - (IBAction)red_btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_Fromdate_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Todate_txt text]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
+     if([self.selectType isEqualToString: @"2"]){
     NOTOKPiechartVC *initView =  (NOTOKPiechartVC*)[storyboard instantiateViewControllerWithIdentifier:@"NOTOKPIE"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-    
-    NSString *test =[NSString stringWithFormat:@"%@",[self.notOk_lbl text]];
+             initView.selectPlantCode=selectPlantCode;
+        NSString *test =[NSString stringWithFormat:@"%@",[self.notOk_lbl text]];
     initView.dictObject = test;
-    
-   [self.navigationController pushViewController:initView animated:YES];
+       [self.navigationController pushViewController:initView animated:YES];
+     }
     
 }
 
