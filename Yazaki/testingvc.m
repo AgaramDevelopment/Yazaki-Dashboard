@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
-    NSString *baseURL = [NSString stringWithFormat:@"%@/CANTEEN/CATEGORYDETAILS/%@/%@/%@/%@",BaseURL,category,STATUS,fromDate,Todate];
+    NSString *baseURL = [NSString stringWithFormat:@"%@/CANTEEN/CATEGORYDETAILS/%@/%@/%@/%@/%@",BaseURL,_selectPlantCode,category,STATUS,fromDate,Todate];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -39,18 +39,18 @@
     NSDictionary *serviceResponse=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
     self.TestingArray=[serviceResponse objectForKey:@"CATEGORIES"];
     
-    if( [serviceResponse objectForKey:@"CATEGORIES"] == nil ||
-       [[serviceResponse objectForKey:@"CATEGORIES"] isEqual:[NSNull null]] ){
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        testing2 *test =  (testing2*)[storyboard instantiateViewControllerWithIdentifier:@"testing2vc"];
-        
-        test.passSTATUS =STATUS;
-        test.passcategory=category;
-        test.passfromDate=fromDate;
-        test.passTodate= Todate;
-      [self presentViewController:test animated:NO completion:nil];
-        // do nothing
-    }
+//    if( [serviceResponse objectForKey:@"CATEGORIES"] == nil ||
+//       [[serviceResponse objectForKey:@"CATEGORIES"] isEqual:[NSNull null]] ){
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        testing2 *test =  (testing2*)[storyboard instantiateViewControllerWithIdentifier:@"testing2vc"];
+//        
+//        test.passSTATUS =STATUS;
+//        test.passcategory=category;
+//        test.passfromDate=fromDate;
+//        test.passTodate= Todate;
+//      [self presentViewController:test animated:NO completion:nil];
+//        // do nothing
+//    }
         
         
     }
