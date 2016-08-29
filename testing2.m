@@ -10,6 +10,7 @@
 #import "EMpTableViewCell.h"
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
+#import "Common.h"
 @interface testing2 ()
 {
     CustomNavigationVC *objCustomNavigation;
@@ -29,7 +30,8 @@
     [super viewDidLoad];
     [self customnavigationmethod];
     
-    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/CANTEEN/EMPLOYEEDETAILS/%@/%@/%@/%@/%@",passSTATUS,passcategory,passcatID,passfromDate,passTodate];
+   
+    NSString *baseURL = [NSString stringWithFormat:@"%@/CANTEEN/EMPLOYEEDETAILS/%@/%@/%@/%@/%@",BaseURL,passSTATUS,passcategory,passcatID,passfromDate,passTodate];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
