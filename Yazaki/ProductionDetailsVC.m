@@ -50,7 +50,7 @@
     if (responseData != nil) {
         
         NSDictionary *serviceResponse=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-        productionDetailArray=[serviceResponse objectForKey:@"BOXDETAILS"];
+        productionDetailArray=[serviceResponse objectForKey:@"BOXDETAILSPART"];
         
         
     }
@@ -91,10 +91,10 @@
      ProductionDetilCell*cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
                                                            forIndexPath:indexPath];
     NSDictionary *test=[productionDetailArray objectAtIndex:indexPath.row];
-//    cell.Plant_lbl.text = [test valueForKey:@"PLANTNAME"];
-//    cell.lineName_lbl.text=[test valueForKey:@"LINENAME"];
-//    cell.ActualQuality_lbl.text=[test valueForKey:@"ACTUALQTY"];
-//    cell.PlanQuality_Lbl.text=[test valueForKey:@"PLANQTY"];
+    cell.PartCode.text = [test valueForKey:@"PARTCODE"];
+    cell.Actuaquality_lbl.text=[test valueForKey:@"ACTUALQTY"];
+    cell.PlanQuality_lbl.text=[test valueForKey:@"PLANQTY"];
+   
     cell.selectionStyle=UITableViewCellSelectionStyleBlue;
     return cell;
 }
@@ -111,6 +111,7 @@
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
     [self.view addSubview:objCustomNavigation.view];
     objCustomNavigation.lbl_titleName.text=@"";
+      objCustomNavigation.Logout_Btn.hidden=YES;
     [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];
     

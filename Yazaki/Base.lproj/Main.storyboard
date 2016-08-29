@@ -920,21 +920,21 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual Quality" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIM-XY-LMT">
-                                                <rect key="frame" x="201" y="0.0" width="55" height="38"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual Quantity" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIM-XY-LMT">
+                                                <rect key="frame" x="196" y="0.0" width="61" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="dl8-H7-e6z"/>
-                                                    <constraint firstAttribute="width" constant="55" id="sXK-7W-fpk"/>
+                                                    <constraint firstAttribute="width" constant="61" id="sXK-7W-fpk"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan Quality" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEk-9i-PeU">
-                                                <rect key="frame" x="265" y="0.0" width="54" height="38"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan Quantity" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEk-9i-PeU">
+                                                <rect key="frame" x="265" y="0.0" width="74" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="cp6-8j-ypF"/>
-                                                    <constraint firstAttribute="width" constant="54" id="qgr-uu-sne"/>
+                                                    <constraint firstAttribute="width" constant="74" id="qgr-uu-sne"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -944,10 +944,10 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="HEk-9i-PeU" firstAttribute="leading" secondItem="ABj-YC-YZz" secondAttribute="leading" constant="265" id="1cO-vo-7Uv"/>
-                                            <constraint firstAttribute="trailing" secondItem="HEk-9i-PeU" secondAttribute="trailing" constant="56" id="20m-87-9cx"/>
+                                            <constraint firstAttribute="trailing" secondItem="HEk-9i-PeU" secondAttribute="trailing" constant="36" id="20m-87-9cx"/>
                                             <constraint firstItem="X2G-gC-e60" firstAttribute="top" secondItem="ABj-YC-YZz" secondAttribute="top" constant="8" id="HSF-0h-aub"/>
                                             <constraint firstItem="7Lj-1Q-iqF" firstAttribute="top" secondItem="ABj-YC-YZz" secondAttribute="top" constant="8" id="OgL-bq-Mwf"/>
-                                            <constraint firstItem="iIM-XY-LMT" firstAttribute="leading" secondItem="ABj-YC-YZz" secondAttribute="leading" constant="201" id="PG6-eb-yVu"/>
+                                            <constraint firstItem="iIM-XY-LMT" firstAttribute="leading" secondItem="ABj-YC-YZz" secondAttribute="leading" constant="196" id="PG6-eb-yVu"/>
                                             <constraint firstAttribute="width" constant="375" id="TZA-LF-IRb"/>
                                             <constraint firstItem="iIM-XY-LMT" firstAttribute="top" secondItem="ABj-YC-YZz" secondAttribute="top" id="Zrh-4B-hm8"/>
                                             <constraint firstItem="HEk-9i-PeU" firstAttribute="top" secondItem="ABj-YC-YZz" secondAttribute="top" id="hEz-fR-6hu"/>
@@ -2280,17 +2280,17 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan Quality" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfZ-IJ-aeC">
-                                                <rect key="frame" x="261" y="4" width="106" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan Quantity" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfZ-IJ-aeC">
+                                                <rect key="frame" x="251" y="3" width="116" height="31"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="106" id="Cua-8V-MD6"/>
-                                                    <constraint firstAttribute="height" constant="30" id="lUR-uI-4zO"/>
+                                                    <constraint firstAttribute="width" constant="116" id="Cua-8V-MD6"/>
+                                                    <constraint firstAttribute="height" constant="31" id="lUR-uI-4zO"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual Quality" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWX-7x-GHr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual Quantity" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWX-7x-GHr">
                                                 <rect key="frame" x="130" y="3" width="118" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Xmj-Tg-Llt"/>
@@ -2303,7 +2303,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="MfZ-IJ-aeC" firstAttribute="leading" secondItem="QRr-cz-1Pv" secondAttribute="leading" constant="261" id="5Lg-Mo-Ofl"/>
+                                            <constraint firstItem="MfZ-IJ-aeC" firstAttribute="leading" secondItem="QRr-cz-1Pv" secondAttribute="leading" constant="251" id="5Lg-Mo-Ofl"/>
                                             <constraint firstAttribute="height" constant="38" id="8wO-mO-cOm"/>
                                             <constraint firstItem="vfv-2I-EHJ" firstAttribute="top" secondItem="QRr-cz-1Pv" secondAttribute="top" constant="8" id="ObO-aE-sT5"/>
                                             <constraint firstAttribute="width" constant="375" id="Vyy-k1-Cpw"/>
@@ -2311,7 +2311,7 @@
                                             <constraint firstItem="MWX-7x-GHr" firstAttribute="leading" secondItem="QRr-cz-1Pv" secondAttribute="leading" constant="130" id="dwf-NH-btA"/>
                                             <constraint firstItem="vfv-2I-EHJ" firstAttribute="leading" secondItem="QRr-cz-1Pv" secondAttribute="leading" constant="8" id="feb-TZ-SkQ"/>
                                             <constraint firstAttribute="trailing" secondItem="MfZ-IJ-aeC" secondAttribute="trailing" constant="8" id="g9O-ck-PSX"/>
-                                            <constraint firstItem="MfZ-IJ-aeC" firstAttribute="top" secondItem="QRr-cz-1Pv" secondAttribute="top" constant="4" id="qhl-q9-dAH"/>
+                                            <constraint firstItem="MfZ-IJ-aeC" firstAttribute="top" secondItem="QRr-cz-1Pv" secondAttribute="top" constant="3" id="qhl-q9-dAH"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pfC-ru-sLN">
@@ -2330,30 +2330,30 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlE-ff-hMv">
-                                                            <rect key="frame" x="249" y="8" width="94" height="26"/>
+                                                            <rect key="frame" x="274" y="0.0" width="79" height="34"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="26" id="XDO-tF-Uwr"/>
-                                                                <constraint firstAttribute="width" constant="94" id="g34-rH-SgB"/>
+                                                                <constraint firstAttribute="height" constant="34" id="XDO-tF-Uwr"/>
+                                                                <constraint firstAttribute="width" constant="79" id="g34-rH-SgB"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="16"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIn-mn-RTx">
-                                                            <rect key="frame" x="5" y="8" width="136" height="27"/>
+                                                            <rect key="frame" x="5" y="0.0" width="163" height="35"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="27" id="WVJ-w6-t3p"/>
-                                                                <constraint firstAttribute="width" constant="136" id="dte-RV-Xuo"/>
+                                                                <constraint firstAttribute="height" constant="35" id="WVJ-w6-t3p"/>
+                                                                <constraint firstAttribute="width" constant="163" id="dte-RV-Xuo"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="16"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tat-in-g0L">
-                                                            <rect key="frame" x="125" y="8" width="125" height="27"/>
+                                                            <rect key="frame" x="161" y="0.0" width="96" height="35"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="125" id="ODi-Qi-eKN"/>
-                                                                <constraint firstAttribute="height" constant="27" id="ePU-Ob-fi8"/>
+                                                                <constraint firstAttribute="width" constant="96" id="ODi-Qi-eKN"/>
+                                                                <constraint firstAttribute="height" constant="35" id="ePU-Ob-fi8"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="16"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2361,22 +2361,19 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="OlE-ff-hMv" firstAttribute="top" secondItem="Apk-7D-Meg" secondAttribute="top" constant="8" id="8Ge-rB-VFL"/>
-                                                        <constraint firstAttribute="trailing" secondItem="tat-in-g0L" secondAttribute="trailing" constant="125" id="FAU-85-eO3"/>
-                                                        <constraint firstItem="tat-in-g0L" firstAttribute="top" secondItem="Apk-7D-Meg" secondAttribute="top" constant="8" id="WCS-ei-XrE"/>
-                                                        <constraint firstItem="tat-in-g0L" firstAttribute="leading" secondItem="Apk-7D-Meg" secondAttribute="leading" constant="125" id="YUV-kW-Qp6"/>
+                                                        <constraint firstItem="OlE-ff-hMv" firstAttribute="top" secondItem="Apk-7D-Meg" secondAttribute="top" id="8Ge-rB-VFL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="tat-in-g0L" secondAttribute="trailing" constant="118" id="FAU-85-eO3"/>
+                                                        <constraint firstItem="tat-in-g0L" firstAttribute="top" secondItem="Apk-7D-Meg" secondAttribute="top" id="WCS-ei-XrE"/>
+                                                        <constraint firstItem="tat-in-g0L" firstAttribute="leading" secondItem="Apk-7D-Meg" secondAttribute="leading" constant="161" id="YUV-kW-Qp6"/>
                                                         <constraint firstItem="jIn-mn-RTx" firstAttribute="leading" secondItem="Apk-7D-Meg" secondAttribute="leading" constant="5" id="cbf-Ij-WSM"/>
-                                                        <constraint firstAttribute="trailing" secondItem="OlE-ff-hMv" secondAttribute="trailing" constant="32" id="ghA-Hr-jMe"/>
-                                                        <constraint firstItem="jIn-mn-RTx" firstAttribute="top" secondItem="Apk-7D-Meg" secondAttribute="top" constant="8" id="rd6-KW-fQZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="OlE-ff-hMv" secondAttribute="trailing" constant="22" id="ghA-Hr-jMe"/>
+                                                        <constraint firstItem="jIn-mn-RTx" firstAttribute="top" secondItem="Apk-7D-Meg" secondAttribute="top" id="rd6-KW-fQZ"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="ActualQuality_lbl" destination="tat-in-g0L" id="PCf-q2-wWo"/>
                                                     <outlet property="Actuaquality_lbl" destination="tat-in-g0L" id="Xfx-dD-7Sr"/>
                                                     <outlet property="PartCode" destination="jIn-mn-RTx" id="g1g-u9-WPq"/>
-                                                    <outlet property="PlanQuality_Lbl" destination="OlE-ff-hMv" id="AqU-jB-F9j"/>
                                                     <outlet property="PlanQuality_lbl" destination="OlE-ff-hMv" id="GEo-Xo-bZu"/>
-                                                    <outlet property="lineName_lbl" destination="jIn-mn-RTx" id="55G-Ra-Wlh"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -2386,10 +2383,10 @@
                                         </connections>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eME-Q6-dQ6">
-                                        <rect key="frame" x="185" y="8" width="190" height="21"/>
+                                        <rect key="frame" x="188" y="8" width="187" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="huJ-Qy-6Ej"/>
-                                            <constraint firstAttribute="width" constant="190" id="jTS-jp-5J8"/>
+                                            <constraint firstAttribute="width" constant="187" id="jTS-jp-5J8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2422,7 +2419,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9m-sF-D4A">
-                                <rect key="frame" x="156" y="92" width="44" height="21"/>
+                                <rect key="frame" x="155" y="92" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="L5w-bY-9eu"/>
                                     <constraint firstAttribute="height" constant="21" id="ZHp-m4-qqw"/>
@@ -2444,7 +2441,7 @@
                         <constraints>
                             <constraint firstItem="SHu-Lj-SJ9" firstAttribute="leading" secondItem="iaN-Ae-ruf" secondAttribute="leading" id="6oR-WM-wBg"/>
                             <constraint firstItem="EuV-M3-xto" firstAttribute="leading" secondItem="iaN-Ae-ruf" secondAttribute="leading" constant="6" id="8TP-j2-5qB"/>
-                            <constraint firstAttribute="trailing" secondItem="T9m-sF-D4A" secondAttribute="trailing" constant="175" id="D5D-iw-pWe"/>
+                            <constraint firstAttribute="trailing" secondItem="T9m-sF-D4A" secondAttribute="trailing" constant="176" id="D5D-iw-pWe"/>
                             <constraint firstItem="EuV-M3-xto" firstAttribute="top" secondItem="qtP-Q8-Hjw" secondAttribute="bottom" constant="72" id="FkS-KO-Z2w"/>
                             <constraint firstItem="T9m-sF-D4A" firstAttribute="top" secondItem="iaN-Ae-ruf" secondAttribute="top" constant="92" id="LkZ-iE-9GV"/>
                             <constraint firstItem="JDf-4f-BbU" firstAttribute="top" secondItem="qtP-Q8-Hjw" secondAttribute="bottom" constant="72" id="Rlf-GM-ioN"/>
@@ -2452,7 +2449,7 @@
                             <constraint firstItem="SHu-Lj-SJ9" firstAttribute="top" secondItem="qtP-Q8-Hjw" secondAttribute="bottom" constant="64" id="WVW-0s-08R"/>
                             <constraint firstItem="JDf-4f-BbU" firstAttribute="leading" secondItem="iaN-Ae-ruf" secondAttribute="leading" constant="47" id="cKO-bH-bh5"/>
                             <constraint firstItem="8ar-9Z-uY9" firstAttribute="top" secondItem="SHu-Lj-SJ9" secondAttribute="bottom" id="nAb-BE-8qg"/>
-                            <constraint firstItem="T9m-sF-D4A" firstAttribute="leading" secondItem="iaN-Ae-ruf" secondAttribute="leading" constant="156" id="pa9-d2-fSE"/>
+                            <constraint firstItem="T9m-sF-D4A" firstAttribute="leading" secondItem="iaN-Ae-ruf" secondAttribute="leading" constant="155" id="pa9-d2-fSE"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
