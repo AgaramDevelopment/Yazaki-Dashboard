@@ -95,7 +95,8 @@
 
 -(void)moveToView :(NSMutableArray *) dashBoardCatagory{
     
-    
+    [[NSUserDefaults standardUserDefaults] setObject:dashBoardCatagory forKey:@"LoginUserRecord"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     DashboardVC *dashBoardVC = [[DashboardVC alloc]init];
     dashBoardVC =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
     dashBoardVC.dashBoardList=dashBoardCatagory;

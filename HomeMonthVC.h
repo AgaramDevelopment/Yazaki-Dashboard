@@ -37,4 +37,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UILabel *plant_lbl;
 
+@property (strong,nonatomic) IBOutlet UIView * greenCircle_view;
+@property (strong,nonatomic) IBOutlet UIView * redCircle_view;
+@property (strong,nonatomic) IBOutlet NSLayoutConstraint * greenviewXposition;
+
 @end

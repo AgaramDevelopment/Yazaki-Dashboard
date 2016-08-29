@@ -25,7 +25,7 @@
 @implementation DashboardVC
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+
     [super viewDidLoad];
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(150, 225, 20, 30)];
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
@@ -35,6 +35,12 @@
     [objCustomNavigation.Home_Btn setHidden:YES];
     dashBoard_Array =[[NSMutableArray alloc]init];
     dashBoard_Array =self.dashBoardList;
+   
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"LoginUserRecord"] != nil)
+    {
+        dashBoard_Array=[[NSUserDefaults standardUserDefaults] objectForKey:@"LoginUserRecord"];
+    }
+
     
 }
 
