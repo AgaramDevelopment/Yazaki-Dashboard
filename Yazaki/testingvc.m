@@ -10,6 +10,7 @@
 #import "testing2.h"
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
+#import "Common.h"
 @interface testingvc ()
 {
     CustomNavigationVC *objCustomNavigation;
@@ -26,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
-    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/CANTEEN/CATEGORYDETAILS/%@/%@/%@/%@",category,STATUS,fromDate,Todate];
+    NSString *baseURL = [NSString stringWithFormat:@"%@/CANTEEN/CATEGORYDETAILS/%@/%@/%@/%@",BaseURL,category,STATUS,fromDate,Todate];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;

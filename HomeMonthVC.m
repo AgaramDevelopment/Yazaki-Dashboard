@@ -207,21 +207,7 @@
         ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
         
         [self ResponDataValue:ResultHolderDict:self.selectType];
-        
-//        NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
-//        NSDictionary *myslot=[temp objectAtIndex:0];
-//        
-//        NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
-//        NSDictionary *myslot1=[temp1 objectAtIndex:0];
-//        
-//        self.ok_lbl.text=[myslot objectForKey:@"NAME"];
-//        self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
-//        self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
-//        self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
-//        _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
-        
-        
-        
+    
     }
     else{
         //handle received data
@@ -413,6 +399,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+    if([self.selectType isEqualToString: @"2"]){
+    
     NOTOKPiechartVC *initView =  (NOTOKPiechartVC*)[storyboard instantiateViewControllerWithIdentifier:@"NOTOKPIE"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
@@ -421,6 +409,9 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     initView.dictObject = test;
     
     [self.navigationController pushViewController:initView animated:YES];
+    }
+    
+    
     
 }
 
@@ -431,6 +422,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+      if([self.selectType isEqualToString: @"2"]){
+    
     PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
@@ -439,6 +432,9 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     initView.dictObject = test;
     
    [self.navigationController pushViewController:initView animated:YES];
+    
+      }
+    
     
 }
 
