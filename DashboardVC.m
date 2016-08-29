@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [super viewDidLoad];
+  
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(150, 225, 20, 30)];
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     spinner.color = [UIColor blackColor];
@@ -156,9 +156,11 @@
      HomeMonthVC * destViewController = [initView.viewControllers objectAtIndex:0];
      destViewController.selectType = selectOptionTye;
     
-    //HOMEVC * homeVC =[[HOMEVC alloc]init];
-    //homeVC=[initView.viewControllers objectAtIndex:0];
-    //homeVC.selectType=selectOptionTye;
+
+    
+    HOMEVC *destViewController1 =[initView.viewControllers objectAtIndex:1];
+    destViewController1.selectType = selectOptionTye;
+    
     [self.navigationController pushViewController:initView animated:YES];
     
 }
@@ -179,6 +181,27 @@
 }
 */
 
+//
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([segue.identifier isEqualToString:@"Homevc"]) {
+//        NSIndexPath *indexPath = [self.collectionView indexPathForSelectedRow];
+//        UITabBarController *tabbar=segue.destinationViewController;
+//        PreviewVC *destViewController = [tabbar.viewControllers objectAtIndex:0];
+//        destViewController.dictObject = [self.ResultHolderArray objectAtIndex:indexPath.row];
+//        SummeryVC *destViewController1 = [tabbar.viewControllers objectAtIndex:1];
+//        destViewController1.dictObject = [self.ResultHolderArray objectAtIndex:indexPath.row];
+//        
+//        CommentryVC *destViewController2 = [tabbar.viewControllers objectAtIndex:2];
+//        destViewController2.dictObject = [self.ResultHolderArray objectAtIndex:indexPath.row];
+//        PlayerXIVC *destViewController3 = [tabbar.viewControllers objectAtIndex:3];
+//        destViewController3.dictObject = [self.ResultHolderArray objectAtIndex:indexPath.row];
+//        
+//        ScorecardVC *destViewController4 = [tabbar.viewControllers objectAtIndex:4];
+//        destViewController4.dictObject = [self.ResultHolderArray objectAtIndex:indexPath.row];
+//
+//
+//    }
+//}
 -(void)customnavigationmethod
 {
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];

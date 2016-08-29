@@ -136,47 +136,6 @@
     }
     
     
-//    NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    NSURLResponse *response;
-//    NSError *error;
-//    
-//    NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-//    if (responseData != nil) {
-//        
-//        ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-//        
-//        NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
-//        NSDictionary *myslot=[temp objectAtIndex:0];
-//        
-//        NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
-//        NSDictionary *myslot1=[temp1 objectAtIndex:0];
-//        
-//        self.ok_lbl.text=[myslot objectForKey:@"NAME"];
-//        self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
-//        self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
-//        self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
-//        _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
-// 
-// 
-////    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-////    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
-////    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
-////    
-////    self.ok_lbl.text=[myslot valueForKey:@"NAME"];
-////    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
-////    
-////    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
-////    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
-//    
-//    }
-//    else{
-//        //handle received data
-//        [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
-//        
-//    }
-    
-    
 }
 
 -(void)WebserviceMethod:(NSString *)URL
@@ -193,21 +152,7 @@
         ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
         
         [self ResponDataValue:ResultHolderDict:self.selectType];
-        
-//        NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
-//        NSDictionary *myslot=[temp objectAtIndex:0];
-//        
-//        NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
-//        NSDictionary *myslot1=[temp1 objectAtIndex:0];
-//        
-//        self.ok_lbl.text=[myslot objectForKey:@"NAME"];
-//        self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
-//        self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
-//        self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
-//        _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
-        
-        
-        
+    
     }
     else{
         //handle received data
@@ -327,32 +272,65 @@
 - (IBAction)GenerateMonth_Btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
-    NSString *baseURL = [NSString stringWithFormat:@"http://182.74.23.195:8094/YazakiService.svc/CANTEEN/INITIALIZE/%@/%@/%@",selectPlantCode,userUpdate,userUpdate1];
-    NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    NSURLResponse *response;
-    NSError *error;
-    
-    NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    if (responseData != nil) {
-
-    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
-    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
-    
-    self.ok_lbl.text=[myslot valueForKey:@"NAME"];
-    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
-    
-    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
-    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
+      NSString *baseURL;
+    if([self.selectType isEqualToString: @"2"])
+    {
+        
+          baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,selectPlantCode,userUpdate,userUpdate1];
+        [self WebserviceMethod:baseURL];
     }
     
-    else{
-        //handle received data
-
-            //handle received data
-            [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
-       
+    else if ([self.selectType isEqualToString: @"3"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/%@/%@/%@",BaseURL,selectPlantCode,userUpdate,userUpdate1];
+        [self WebserviceMethod:baseURL];
+    }
+    
+    else if ([self.selectType isEqualToString: @"4"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        [self WebserviceMethod:baseURL];
+    }
+    
+    else if ([self.selectType isEqualToString: @"5"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/EFFICIENCYINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        [self WebserviceMethod:baseURL];
+    }
+    
+    else if ([self.selectType isEqualToString: @"6"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/QUOTEMANAGEMENT/COSTINGINITIALIZE/''/''",BaseURL];
+        [self WebserviceMethod:baseURL];
+    }
+    
+    else if ([self.selectType isEqualToString: @"7"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/TRAINING/TRAININGDASHBOARDINITIALIZE",BaseURL];
+        [self WebserviceMethod:baseURL];
+    }
+    
+    else if ([self.selectType isEqualToString: @"8"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/INITIALIZEGATEENTRYDASHBOARD/''/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        [self WebserviceMethod:baseURL];
+    }
+    
+    else if ([self.selectType isEqualToString: @"9"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTINITIALIZE",BaseURL];
+        [self WebserviceMethod:baseURL];
+    }
+    
+    else if ([self.selectType isEqualToString: @"10"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/PROJECTMANAGEMENT/INITIALIZEPROJECTMANGEMENT",BaseURL];
+        [self WebserviceMethod:baseURL];
+    }
+    else if ([self.selectType isEqualToString: @"12"])
+    {
+        baseURL = [NSString stringWithFormat:@"%@/Attendance/INITIALIZE/%@/%@",BaseURL,userUpdate,userUpdate1];
+        [self WebserviceMethod:baseURL];
     }
 
 }
