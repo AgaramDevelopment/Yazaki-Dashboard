@@ -179,7 +179,13 @@
     {
         NSArray *temp =   [responsData objectForKey:@"ACTUALQTY"];
         
-        self.Ok_lbl.text=@"ACTUALQTY";
+        if(temp.count == 1)
+        {
+            self.redCircle_view.hidden=YES;
+            self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+        }
+        
+        self.Ok_lbl.text=@"TOTAL QUANTITY";
         
         self.CountValues_Green_lbl.text=[temp valueForKey:@"ACTUALQTY"];
         
@@ -190,6 +196,11 @@
     {
         NSArray *temp =   [responsData objectForKey:@"ActualQuantitys"];
         
+        if(temp.count == 1)
+        {
+            self.redCircle_view.hidden=YES;
+            self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+        }
         NSDictionary *myslot=[temp objectAtIndex:0];
         self.Ok_lbl.text=@"ACTUALQUANTITY";
         
@@ -199,6 +210,7 @@
         
         
     }
+
     
     else if ([selectOptionType isEqualToString: @"5"])
     {
