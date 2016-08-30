@@ -68,7 +68,6 @@
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Todate_txt text]];
     
     
-    self.redib_Btn.backgroundColor=[UIColor colorWithRed:(51/255.0f) green:(188/255.0f) blue:(8/255.0f) alpha:1.0f];
     
     NSString *baseURL;
  
