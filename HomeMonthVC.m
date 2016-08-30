@@ -396,7 +396,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    if([self.selectType isEqualToString: @"2"]){
+    //if([self.selectType isEqualToString: @"2"]){
     
     NOTOKPiechartVC *initView =  (NOTOKPiechartVC*)[storyboard instantiateViewControllerWithIdentifier:@"NOTOKPIE"];
     initView.str1 = userUpdate;
@@ -406,7 +406,19 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     initView.dictObject = test;
     
     [self.navigationController pushViewController:initView animated:YES];
-    }
+    //}
+    
+//    else if ([self.selectType isEqualToString:@"4"])
+//    {
+//        NOTOKPiechartVC *initView =  (NOTOKPiechartVC*)[storyboard instantiateViewControllerWithIdentifier:@"NOTOKPIE"];
+//        initView.str1 = userUpdate;
+//        initView.str2 = userUpdate1;
+//        initView.selectPlantCode=selectPlantCode;
+//        NSString *test =[NSString stringWithFormat:@"%@",[self.notOk_lbl text]];
+//        initView.dictObject = test;
+//        
+//        [self.navigationController pushViewController:initView animated:YES];
+//    }
     
     
     

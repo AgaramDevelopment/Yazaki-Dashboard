@@ -1,30 +1,38 @@
 //
-//  ScrapDetailVC.m
+//  QuoteMgtVC.m
 //  Yazaki
 //
-//  Created by APPLE on 29/08/16.
+//  Created by APPLE on 30/08/16.
 //  Copyright © 2016 apple. All rights reserved.
 //
 
-#import "ScrapDetailVC.h"
+#import "QuoteMgtVC.h"
 #import "CustomNavigationVC.h"
 #import "Common.h"
+#import "QuoteMgtcell.h"
 
-@interface ScrapDetailVC ()
+@interface QuoteMgtVC ()
 {
     CustomNavigationVC * objCustomNavigation;
-    NSMutableArray * objCatagory;
+    NSMutableArray * objQUMArray;
+    NSMutableArray *CustomerArray ;
+    NSMutableArray *DetailsArray;
+    NSMutableArray *Plantarray;
 }
 
 @end
 
-@implementation ScrapDetailVC
+@implementation QuoteMgtVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
-    objCatagory=[[NSMutableArray alloc]init];
-   NSString * baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPDETAILED/%@/%@/%@/%@",BaseURL,self.selectplancode,self.STATUS,self.fromDate,self.Todate];
+    objQUMArray=[[NSMutableArray alloc]init];
+    Plantarray  =[[NSMutableArray alloc]init];
+     DetailsArray  =[[NSMutableArray alloc]init];
+     CustomerArray  =[[NSMutableArray alloc]init];
+   NSString * baseURL = [NSString stringWithFormat:@"%@/QUOTEMANAGEMENT/COSTINGINITIALIZE/''/''",BaseURL];
+    
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -34,7 +42,15 @@
     if (responseData != nil) {
         
         _serviceResponse=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+        CustomerArray =   [_serviceResponse objectForKey:@"CostingInitializeCustomer"];
+        //NSDictionary *myslot=[CustomerArray objectAtIndex:0];
         
+         DetailsArray =   [_serviceResponse objectForKey:@"CostingInitializeDetails"];
+       // NSDictionary *myslot1=[DetailsArray objectAtIndex:0];
+        
+       Plantarray =   [_serviceResponse objectForKey:@"CostingInitializePlant"];
+       // NSDictionary *myslot2=[Plantarray objectAtIndex:0];
+        objQUMArray=[_serviceResponse copy];
         
     }
     else{
@@ -46,11 +62,7 @@
 
     
 }
--(void) showDialog:(NSString*) message andTitle:(NSString*) title{
-    UIAlertView *alertDialog = [[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-    
-    [alertDialog show];
-}
+
 -(void)customnavigationmethod
 {
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
@@ -61,6 +73,12 @@
     
 }
 
+-(void) showDialog:(NSString*) message andTitle:(NSString*) title{
+    UIAlertView *alertDialog = [[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    
+    [alertDialog show];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;    //count of section
@@ -69,7 +87,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [objCatagory count];    //count number of row from counting array hear cataGorry is An Array
+    return [objQUMArray count];    //count number of row from counting array hear cataGorry is An Array
 }
 
 
@@ -77,27 +95,33 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *MyIdentifier = @"MyIdentifier";
+    static NSString *MyIdentifier = @"QuoteMgtcell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    QuoteMgtcell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:MyIdentifier];
+        cell = [[QuoteMgtcell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:MyIdentifier];
     }
     
-    // Here we use the provided setImageWithURL: method to load the web image
-    // Ensure you use a placeholder image otherwise cells will be initialized with no image
-    //[cell.imageView setImageWithURL:[NSURL URLWithString:@"http://example.com/image.jpg"]
-                   //placeholderImage:[UIImage imageNamed:@"placeholder"]];
-    cell.textLabel.text = @"My Text";
+    NSDictionary * plan =[Plantarray objectAtIndex:indexPath.row];
+    NSDictionary * customername =[CustomerArray objectAtIndex:indexPath.row];
+    
+    cell.plan_lbl.text =[plan valueForKey:@"PLANTNAME"];
+    cell.customername_lbl.text = [customername valueForKey:@"CUSTOMERNAME"];
     return cell;
 }
+
+
+
+
 -(IBAction)Back_BtnAction:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

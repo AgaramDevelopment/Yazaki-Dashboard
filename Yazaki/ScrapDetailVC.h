@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ScrapDetailVC : UIViewController
+@property (nonatomic,strong) NSString * fromDate;
+@property (nonatomic,strong) NSString * Todate;
+@property (nonatomic,strong) NSString * selectplancode;
+@property (nonatomic,strong) NSString * STATUS;
+@property (strong, nonatomic) NSDictionary *serviceResponse;
 
 @end

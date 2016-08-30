@@ -49,6 +49,8 @@
 		1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1882BE411CA2911600D25D68 /* HomeMonthVC.m */; };
 		188E6AEE1D746075001A3D71 /* ScrapDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E6AED1D746075001A3D71 /* ScrapDetailVC.m */; };
 		188F5B1D1CA3C26800035964 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188F5B1C1CA3C26800035964 /* QuartzCore.framework */; };
+		18EC562A1D757E5F00516CA8 /* QuoteMgtVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */; };
+		18EC562D1D758E9200516CA8 /* QuoteMgtcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC562C1D758E9200516CA8 /* QuoteMgtcell.m */; };
 		CE67D9C21CD341F20042E4DB /* Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */; };
 		CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */; };
 		CE7CD4501D6FFD6500EBA627 /* CustomNavigationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */; };
@@ -147,6 +149,10 @@
 		188E6AEC1D746075001A3D71 /* ScrapDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapDetailVC.h; sourceTree = "<group>"; };
 		188E6AED1D746075001A3D71 /* ScrapDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapDetailVC.m; sourceTree = "<group>"; };
 		188F5B1C1CA3C26800035964 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		18EC56281D757E5F00516CA8 /* QuoteMgtVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteMgtVC.h; sourceTree = "<group>"; };
+		18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteMgtVC.m; sourceTree = "<group>"; };
+		18EC562B1D758E9200516CA8 /* QuoteMgtcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteMgtcell.h; sourceTree = "<group>"; };
+		18EC562C1D758E9200516CA8 /* QuoteMgtcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteMgtcell.m; sourceTree = "<group>"; };
 		CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-83.5@2x.png"; path = "app icon/Icon-83.5@2x.png"; sourceTree = SOURCE_ROOT; };
 		CE7CD44C1D6FFD6500EBA627 /* CustomNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationVC.h; sourceTree = "<group>"; };
 		CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationVC.m; sourceTree = "<group>"; };
@@ -280,6 +286,10 @@
 				1863D5CB1CA10D7700D2F625 /* AppDelegate.m */,
 				188E6AEC1D746075001A3D71 /* ScrapDetailVC.h */,
 				188E6AED1D746075001A3D71 /* ScrapDetailVC.m */,
+				18EC56281D757E5F00516CA8 /* QuoteMgtVC.h */,
+				18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */,
+				18EC562B1D758E9200516CA8 /* QuoteMgtcell.h */,
+				18EC562C1D758E9200516CA8 /* QuoteMgtcell.m */,
 				1863D5D31CA10D7700D2F625 /* Images.xcassets */,
 				CED1B5521CCDFC61001D54B3 /* Icon-40.png */,
 				CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */,
@@ -487,6 +497,7 @@
 				CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */,
 				1863D5CC1CA10D7700D2F625 /* AppDelegate.m in Sources */,
 				CE8680C21D74516600463967 /* ProductionDetailsVC.m in Sources */,
+				18EC562A1D757E5F00516CA8 /* QuoteMgtVC.m in Sources */,
 				CE8680BC1D74422900463967 /* ProductionVC.m in Sources */,
 				1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */,
 				1863D5EE1CA10F0800D2F625 /* LoginVC.m in Sources */,
@@ -501,6 +512,7 @@
 				1863D5FE1CA13A5500D2F625 /* HOMEVC.m in Sources */,
 				CE8680C51D745C1300463967 /* ProductionDetilCell.m in Sources */,
 				1866708B1CACEA68001C349A /* testing2.m in Sources */,
+				18EC562D1D758E9200516CA8 /* QuoteMgtcell.m in Sources */,
 				1880C9981D6F283E0042733E /* DashBoardCell.m in Sources */,
 				1863D5C91CA10D7700D2F625 /* main.m in Sources */,
 				186230D61CABF13D001088C3 /* CatdetailsTableViewCell.m in Sources */,

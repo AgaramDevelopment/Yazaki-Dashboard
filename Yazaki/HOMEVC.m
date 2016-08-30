@@ -147,7 +147,7 @@
         
         ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
         
-        [self ResponDataValue:ResultHolderDict:self.selectType];
+        [self ResponDataValue :ResultHolderDict:self.selectType];
         
         
         
@@ -387,7 +387,7 @@
         PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-             initView.selectPlantCode=selectPlantCode;
+    initView.selectPlantCode=selectPlantCode;
     NSString *test =[NSString stringWithFormat:@"%@",[self.Ok_lbl text]];
     initView.dictObject = test;
     [self.navigationController pushViewController:initView animated:YES];
