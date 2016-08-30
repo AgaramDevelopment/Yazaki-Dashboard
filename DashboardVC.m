@@ -15,6 +15,7 @@
 #import "HomeMonthVC.h"
 #import "HOMEVC.h"
 #import "LoginVC.h"
+#import "QuoteMgtVC.h"
 
 @interface DashboardVC ()
 {
@@ -156,10 +157,12 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
    // UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
     NSDictionary *list= [dashBoard_Array objectAtIndex:indexPath.row];
     
     NSString * selectOptionTye= [list valueForKey:@"DASHBOARDID"];
+    
+    if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"2"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"4"])
+    {
     
     UITabBarController *initView =  (UITabBarController*)[self.storyboard instantiateViewControllerWithIdentifier:@"Homevc"];
 
@@ -172,7 +175,13 @@
     destViewController1.selectType = selectOptionTye;
     
     [self.navigationController pushViewController:initView animated:YES];
-    
+    }
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"6"])
+    {
+        QuoteMgtVC * objQuoteMgtVC =  (QuoteMgtVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"QuoteMgtvc"];
+        objQuoteMgtVC.selectType =selectOptionTye;
+        [self.navigationController pushViewController:objQuoteMgtVC animated:YES];
+    }
 }
 
 -(IBAction)didClickLogoutBtnAction:(id)sender
