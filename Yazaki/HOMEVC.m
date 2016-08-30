@@ -12,6 +12,7 @@
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
 #import "Common.h"
+#import "ProductionVC.h"
 @interface HOMEVC ()
 {
     CustomNavigationVC *objCustomNavigation;
@@ -391,56 +392,19 @@
     initView.dictObject = test;
     [self.navigationController pushViewController:initView animated:YES];
      }
-     else if ([self.selectType isEqualToString:@"4"])
-     {
-         NSString * baseURL;
-         NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
-         
-         baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPTYPE/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
-         NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-         NSURLRequest *request = [NSURLRequest requestWithURL:url];
-         NSURLResponse *response;
-         NSError *error;
-         
-         NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-         if (responseData != nil) {
-             
-             
-             self.redCircle_view.hidden=NO;
-             
-             self.redib_Btn.backgroundColor=[UIColor colorWithRed:(40/255.0f) green:(113/255.0f) blue:(42/255.0f) alpha:1.0f];
-             
-             self.greenviewXposition.constant=13;
-             
-             ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-             NSArray *temp =   [ResultHolderDict objectForKey:@"Avoidable"];
-             NSDictionary *myslot;
-             if(temp.count > 0)
-             {
-                 myslot=[temp objectAtIndex:0];
-             }
-             NSArray *temp1 =   [ResultHolderDict objectForKey:@"unAvoidable"];
-             NSDictionary *myslot1=[temp1 objectAtIndex:0];
-             
-             self.Ok_lbl.text=([[myslot objectForKey:@"SESSIONVALUE"] isEqualToString:@""] || [myslot objectForKey:@"SESSIONVALUE"]==nil)?@"Avoidable":[myslot objectForKey:@"SESSIONVALUE"];
-             
-             self.notOk_lbl.text=([[myslot1 objectForKey:@"SESSIONVALUE"] isEqualToString:@""] || [myslot1 objectForKey:@"SESSIONVALUE"]==nil)?@"Un Avoidable":[myslot1 objectForKey:@"SESSIONVALUE"];
-             
-             self.CountValues_Green_lbl.text=([[myslot objectForKey:@"COUNTVALUE"] isEqualToString:@""] || [myslot objectForKey:@"COUNTVALUE"]==nil)?@"0KG":[myslot objectForKey:@"COUNTVALUE"];
-             
-             self.CountValues_Red_lbl.text=([[myslot1 objectForKey:@"COUNTVALUE"]isEqualToString:@""] || [myslot1 objectForKey:@"COUNTVALUE"])?@"0KG":[myslot1 objectForKey:@"COUNTVALUE"];
-             //_planArray=[ResultHolderDict objectForKey:@"SESSIONVALUE"];
-             
-             
-         }
-         else{
-             //handle received data
-             [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
-             
-         }
-         
-     }
-
+    
+    if([self.selectType isEqualToString: @"3"]){
+        
+        ProductionVC *initView =  (ProductionVC*)[storyboard instantiateViewControllerWithIdentifier:@"Productionvc"];
+        initView.FromStr = userUpdate;
+        initView.ToStr = userUpdate1;
+        initView.selectPlantCode=selectPlantCode;
+        [self.navigationController pushViewController:initView animated:YES];
+        
+    }
+    
+    
+    
 }
 
 - (IBAction)red_btn:(id)sender {
