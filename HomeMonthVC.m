@@ -68,8 +68,7 @@
     self.redCircle_view.hidden=NO;
     self.greenviewXposition.constant=13;
     
-    self.redib_btn.backgroundColor=[UIColor colorWithRed:(51/255.0f) green:(188/255.0f) blue:(8/255.0f) alpha:1.0f];
-    
+        
     self.redib_btn.layer.cornerRadius=70;
     self.redib_btn.layer.masksToBounds=YES;
     
