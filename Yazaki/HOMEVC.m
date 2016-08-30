@@ -92,7 +92,7 @@
     
     else if ([self.selectType isEqualToString: @"5"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/EFFICIENCYINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/EFFICIENCYINITIALIZE",BaseURL];
         [self WebserviceMethod:baseURL];
     }
     
@@ -218,6 +218,15 @@
     
     else if ([selectOptionType isEqualToString: @"5"])
     {
+        
+        _planArray=[responsData objectForKey:@"PlantDetails"];
+        
+        self.redCircle_view.hidden=YES;
+        self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+        
+        self.Ok_lbl.text=@"TOTAL EFFICIENCY";
+        
+        self.CountValues_Green_lbl.text=@"0";
         
     }
     
