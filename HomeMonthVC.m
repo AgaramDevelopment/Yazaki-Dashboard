@@ -13,6 +13,7 @@
 #import "DashboardVC.h"
 #import "Common.h"
 #import "ProductionVC.h"
+#import "EfficiencyLineVC.h"
 @interface HomeMonthVC ()
 {
     CustomNavigationVC *objCustomNavigation;
@@ -37,6 +38,7 @@
     _planArray=[[NSMutableArray alloc]init];
     datepicker=[[UIDatePicker alloc]init];
     datepicker1=[[UIDatePicker alloc]init];
+    ResultHolderDict=[[NSDictionary alloc]init];
     
     datepicker.datePickerMode=UIDatePickerModeDate;
     datepicker1.datePickerMode=UIDatePickerModeDate;
@@ -324,14 +326,7 @@
 - (IBAction)GenerateMonth_Btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
-//      NSString *baseURL;
-//    if([self.selectType isEqualToString: @"2"])
-//    {
-//        
-//          baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,selectPlantCode,userUpdate,userUpdate1];
-//        [self WebserviceMethod:baseURL];
-//    }
-//    
+  
     
     [self CommonWebserviceMethod :userUpdate :userUpdate1];
     
@@ -352,7 +347,20 @@
             
             ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
             
-            [self ResponDataValue :ResultHolderDict:self.selectType];
+            NSArray *temp =   [ResultHolderDict objectForKey:@"plantEfficiencyes"];
+            
+            if(temp.count == 1)
+            {
+                self.redCircle_view.hidden=YES;
+                self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+            }
+            if(temp.count>0)
+            {
+            NSDictionary *myslot=[temp objectAtIndex:0];
+            self.ok_lbl.text=@"TOTAL EFFICIENCY";
+            
+            self.CountValues_Green_lbl.text=[myslot valueForKey:@"AVG"];
+            }
             
         }
         else{
@@ -439,9 +447,10 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
       if([self.selectType isEqualToString: @"2"]){
     
     PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
+          NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-    initView.selectPlantCode=selectPlantCode;
+    initView.selectPlantCode=plancode;
     initView.selectType     =self.selectType;
     NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
     initView.dictObject = test;
@@ -449,6 +458,19 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
    [self.navigationController pushViewController:initView animated:YES];
     
       }
+    
+    
+   else if([self.selectType isEqualToString: @"5"]){
+        
+        EfficiencyLineVC *initView =  (EfficiencyLineVC*)[storyboard instantiateViewControllerWithIdentifier:@"effeciencyLine"];
+        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+        initView.fromstr = userUpdate;
+        initView.tostr = userUpdate1;
+        initView.selectPlantCode=plancode;
+      [self.navigationController pushViewController:initView animated:YES];
+        
+    }
+    
     
     else if ([self.selectType isEqualToString:@"4"])
     {
@@ -510,7 +532,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
             PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
             initView.str1 = userUpdate;
             initView.str2 = userUpdate1;
-            initView.selectPlantCode=selectPlantCode;
+               NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+            initView.selectPlantCode=plancode;
             initView.selectType     =self.selectType;
             NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
             initView.dictObject = test;
