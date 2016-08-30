@@ -497,6 +497,12 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
             
             
         }
+        else{
+                    //handle received data
+                    [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
+                    
+                }
+
        
         }
         else{
@@ -533,12 +539,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     
     
     
-    else{
-        //handle received data
-        [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
-        
-    }
-    
+//
     
     
 }

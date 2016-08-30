@@ -163,8 +163,9 @@
 {
     if([self.selectType isEqualToString:@"2"])
     {
+         NSArray *temp =   [responseData objectForKey:@"SESSIONCOUNT"];
         if( [responseData objectForKey:@"SESSIONCOUNT"] == nil ||
-           [[responseData objectForKey:@"SESSIONCOUNT"] isEqual:[NSNull null]] ){
+           [[responseData objectForKey:@"SESSIONCOUNT"] isEqual:[NSNull null]] ||  temp.count ==0){
             // value is unavailable
             [self EmptyDataResponse];
         }else
