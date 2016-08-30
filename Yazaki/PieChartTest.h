@@ -18,6 +18,7 @@
 @property(strong,nonatomic)NSString *dictObject;
 @property(strong,nonatomic)NSString *selectPlantCode;
 @property(strong,nonatomic)NSString *selectType;
+@property (strong,nonatomic) NSString * selectAvoidablecode;
 @property (weak, nonatomic) IBOutlet UIView *legend_ok_view;
 - (IBAction)BreakFast_btn:(id)sender;
 - (IBAction)Dinner_btn:(id)sender;

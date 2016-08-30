@@ -13,6 +13,7 @@
 @property (nonatomic,strong) NSString * Todate;
 @property (nonatomic,strong) NSString * selectplancode;
 @property (nonatomic,strong) NSString * STATUS;
+@property (nonatomic,strong) NSString * SelectareaCode;
 @property (strong, nonatomic) NSDictionary *serviceResponse;
 
 @end

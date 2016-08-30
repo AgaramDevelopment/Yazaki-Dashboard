@@ -161,7 +161,7 @@
     
     NSString * selectOptionTye= [list valueForKey:@"DASHBOARDID"];
     
-    if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"2"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"4"])
+    if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"2"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"4"] || [[list valueForKey:@"DASHBOARDID"] isEqualToString: @"8"])
     {
     
     UITabBarController *initView =  (UITabBarController*)[self.storyboard instantiateViewControllerWithIdentifier:@"Homevc"];

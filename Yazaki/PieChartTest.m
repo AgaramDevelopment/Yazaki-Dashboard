@@ -46,7 +46,7 @@
     }
     else if ([self.selectType isEqualToString:@"4"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPTYPE/%@/%@/%@",BaseURL,_selectPlantCode,str1,str2];
+        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPAREA/%@/%@/%@/%@",BaseURL,_selectPlantCode,self.selectAvoidablecode,str1,str2];
     }
     [self webServicemethod:baseURL];
     
@@ -188,7 +188,7 @@
     }
     else if ([self.selectType isEqualToString:@"4"])
     {
-        NSArray * temp =[responseData objectForKey:@"Avoidable"];
+        NSArray * temp =[responseData objectForKey:@"DTScrapArea"];
         //NSArray *temp =   [available valueForKey:@"SESSIONVALUE"];
         if ([temp isKindOfClass:[NSArray class]] && temp.count !=0)
         {            // value is available
@@ -394,16 +394,18 @@
         
         ScrapDetailVC * objScrapDetailVC =  (ScrapDetailVC*)[storyboard instantiateViewControllerWithIdentifier:@"ScrapDetailvc"];
         
-        self.values =   [_serviceResponse objectForKey:@"Avoidable"];
+        self.values =   [_serviceResponse objectForKey:@"DTScrapArea"];
         // //destViewController = [CategoryVC.destViewController objectAtIndex:0];
         NSDictionary *sample=[self.values objectAtIndex:index];
-        NSString*item=[sample objectForKey:@"SESSIONVALUE"];
+        NSString * item=[sample objectForKey:@"SESSIONVALUE"];
+       
         
         //destViewController.category = item;
         objScrapDetailVC.STATUS =item;
         objScrapDetailVC.fromDate=str1;
         objScrapDetailVC.Todate=str2;
         objScrapDetailVC.selectplancode=_selectPlantCode;
+        objScrapDetailVC.SelectareaCode =self.selectAvoidablecode;
         [self.navigationController pushViewController:objScrapDetailVC animated:YES];
         
     }

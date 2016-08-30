@@ -51,6 +51,7 @@
 		188F5B1D1CA3C26800035964 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188F5B1C1CA3C26800035964 /* QuartzCore.framework */; };
 		18EC562A1D757E5F00516CA8 /* QuoteMgtVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */; };
 		18EC562D1D758E9200516CA8 /* QuoteMgtcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC562C1D758E9200516CA8 /* QuoteMgtcell.m */; };
+		18EC56301D75B22800516CA8 /* ScrapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC562F1D75B22800516CA8 /* ScrapCell.m */; };
 		CE67D9C21CD341F20042E4DB /* Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */; };
 		CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */; };
 		CE7CD4501D6FFD6500EBA627 /* CustomNavigationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */; };
@@ -153,6 +154,8 @@
 		18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteMgtVC.m; sourceTree = "<group>"; };
 		18EC562B1D758E9200516CA8 /* QuoteMgtcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteMgtcell.h; sourceTree = "<group>"; };
 		18EC562C1D758E9200516CA8 /* QuoteMgtcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteMgtcell.m; sourceTree = "<group>"; };
+		18EC562E1D75B22800516CA8 /* ScrapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapCell.h; sourceTree = "<group>"; };
+		18EC562F1D75B22800516CA8 /* ScrapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapCell.m; sourceTree = "<group>"; };
 		CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-83.5@2x.png"; path = "app icon/Icon-83.5@2x.png"; sourceTree = SOURCE_ROOT; };
 		CE7CD44C1D6FFD6500EBA627 /* CustomNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationVC.h; sourceTree = "<group>"; };
 		CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationVC.m; sourceTree = "<group>"; };
@@ -286,6 +289,8 @@
 				1863D5CB1CA10D7700D2F625 /* AppDelegate.m */,
 				188E6AEC1D746075001A3D71 /* ScrapDetailVC.h */,
 				188E6AED1D746075001A3D71 /* ScrapDetailVC.m */,
+				18EC562E1D75B22800516CA8 /* ScrapCell.h */,
+				18EC562F1D75B22800516CA8 /* ScrapCell.m */,
 				18EC56281D757E5F00516CA8 /* QuoteMgtVC.h */,
 				18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */,
 				18EC562B1D758E9200516CA8 /* QuoteMgtcell.h */,
@@ -498,6 +503,7 @@
 				1863D5CC1CA10D7700D2F625 /* AppDelegate.m in Sources */,
 				CE8680C21D74516600463967 /* ProductionDetailsVC.m in Sources */,
 				18EC562A1D757E5F00516CA8 /* QuoteMgtVC.m in Sources */,
+				18EC56301D75B22800516CA8 /* ScrapCell.m in Sources */,
 				CE8680BC1D74422900463967 /* ProductionVC.m in Sources */,
 				1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */,
 				1863D5EE1CA10F0800D2F625 /* LoginVC.m in Sources */,

@@ -9,6 +9,7 @@
 #import "ScrapDetailVC.h"
 #import "CustomNavigationVC.h"
 #import "Common.h"
+#import "ScrapCell.h"
 
 @interface ScrapDetailVC ()
 {
@@ -24,7 +25,7 @@
     [super viewDidLoad];
     [self customnavigationmethod];
     objCatagory=[[NSMutableArray alloc]init];
-   NSString * baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPDETAILED/%@/%@/%@/%@",BaseURL,self.selectplancode,self.STATUS,self.fromDate,self.Todate];
+   NSString * baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPDETAILED/%@/%@/%@/%@/%@",BaseURL,self.selectplancode,self.SelectareaCode,self.STATUS,self.fromDate,self.Todate];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -34,6 +35,7 @@
     if (responseData != nil) {
         
         _serviceResponse=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+        objCatagory=[_serviceResponse objectForKey:@"ScrapAreaDetailed"];
         
         
     }
@@ -77,21 +79,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *MyIdentifier = @"MyIdentifier";
+    static NSString *MyIdentifier = @"ScrapCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    ScrapCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[ScrapCell alloc] initWithStyle:UITableViewCellStyleDefault
                                        reuseIdentifier:MyIdentifier];
     }
+    NSDictionary * objDic=[objCatagory objectAtIndex:indexPath.row];
     
-    // Here we use the provided setImageWithURL: method to load the web image
-    // Ensure you use a placeholder image otherwise cells will be initialized with no image
-    //[cell.imageView setImageWithURL:[NSURL URLWithString:@"http://example.com/image.jpg"]
-                   //placeholderImage:[UIImage imageNamed:@"placeholder"]];
-    cell.textLabel.text = @"My Text";
+       cell.plan_lbl.text = [objDic valueForKey:@"PlantName"];
+    cell.lineName_lbl.text =[objDic valueForKey:@"LineName"];
+    cell.processName_lbl.text =[objDic valueForKey:@"ProcessName"];
+    cell.weight_lbl.text =[objDic valueForKey:@"Weight"];
     return cell;
 }
 -(IBAction)Back_BtnAction:(id)sender
