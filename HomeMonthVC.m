@@ -535,8 +535,10 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
                NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
             initView.selectPlantCode=plancode;
             initView.selectType     =self.selectType;
+           
             NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
             initView.dictObject = test;
+            initView.selectAvoidablecode =([test isEqualToString:@"Avoidable"])?@"1":@"0";
             
             [self.navigationController pushViewController:initView animated:YES];
             

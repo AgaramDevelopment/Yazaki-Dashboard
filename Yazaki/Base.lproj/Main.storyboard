@@ -2065,7 +2065,7 @@
                                                     <constraint firstAttribute="height" constant="35" id="Liq-oQ-Phi"/>
                                                     <constraint firstAttribute="width" constant="75" id="NVx-h6-ObT"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -2075,17 +2075,17 @@
                                                     <constraint firstAttribute="height" constant="35" id="1MY-Ys-Bn8"/>
                                                     <constraint firstAttribute="width" constant="100" id="ETR-Qo-tt3"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProcessName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFY-8z-a97">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ProcessName" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFY-8z-a97">
                                                 <rect key="frame" x="189" y="18" width="100" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="MWI-Fs-E25"/>
                                                     <constraint firstAttribute="width" constant="100" id="ToC-1q-MDX"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -2095,12 +2095,12 @@
                                                     <constraint firstAttribute="width" constant="78" id="0L9-cC-Ifx"/>
                                                     <constraint firstAttribute="height" constant="35" id="7Z7-aa-DNK"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.69536637931034484" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="0bj-KM-cxV"/>
                                             <constraint firstItem="UFY-8z-a97" firstAttribute="leading" secondItem="Qbs-FR-DpU" secondAttribute="trailing" constant="5" id="9Vd-iY-0eM"/>
@@ -2121,14 +2121,14 @@
                                         <rect key="frame" x="0.0" y="70" width="375" height="483"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="Amw-a6-bfZ">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScrapCell" rowHeight="75" id="Amw-a6-bfZ" customClass="ScrapCell">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Amw-a6-bfZ" id="fxD-sa-VrH">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R5-Sz-Gpa">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R5-Sz-Gpa">
                                                             <rect key="frame" x="3" y="15" width="70" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="WQp-64-nkz"/>
@@ -2138,33 +2138,33 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qb-OO-pik">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qb-OO-pik">
                                                             <rect key="frame" x="78" y="15" width="100" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="80Z-YN-x9j"/>
                                                                 <constraint firstAttribute="width" constant="100" id="GJT-Hp-903"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="15"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9v-Zu-WA1">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9v-Zu-WA1">
                                                             <rect key="frame" x="183" y="15" width="100" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="RRo-Ch-fd1"/>
                                                                 <constraint firstAttribute="width" constant="100" id="skV-86-S6A"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="15"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R74-ve-tmC">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R74-ve-tmC">
                                                             <rect key="frame" x="288" y="15" width="83" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="6Ua-Uw-Opy"/>
                                                                 <constraint firstAttribute="width" constant="83" id="dDi-Yz-VoS"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="15"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -2183,8 +2183,18 @@
                                                         <constraint firstItem="R74-ve-tmC" firstAttribute="top" secondItem="fxD-sa-VrH" secondAttribute="top" constant="15" id="v5G-9B-P64"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="lineName_lbl" destination="8qb-OO-pik" id="4Aa-e9-RoK"/>
+                                                    <outlet property="plan_lbl" destination="0R5-Sz-Gpa" id="n16-PJ-0Bc"/>
+                                                    <outlet property="processName_lbl" destination="p9v-Zu-WA1" id="Bmz-zf-mOK"/>
+                                                    <outlet property="weight_lbl" destination="R74-ve-tmC" id="kGl-ND-bnw"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="6OE-8p-xA6" id="DeH-cu-kje"/>
+                                            <outlet property="delegate" destination="6OE-8p-xA6" id="Dpc-l3-9ac"/>
+                                        </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFK-Ik-86f">
                                         <rect key="frame" x="0.0" y="552" width="375" height="50"/>
