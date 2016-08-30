@@ -92,45 +92,7 @@
     [self CommonWebserviceMethod:userUpdate :userUpdate1];
     
     
-//    NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    NSURLResponse *response;
-//    NSError *error;
-//    
-//    NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-//    if (responseData != nil) {
-//        
-//        ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-//        
-//        NSArray *temp =   [ResultHolderDict objectForKey:@"Initialize_Ok"];
-//        NSDictionary *myslot=[temp objectAtIndex:0];
-//        
-//        NSArray *temp1 =   [ResultHolderDict objectForKey:@"Initialize_NotOk"];
-//        NSDictionary *myslot1=[temp1 objectAtIndex:0];
-//        
-//        self.ok_lbl.text=[myslot objectForKey:@"NAME"];
-//        self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
-//        self.CountValues_Green_lbl.text=[myslot objectForKey:@"COUNTVALUE"];
-//        self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
-//        _planArray=[ResultHolderDict objectForKey:@"PlantDetails"];
-// 
-// 
-////    NSMutableArray *ResultHolderArray=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-////    NSDictionary *myslot=[ResultHolderArray objectAtIndex:0];
-////    NSDictionary *myslot1=[ResultHolderArray objectAtIndex:1];
-////    
-////    self.ok_lbl.text=[myslot valueForKey:@"NAME"];
-////    self.notOk_lbl.text=[myslot1 valueForKey:@"NAME"];
-////    
-////    self.CountValues_Green_lbl.text=[myslot valueForKey:@"COUNTVALUE"];
-////    self.CountValues_Red_lbl.text=[myslot1 valueForKey:@"COUNTVALUE"];
-//    
-//    }
-//    else{
-//        //handle received data
-//        [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
-//        
-//    }
+
     
     
 }
@@ -159,7 +121,10 @@
     
     else if ([self.selectType isEqualToString: @"5"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/EFFICIENCYINITIALIZE/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/EFFICIENCYINITIALIZE",BaseURL];
+        
+        
+        
         [self WebserviceMethod:baseURL];
     }
     
@@ -281,8 +246,22 @@
     
     else if ([selectOptionType isEqualToString: @"5"])
     {
+        
+       
+            _planArray=[responsData objectForKey:@"PlantDetails"];
+        
+                self.redCircle_view.hidden=YES;
+                self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+      
+            self.ok_lbl.text=@"TOTAL EFFICIENCY";
+            
+            self.CountValues_Green_lbl.text=@"0";
+            
+        
+        
        
     }
+    
     
     else if ([selectOptionType isEqualToString: @"6"])
     {
@@ -356,8 +335,35 @@
 //    
     
     [self CommonWebserviceMethod :userUpdate :userUpdate1];
+    
+    if ([_selectType isEqualToString: @"5"]) {
+    //    EFFICIENCY/PLANTEFFICIENCY/{PLANTCODE}/{FROMDATE}/{TODATE}
+        NSString * baseURL;
+        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+        
+        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
+        
+        NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSURLResponse *response;
+        NSError *error;
+        
+        NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if (responseData != nil) {
+            
+            ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+            
+            [self ResponDataValue :ResultHolderDict:self.selectType];
+            
+        }
+        else{
+            //handle received data
+            [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
+            
+        }
+        
 
-
+    }
 }
 
 
@@ -479,11 +485,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
             
             
         }
-        else{
-            //handle received data
-            [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
-            
-        }
+       
         }
         else{
             
@@ -513,6 +515,18 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
        [self.navigationController pushViewController:initView animated:YES];
         
     }
+    
+    
+    
+    
+    
+    
+    else{
+        //handle received data
+        [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
+        
+    }
+    
     
     
 }
