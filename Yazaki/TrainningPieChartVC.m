@@ -10,6 +10,7 @@
 #import "CustomNavigationVC.h"
 #import "Common.h"
 #import "DashboardVC.h"
+#import "TrainningDetailsVC.h"
 
 
 @interface TrainningPieChartVC ()
@@ -189,8 +190,7 @@
         self.pieChartView.textColor = [UIColor blackColor];
         self.pieChartView.selectedTextColor = [UIColor whiteColor];
         self.pieChartView.borderPercentage = 0.01;
-        [self performSelector:@selector(pieChartView:didSelectSliceAtIndex:)
-                   withObject:nil afterDelay:50.0f];
+
         
         
     }
@@ -265,43 +265,27 @@
     }
 }
 
-//- (void)pieChartView:(MCPieChartView*)pieChartView didSelectSliceAtIndex:(NSInteger)index;
-//{     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//    if (index==0) {
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        testing2 *test =  (testing2*)[storyboard instantiateViewControllerWithIdentifier:@"testing2vc"];
-//        self.values =   [_serviceResponse objectForKey:@"SESSIONCOUNT"];
-//        NSDictionary *sample=[self.values objectAtIndex:index];
-//        NSString*item=[sample objectForKey:@"SESSIONVALUE"];
-//        NSString *catid=@"1234";
-//        test.passcatID = catid;
-//        test.passSTATUS =dictObject;
-//        test.passcategory=item;
-//        test.passfromDate=str1;
-//        test.passTodate= str2;
-//        test.selectPlantCode=_selectPlantCode;
-//        [self.navigationController pushViewController:test animated:YES];
-//        
-//        
-//        
-//    }
-//    
-//    if(index==1)
-//    {
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        testingvc *destViewController =  (testingvc*)[storyboard instantiateViewControllerWithIdentifier:@"testing"];
-//        self.values =   [_serviceResponse objectForKey:@"SESSIONCOUNT"];
-//        NSDictionary *sample=[self.values objectAtIndex:index];
-//        NSString*item=[sample objectForKey:@"SESSIONVALUE"];
-//        destViewController.category = item;
-//        destViewController.STATUS =dictObject;
-//        destViewController.fromDate=str1;
-//        destViewController.Todate=str2;
-//        destViewController.selectPlantCode=_selectPlantCode;
-//        
-//        [self.navigationController pushViewController:destViewController animated:YES];
-//    }
-//});
-//}
 
+
+
+
+- (void)pieChartView:(MCPieChartView*)pieChartView didSelectSliceAtIndex:(NSInteger)index;
+{
+     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+        TrainningDetailsVC *destViewController =  (TrainningDetailsVC*)[storyboard instantiateViewControllerWithIdentifier:@"trainningdetails"];
+        
+        self.values =   [_serviceResponse objectForKey:@"CountValues"];
+        // //destViewController = [CategoryVC.destViewController objectAtIndex:0];
+        NSDictionary *sample=[self.values objectAtIndex:index];
+        NSString*VersionStatus=[sample objectForKey:@"SessionValue"];
+        //
+         destViewController.VersionStatus=VersionStatus;
+        [self.navigationController pushViewController:destViewController animated:YES];
+    
+    
+    });
+}
 @end
