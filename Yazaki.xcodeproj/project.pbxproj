@@ -49,6 +49,11 @@
 		1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1882BE411CA2911600D25D68 /* HomeMonthVC.m */; };
 		188E6AEE1D746075001A3D71 /* ScrapDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 188E6AED1D746075001A3D71 /* ScrapDetailVC.m */; };
 		188F5B1D1CA3C26800035964 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188F5B1C1CA3C26800035964 /* QuartzCore.framework */; };
+		18D163C61D76B57F003EBAE2 /* QuoteVarientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D163C51D76B57F003EBAE2 /* QuoteVarientVC.m */; };
+		18D163C91D76BDD9003EBAE2 /* QuoteVarientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D163C81D76BDD9003EBAE2 /* QuoteVarientCell.m */; };
+		18D163CC1D76EEB2003EBAE2 /* QuoteAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D163CB1D76EEB2003EBAE2 /* QuoteAmount.m */; };
+		18D163CF1D76F170003EBAE2 /* QuoteAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D163CE1D76F170003EBAE2 /* QuoteAmountCell.m */; };
+		18D163D21D76F70F003EBAE2 /* ProjectMgtVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D163D11D76F70F003EBAE2 /* ProjectMgtVC.m */; };
 		18EC562A1D757E5F00516CA8 /* QuoteMgtVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */; };
 		18EC562D1D758E9200516CA8 /* QuoteMgtcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC562C1D758E9200516CA8 /* QuoteMgtcell.m */; };
 		18EC56301D75B22800516CA8 /* ScrapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC562F1D75B22800516CA8 /* ScrapCell.m */; };
@@ -157,6 +162,16 @@
 		188E6AEC1D746075001A3D71 /* ScrapDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapDetailVC.h; sourceTree = "<group>"; };
 		188E6AED1D746075001A3D71 /* ScrapDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapDetailVC.m; sourceTree = "<group>"; };
 		188F5B1C1CA3C26800035964 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		18D163C41D76B57F003EBAE2 /* QuoteVarientVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteVarientVC.h; sourceTree = "<group>"; };
+		18D163C51D76B57F003EBAE2 /* QuoteVarientVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteVarientVC.m; sourceTree = "<group>"; };
+		18D163C71D76BDD9003EBAE2 /* QuoteVarientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteVarientCell.h; sourceTree = "<group>"; };
+		18D163C81D76BDD9003EBAE2 /* QuoteVarientCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteVarientCell.m; sourceTree = "<group>"; };
+		18D163CA1D76EEB2003EBAE2 /* QuoteAmount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteAmount.h; sourceTree = "<group>"; };
+		18D163CB1D76EEB2003EBAE2 /* QuoteAmount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteAmount.m; sourceTree = "<group>"; };
+		18D163CD1D76F170003EBAE2 /* QuoteAmountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteAmountCell.h; sourceTree = "<group>"; };
+		18D163CE1D76F170003EBAE2 /* QuoteAmountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteAmountCell.m; sourceTree = "<group>"; };
+		18D163D01D76F70F003EBAE2 /* ProjectMgtVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMgtVC.h; sourceTree = "<group>"; };
+		18D163D11D76F70F003EBAE2 /* ProjectMgtVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectMgtVC.m; sourceTree = "<group>"; };
 		18EC56281D757E5F00516CA8 /* QuoteMgtVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteMgtVC.h; sourceTree = "<group>"; };
 		18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteMgtVC.m; sourceTree = "<group>"; };
 		18EC562B1D758E9200516CA8 /* QuoteMgtcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteMgtcell.h; sourceTree = "<group>"; };
@@ -330,6 +345,16 @@
 				18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */,
 				18EC562B1D758E9200516CA8 /* QuoteMgtcell.h */,
 				18EC562C1D758E9200516CA8 /* QuoteMgtcell.m */,
+				18D163C41D76B57F003EBAE2 /* QuoteVarientVC.h */,
+				18D163C51D76B57F003EBAE2 /* QuoteVarientVC.m */,
+				18D163C71D76BDD9003EBAE2 /* QuoteVarientCell.h */,
+				18D163C81D76BDD9003EBAE2 /* QuoteVarientCell.m */,
+				18D163CA1D76EEB2003EBAE2 /* QuoteAmount.h */,
+				18D163CB1D76EEB2003EBAE2 /* QuoteAmount.m */,
+				18D163CD1D76F170003EBAE2 /* QuoteAmountCell.h */,
+				18D163CE1D76F170003EBAE2 /* QuoteAmountCell.m */,
+				18D163D01D76F70F003EBAE2 /* ProjectMgtVC.h */,
+				18D163D11D76F70F003EBAE2 /* ProjectMgtVC.m */,
 				1863D5D31CA10D7700D2F625 /* Images.xcassets */,
 				CED1B5521CCDFC61001D54B3 /* Icon-40.png */,
 				CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */,
@@ -546,10 +571,14 @@
 				CE801B2E1D76C6C4007BCC58 /* TrainningDetailsVC.m in Sources */,
 				1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */,
 				1863D5EE1CA10F0800D2F625 /* LoginVC.m in Sources */,
+				18D163C61D76B57F003EBAE2 /* QuoteVarientVC.m in Sources */,
 				CE8680BF1D74496000463967 /* ProdcutionCell.m in Sources */,
 				186173C41CA53FFD002A51DA /* testpie.m in Sources */,
+				18D163CF1D76F170003EBAE2 /* QuoteAmountCell.m in Sources */,
+				18D163C91D76BDD9003EBAE2 /* QuoteVarientCell.m in Sources */,
 				186670821CACE456001C349A /* EMpTableViewCell.m in Sources */,
 				1865D42B1CAE3AD4005E792C /* DashboardVC.m in Sources */,
+				18D163D21D76F70F003EBAE2 /* ProjectMgtVC.m in Sources */,
 				186173BB1CA4F89A002A51DA /* MCUtil.m in Sources */,
 				186173B71CA4F89A002A51DA /* MCNewCustomLayer.m in Sources */,
 				CE75629F1D75B57000C7056D /* EfficiencyLineVC.m in Sources */,
@@ -566,6 +595,7 @@
 				186230D61CABF13D001088C3 /* CatdetailsTableViewCell.m in Sources */,
 				186173BA1CA4F89A002A51DA /* MCSliceLayer.m in Sources */,
 				186173A91CA4F796002A51DA /* PieChartTest.m in Sources */,
+				18D163CC1D76EEB2003EBAE2 /* QuoteAmount.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
