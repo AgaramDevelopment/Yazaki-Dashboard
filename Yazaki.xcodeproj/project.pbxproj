@@ -58,8 +58,14 @@
 		18EC562D1D758E9200516CA8 /* QuoteMgtcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC562C1D758E9200516CA8 /* QuoteMgtcell.m */; };
 		18EC56301D75B22800516CA8 /* ScrapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC562F1D75B22800516CA8 /* ScrapCell.m */; };
 		CE67D9C21CD341F20042E4DB /* Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */; };
+		CE75629C1D75B3FA00C7056D /* EffeciencyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75629B1D75B3FA00C7056D /* EffeciencyCell.m */; };
+		CE75629F1D75B57000C7056D /* EfficiencyLineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE75629E1D75B57000C7056D /* EfficiencyLineVC.m */; };
 		CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */; };
 		CE7CD4501D6FFD6500EBA627 /* CustomNavigationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */; };
+		CE801B281D76A23F007BCC58 /* TrainnningVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE801B271D76A23F007BCC58 /* TrainnningVC.m */; };
+		CE801B2B1D76B66D007BCC58 /* TrainningPieChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE801B2A1D76B66D007BCC58 /* TrainningPieChartVC.m */; };
+		CE801B2E1D76C6C4007BCC58 /* TrainningDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE801B2D1D76C6C4007BCC58 /* TrainningDetailsVC.m */; };
+		CE801B311D76DA88007BCC58 /* TrainingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE801B301D76DA88007BCC58 /* TrainingCell.m */; };
 		CE8680BC1D74422900463967 /* ProductionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8680BB1D74422900463967 /* ProductionVC.m */; };
 		CE8680BF1D74496000463967 /* ProdcutionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8680BE1D74496000463967 /* ProdcutionCell.m */; };
 		CE8680C21D74516600463967 /* ProductionDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8680C11D74516600463967 /* ProductionDetailsVC.m */; };
@@ -172,9 +178,21 @@
 		18EC562E1D75B22800516CA8 /* ScrapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrapCell.h; sourceTree = "<group>"; };
 		18EC562F1D75B22800516CA8 /* ScrapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrapCell.m; sourceTree = "<group>"; };
 		CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-83.5@2x.png"; path = "app icon/Icon-83.5@2x.png"; sourceTree = SOURCE_ROOT; };
+		CE75629A1D75B3FA00C7056D /* EffeciencyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffeciencyCell.h; sourceTree = "<group>"; };
+		CE75629B1D75B3FA00C7056D /* EffeciencyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffeciencyCell.m; sourceTree = "<group>"; };
+		CE75629D1D75B57000C7056D /* EfficiencyLineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EfficiencyLineVC.h; sourceTree = "<group>"; };
+		CE75629E1D75B57000C7056D /* EfficiencyLineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EfficiencyLineVC.m; sourceTree = "<group>"; };
 		CE7CD44C1D6FFD6500EBA627 /* CustomNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationVC.h; sourceTree = "<group>"; };
 		CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationVC.m; sourceTree = "<group>"; };
 		CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNavigationVC.xib; sourceTree = "<group>"; };
+		CE801B261D76A23F007BCC58 /* TrainnningVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainnningVC.h; sourceTree = "<group>"; };
+		CE801B271D76A23F007BCC58 /* TrainnningVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainnningVC.m; sourceTree = "<group>"; };
+		CE801B291D76B66D007BCC58 /* TrainningPieChartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainningPieChartVC.h; sourceTree = "<group>"; };
+		CE801B2A1D76B66D007BCC58 /* TrainningPieChartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainningPieChartVC.m; sourceTree = "<group>"; };
+		CE801B2C1D76C6C4007BCC58 /* TrainningDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainningDetailsVC.h; sourceTree = "<group>"; };
+		CE801B2D1D76C6C4007BCC58 /* TrainningDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainningDetailsVC.m; sourceTree = "<group>"; };
+		CE801B2F1D76DA88007BCC58 /* TrainingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingCell.h; sourceTree = "<group>"; };
+		CE801B301D76DA88007BCC58 /* TrainingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingCell.m; sourceTree = "<group>"; };
 		CE8680BA1D74422900463967 /* ProductionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductionVC.h; sourceTree = "<group>"; };
 		CE8680BB1D74422900463967 /* ProductionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductionVC.m; sourceTree = "<group>"; };
 		CE8680BD1D74496000463967 /* ProdcutionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProdcutionCell.h; sourceTree = "<group>"; };
@@ -269,6 +287,18 @@
 				CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */,
 				188F5B1C1CA3C26800035964 /* QuartzCore.framework */,
 				1863D5EF1CA1163500D2F625 /* IMAGES */,
+				CE801B291D76B66D007BCC58 /* TrainningPieChartVC.h */,
+				CE801B2A1D76B66D007BCC58 /* TrainningPieChartVC.m */,
+				CE801B2C1D76C6C4007BCC58 /* TrainningDetailsVC.h */,
+				CE801B2D1D76C6C4007BCC58 /* TrainningDetailsVC.m */,
+				CE801B2F1D76DA88007BCC58 /* TrainingCell.h */,
+				CE801B301D76DA88007BCC58 /* TrainingCell.m */,
+				CE801B261D76A23F007BCC58 /* TrainnningVC.h */,
+				CE801B271D76A23F007BCC58 /* TrainnningVC.m */,
+				CE75629D1D75B57000C7056D /* EfficiencyLineVC.h */,
+				CE75629E1D75B57000C7056D /* EfficiencyLineVC.m */,
+				CE75629A1D75B3FA00C7056D /* EffeciencyCell.h */,
+				CE75629B1D75B3FA00C7056D /* EffeciencyCell.m */,
 				CE8680BD1D74496000463967 /* ProdcutionCell.h */,
 				CE8680C31D745C1300463967 /* ProductionDetilCell.h */,
 				CE8680C41D745C1300463967 /* ProductionDetilCell.m */,
@@ -522,7 +552,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				186230D31CABDFE3001088C3 /* testingvc.m in Sources */,
+				CE75629C1D75B3FA00C7056D /* EffeciencyCell.m in Sources */,
 				186173B81CA4F89A002A51DA /* MCNewCustomLayeredView.m in Sources */,
+				CE801B2B1D76B66D007BCC58 /* TrainningPieChartVC.m in Sources */,
 				1866708E1CAD209B001C349A /* NOTOKPiechartVC.m in Sources */,
 				CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */,
 				1863D5CC1CA10D7700D2F625 /* AppDelegate.m in Sources */,
@@ -530,6 +562,7 @@
 				18EC562A1D757E5F00516CA8 /* QuoteMgtVC.m in Sources */,
 				18EC56301D75B22800516CA8 /* ScrapCell.m in Sources */,
 				CE8680BC1D74422900463967 /* ProductionVC.m in Sources */,
+				CE801B2E1D76C6C4007BCC58 /* TrainningDetailsVC.m in Sources */,
 				1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */,
 				1863D5EE1CA10F0800D2F625 /* LoginVC.m in Sources */,
 				18D163C61D76B57F003EBAE2 /* QuoteVarientVC.m in Sources */,
@@ -542,13 +575,16 @@
 				18D163D21D76F70F003EBAE2 /* ProjectMgtVC.m in Sources */,
 				186173BB1CA4F89A002A51DA /* MCUtil.m in Sources */,
 				186173B71CA4F89A002A51DA /* MCNewCustomLayer.m in Sources */,
+				CE75629F1D75B57000C7056D /* EfficiencyLineVC.m in Sources */,
 				188E6AEE1D746075001A3D71 /* ScrapDetailVC.m in Sources */,
 				186173B91CA4F89A002A51DA /* MCPieChartView.m in Sources */,
+				CE801B311D76DA88007BCC58 /* TrainingCell.m in Sources */,
 				1863D5FE1CA13A5500D2F625 /* HOMEVC.m in Sources */,
 				CE8680C51D745C1300463967 /* ProductionDetilCell.m in Sources */,
 				1866708B1CACEA68001C349A /* testing2.m in Sources */,
 				18EC562D1D758E9200516CA8 /* QuoteMgtcell.m in Sources */,
 				1880C9981D6F283E0042733E /* DashBoardCell.m in Sources */,
+				CE801B281D76A23F007BCC58 /* TrainnningVC.m in Sources */,
 				1863D5C91CA10D7700D2F625 /* main.m in Sources */,
 				186230D61CABF13D001088C3 /* CatdetailsTableViewCell.m in Sources */,
 				186173BA1CA4F89A002A51DA /* MCSliceLayer.m in Sources */,

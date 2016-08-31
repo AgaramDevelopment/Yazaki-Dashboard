@@ -13,6 +13,7 @@
 #import "DashboardVC.h"
 #import "Common.h"
 #import "ProductionVC.h"
+#import "EfficiencyLineVC.h"
 @interface HOMEVC ()
 {
     CustomNavigationVC *objCustomNavigation;
@@ -100,12 +101,7 @@
         baseURL = [NSString stringWithFormat:@"%@/QUOTEMANAGEMENT/COSTINGINITIALIZE/''/''",BaseURL];
         [self WebserviceMethod:baseURL];
     }
-    
-    else if ([self.selectType isEqualToString: @"7"])
-    {
-        baseURL = [NSString stringWithFormat:@"%@/TRAINING/TRAININGDASHBOARDINITIALIZE",BaseURL];
-        [self WebserviceMethod:baseURL];
-    }
+   
     
     else if ([self.selectType isEqualToString: @"8"])
     {
@@ -234,10 +230,6 @@
         
     }
     
-    else if ([selectOptionType isEqualToString: @"7"])
-    {
-        
-    }
     
     else if ([selectOptionType isEqualToString: @"8"])
     {
@@ -338,8 +330,37 @@
     
     else if ([self.selectType isEqualToString: @"5"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/EFFICIENCYINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
-        [self WebserviceMethod:baseURL];
+        NSString * baseURL;
+        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+        
+        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
+        
+        NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSURLResponse *response;
+        NSError *error;
+        
+        NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if (responseData != nil) {
+            
+            ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+            
+            NSArray *temp =   [ResultHolderDict objectForKey:@"plantEfficiencyes"];
+            
+            if(temp.count == 1)
+            {
+                self.redCircle_view.hidden=YES;
+                self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+            }
+            if(temp.count>0)
+            {
+                NSDictionary *myslot=[temp objectAtIndex:0];
+                self.Ok_lbl.text=@"TOTAL EFFICIENCY";
+                
+                self.CountValues_Green_lbl.text=[myslot valueForKey:@"AVG"];
+            }
+            
+        }
     }
     
     else if ([self.selectType isEqualToString: @"6"])
@@ -347,13 +368,7 @@
         baseURL = [NSString stringWithFormat:@"%@/QUOTEMANAGEMENT/COSTINGINITIALIZE/''/''",BaseURL];
         [self WebserviceMethod:baseURL];
     }
-    
-    else if ([self.selectType isEqualToString: @"7"])
-    {
-        baseURL = [NSString stringWithFormat:@"%@/TRAINING/TRAININGDASHBOARDINITIALIZE",BaseURL];
-        [self WebserviceMethod:baseURL];
-    }
-    
+ 
     else if ([self.selectType isEqualToString: @"8"])
     {
         baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/INITIALIZEGATEENTRYDASHBOARD/''/''/%@/%@",BaseURL,userUpdate,userUpdate1];
@@ -407,6 +422,18 @@
         initView.FromStr = userUpdate;
         initView.ToStr = userUpdate1;
         initView.selectPlantCode=selectPlantCode;
+        [self.navigationController pushViewController:initView animated:YES];
+        
+    }
+    
+    
+    else if([self.selectType isEqualToString: @"5"]){
+        
+        EfficiencyLineVC *initView =  (EfficiencyLineVC*)[storyboard instantiateViewControllerWithIdentifier:@"effeciencyLine"];
+        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+        initView.fromstr = userUpdate;
+        initView.tostr = userUpdate1;
+        initView.selectPlantCode=plancode;
         [self.navigationController pushViewController:initView animated:YES];
         
     }

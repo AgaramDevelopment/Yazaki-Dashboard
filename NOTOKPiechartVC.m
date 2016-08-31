@@ -11,6 +11,7 @@
 #import "testing2.h"
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
+#import "Common.h"
 @interface NOTOKPiechartVC ()
 {
     CustomNavigationVC *objCustomNavigation;
@@ -35,7 +36,7 @@
     [super viewDidLoad];
     [self customnavigationmethod];
     
-    NSString *baseURL = [NSString stringWithFormat:@"http://192.168.1.49:8097/YazakiService.svc/CANTEEN/SESSION/%@/%@/%@/%@",dictObject,_selectPlantCode,str1,str2];
+    NSString *baseURL = [NSString stringWithFormat:@"%@/CANTEEN/SESSION/%@/%@/%@/%@",BaseURL,dictObject,_selectPlantCode,str1,str2];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -190,10 +191,7 @@
     self.pieChartView.textColor = [UIColor blackColor];
     self.pieChartView.selectedTextColor = [UIColor whiteColor];
     self.pieChartView.borderPercentage = 0.01;
-    [self performSelector:@selector(pieChartView:didSelectSliceAtIndex:)
-                   withObject:nil afterDelay:50.0f];
-
-
+   
 }
     else{
         //handle received data

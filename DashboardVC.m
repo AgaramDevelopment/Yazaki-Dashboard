@@ -16,6 +16,7 @@
 #import "HOMEVC.h"
 #import "LoginVC.h"
 #import "QuoteMgtVC.h"
+#import "TrainnningVC.h"
 
 @interface DashboardVC ()
 {
@@ -161,27 +162,35 @@
     
     NSString * selectOptionTye= [list valueForKey:@"DASHBOARDID"];
     
-    if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"2"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"4"] || [[list valueForKey:@"DASHBOARDID"] isEqualToString: @"8"])
+    if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"2"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"3"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"4"] ||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"5"])
     {
     
     UITabBarController *initView =  (UITabBarController*)[self.storyboard instantiateViewControllerWithIdentifier:@"Homevc"];
 
      HomeMonthVC * destViewController = [initView.viewControllers objectAtIndex:0];
      destViewController.selectType = selectOptionTye;
-    
-
-    
+   
     HOMEVC *destViewController1 =[initView.viewControllers objectAtIndex:1];
     destViewController1.selectType = selectOptionTye;
     
     [self.navigationController pushViewController:initView animated:YES];
     }
+    
     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"6"])
     {
         QuoteMgtVC * objQuoteMgtVC =  (QuoteMgtVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"QuoteMgtvc"];
         objQuoteMgtVC.selectType =selectOptionTye;
         [self.navigationController pushViewController:objQuoteMgtVC animated:YES];
     }
+    
+    else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"7"])
+    {
+        TrainnningVC * objtrainVC =  (TrainnningVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Trainningid"];
+        objtrainVC.selectType =selectOptionTye;
+        [self.navigationController pushViewController:objtrainVC animated:YES];
+    }
+    
+    
 }
 
 -(IBAction)didClickLogoutBtnAction:(id)sender
@@ -199,37 +208,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-//
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.identifier isEqualToString:@"Homevc"]) {
-//        NSIndexPath *indexPath = [self.collectionView indexPathForSelectedRow];
-//        UITabBarController *tabbar=segue.destinationViewController;
-//        PreviewVC *destViewController = [tabbar.viewControllers objectAtIndex:0];
-//        destViewController.dictObject = [self.ResultHolderArray objectAtIndex:indexPath.row];
-//        SummeryVC *destViewController1 = [tabbar.viewControllers objectAtIndex:1];
-//        destViewController1.dictObject = [self.ResultHolderArray objectAtIndex:indexPath.row];
-//        
-//        CommentryVC *destViewController2 = [tabbar.viewControllers objectAtIndex:2];
-//        destViewController2.dictObject = [self.ResultHolderArray objectAtIndex:indexPath.row];
-//        PlayerXIVC *destViewController3 = [tabbar.viewControllers objectAtIndex:3];
-//        destViewController3.dictObject = [self.ResultHolderArray objectAtIndex:indexPath.row];
-//        
-//        ScorecardVC *destViewController4 = [tabbar.viewControllers objectAtIndex:4];
-//        destViewController4.dictObject = [self.ResultHolderArray objectAtIndex:indexPath.row];
-//
-//
-//    }
-//}
 -(void)customnavigationmethod
 {
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
