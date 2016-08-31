@@ -17,6 +17,7 @@
 #import "LoginVC.h"
 #import "QuoteMgtVC.h"
 #import "TrainnningVC.h"
+#import "GiftVCViewController.h"
 
 @interface DashboardVC ()
 {
@@ -189,6 +190,14 @@
         objtrainVC.selectType =selectOptionTye;
         [self.navigationController pushViewController:objtrainVC animated:YES];
     }
+    
+     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"9"])
+     {
+         GiftVCViewController * objtrainVC =  (GiftVCViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"GiftID"];
+         objtrainVC.selectType =selectOptionTye;
+         [self.navigationController pushViewController:objtrainVC animated:YES];
+
+     }
     
     
 }
