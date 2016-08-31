@@ -68,6 +68,7 @@
 		CE801B2B1D76B66D007BCC58 /* TrainningPieChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE801B2A1D76B66D007BCC58 /* TrainningPieChartVC.m */; };
 		CE801B2E1D76C6C4007BCC58 /* TrainningDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE801B2D1D76C6C4007BCC58 /* TrainningDetailsVC.m */; };
 		CE801B311D76DA88007BCC58 /* TrainingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE801B301D76DA88007BCC58 /* TrainingCell.m */; };
+		CE801B341D76F2B3007BCC58 /* GiftVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE801B331D76F2B3007BCC58 /* GiftVCViewController.m */; };
 		CE8680BC1D74422900463967 /* ProductionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8680BB1D74422900463967 /* ProductionVC.m */; };
 		CE8680BF1D74496000463967 /* ProdcutionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8680BE1D74496000463967 /* ProdcutionCell.m */; };
 		CE8680C21D74516600463967 /* ProductionDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8680C11D74516600463967 /* ProductionDetailsVC.m */; };
@@ -199,6 +200,8 @@
 		CE801B2D1D76C6C4007BCC58 /* TrainningDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainningDetailsVC.m; sourceTree = "<group>"; };
 		CE801B2F1D76DA88007BCC58 /* TrainingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingCell.h; sourceTree = "<group>"; };
 		CE801B301D76DA88007BCC58 /* TrainingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingCell.m; sourceTree = "<group>"; };
+		CE801B321D76F2B3007BCC58 /* GiftVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftVCViewController.h; sourceTree = "<group>"; };
+		CE801B331D76F2B3007BCC58 /* GiftVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftVCViewController.m; sourceTree = "<group>"; };
 		CE8680BA1D74422900463967 /* ProductionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductionVC.h; sourceTree = "<group>"; };
 		CE8680BB1D74422900463967 /* ProductionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductionVC.m; sourceTree = "<group>"; };
 		CE8680BD1D74496000463967 /* ProdcutionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProdcutionCell.h; sourceTree = "<group>"; };
@@ -293,6 +296,8 @@
 				CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */,
 				188F5B1C1CA3C26800035964 /* QuartzCore.framework */,
 				1863D5EF1CA1163500D2F625 /* IMAGES */,
+				CE801B321D76F2B3007BCC58 /* GiftVCViewController.h */,
+				CE801B331D76F2B3007BCC58 /* GiftVCViewController.m */,
 				CE801B291D76B66D007BCC58 /* TrainningPieChartVC.h */,
 				CE801B2A1D76B66D007BCC58 /* TrainningPieChartVC.m */,
 				CE801B2C1D76C6C4007BCC58 /* TrainningDetailsVC.h */,
@@ -563,6 +568,7 @@
 			files = (
 				186230D31CABDFE3001088C3 /* testingvc.m in Sources */,
 				CE75629C1D75B3FA00C7056D /* EffeciencyCell.m in Sources */,
+				CE801B341D76F2B3007BCC58 /* GiftVCViewController.m in Sources */,
 				186173B81CA4F89A002A51DA /* MCNewCustomLayeredView.m in Sources */,
 				CE801B2B1D76B66D007BCC58 /* TrainningPieChartVC.m in Sources */,
 				1866708E1CAD209B001C349A /* NOTOKPiechartVC.m in Sources */,
