@@ -54,6 +54,8 @@
 		18D163CC1D76EEB2003EBAE2 /* QuoteAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D163CB1D76EEB2003EBAE2 /* QuoteAmount.m */; };
 		18D163CF1D76F170003EBAE2 /* QuoteAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D163CE1D76F170003EBAE2 /* QuoteAmountCell.m */; };
 		18D163D21D76F70F003EBAE2 /* ProjectMgtVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D163D11D76F70F003EBAE2 /* ProjectMgtVC.m */; };
+		18D163D51D77039E003EBAE2 /* ProjectMgtCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D163D41D77039E003EBAE2 /* ProjectMgtCell.m */; };
+		18D163D81D770DD0003EBAE2 /* ProjectTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D163D71D770DD0003EBAE2 /* ProjectTask.m */; };
 		18EC562A1D757E5F00516CA8 /* QuoteMgtVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */; };
 		18EC562D1D758E9200516CA8 /* QuoteMgtcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC562C1D758E9200516CA8 /* QuoteMgtcell.m */; };
 		18EC56301D75B22800516CA8 /* ScrapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EC562F1D75B22800516CA8 /* ScrapCell.m */; };
@@ -171,6 +173,10 @@
 		18D163CE1D76F170003EBAE2 /* QuoteAmountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteAmountCell.m; sourceTree = "<group>"; };
 		18D163D01D76F70F003EBAE2 /* ProjectMgtVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMgtVC.h; sourceTree = "<group>"; };
 		18D163D11D76F70F003EBAE2 /* ProjectMgtVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectMgtVC.m; sourceTree = "<group>"; };
+		18D163D31D77039E003EBAE2 /* ProjectMgtCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectMgtCell.h; sourceTree = "<group>"; };
+		18D163D41D77039E003EBAE2 /* ProjectMgtCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectMgtCell.m; sourceTree = "<group>"; };
+		18D163D61D770DD0003EBAE2 /* ProjectTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectTask.h; sourceTree = "<group>"; };
+		18D163D71D770DD0003EBAE2 /* ProjectTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectTask.m; sourceTree = "<group>"; };
 		18EC56281D757E5F00516CA8 /* QuoteMgtVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteMgtVC.h; sourceTree = "<group>"; };
 		18EC56291D757E5F00516CA8 /* QuoteMgtVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteMgtVC.m; sourceTree = "<group>"; };
 		18EC562B1D758E9200516CA8 /* QuoteMgtcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteMgtcell.h; sourceTree = "<group>"; };
@@ -350,6 +356,10 @@
 				18D163CE1D76F170003EBAE2 /* QuoteAmountCell.m */,
 				18D163D01D76F70F003EBAE2 /* ProjectMgtVC.h */,
 				18D163D11D76F70F003EBAE2 /* ProjectMgtVC.m */,
+				18D163D31D77039E003EBAE2 /* ProjectMgtCell.h */,
+				18D163D41D77039E003EBAE2 /* ProjectMgtCell.m */,
+				18D163D61D770DD0003EBAE2 /* ProjectTask.h */,
+				18D163D71D770DD0003EBAE2 /* ProjectTask.m */,
 				1863D5D31CA10D7700D2F625 /* Images.xcassets */,
 				CED1B5521CCDFC61001D54B3 /* Icon-40.png */,
 				CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */,
@@ -569,10 +579,12 @@
 				CE8680BF1D74496000463967 /* ProdcutionCell.m in Sources */,
 				186173C41CA53FFD002A51DA /* testpie.m in Sources */,
 				18D163CF1D76F170003EBAE2 /* QuoteAmountCell.m in Sources */,
+				18D163D51D77039E003EBAE2 /* ProjectMgtCell.m in Sources */,
 				18D163C91D76BDD9003EBAE2 /* QuoteVarientCell.m in Sources */,
 				186670821CACE456001C349A /* EMpTableViewCell.m in Sources */,
 				1865D42B1CAE3AD4005E792C /* DashboardVC.m in Sources */,
 				18D163D21D76F70F003EBAE2 /* ProjectMgtVC.m in Sources */,
+				18D163D81D770DD0003EBAE2 /* ProjectTask.m in Sources */,
 				186173BB1CA4F89A002A51DA /* MCUtil.m in Sources */,
 				186173B71CA4F89A002A51DA /* MCNewCustomLayer.m in Sources */,
 				CE75629F1D75B57000C7056D /* EfficiencyLineVC.m in Sources */,

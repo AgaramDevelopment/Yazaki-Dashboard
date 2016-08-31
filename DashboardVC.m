@@ -17,6 +17,7 @@
 #import "LoginVC.h"
 #import "QuoteMgtVC.h"
 #import "TrainnningVC.h"
+#import "ProjectMgtVC.h"
 
 @interface DashboardVC ()
 {
@@ -188,6 +189,13 @@
         TrainnningVC * objtrainVC =  (TrainnningVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Trainningid"];
         objtrainVC.selectType =selectOptionTye;
         [self.navigationController pushViewController:objtrainVC animated:YES];
+    }
+    
+    else if ([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"10"])
+    {
+        ProjectMgtVC * objProjectMgtVC =  (ProjectMgtVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"ProjectMgtvc"];
+       
+        [self.navigationController pushViewController:objProjectMgtVC animated:YES];
     }
     
     
