@@ -135,11 +135,7 @@
         [self WebserviceMethod:baseURL];
     }
     
-    else if ([self.selectType isEqualToString: @"7"])
-    {
-        baseURL = [NSString stringWithFormat:@"%@/TRAINING/TRAININGDASHBOARDINITIALIZE",BaseURL];
-        [self WebserviceMethod:baseURL];
-    }
+
     
     else if ([self.selectType isEqualToString: @"8"])
     {
@@ -268,12 +264,7 @@
     {
         
     }
-    
-    else if ([selectOptionType isEqualToString: @"7"])
-    {
-        
-    }
-    
+  
     else if ([selectOptionType isEqualToString: @"8"])
     {
     }
