@@ -18,6 +18,7 @@
 #import "QuoteMgtVC.h"
 #import "TrainnningVC.h"
 #import "ProjectMgtVC.h"
+#import "GiftVCViewController.h"
 
 @interface DashboardVC ()
 {
@@ -163,7 +164,7 @@
     
     NSString * selectOptionTye= [list valueForKey:@"DASHBOARDID"];
     
-    if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"2"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"3"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"4"] ||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"5"])
+    if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"2"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"3"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"4"] ||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"5"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"8"])
     {
     
     UITabBarController *initView =  (UITabBarController*)[self.storyboard instantiateViewControllerWithIdentifier:@"Homevc"];
@@ -197,6 +198,13 @@
        
         [self.navigationController pushViewController:objProjectMgtVC animated:YES];
     }
+     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"9"])
+     {
+         GiftVCViewController * objtrainVC =  (GiftVCViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"GiftID"];
+         objtrainVC.selectType =selectOptionTye;
+         [self.navigationController pushViewController:objtrainVC animated:YES];
+
+     }
     
     
 }

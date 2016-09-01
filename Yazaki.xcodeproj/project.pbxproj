@@ -40,6 +40,8 @@
 		186670821CACE456001C349A /* EMpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 186670811CACE456001C349A /* EMpTableViewCell.m */; };
 		1866708B1CACEA68001C349A /* testing2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866708A1CACEA68001C349A /* testing2.m */; };
 		1866708E1CAD209B001C349A /* NOTOKPiechartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866708D1CAD209B001C349A /* NOTOKPiechartVC.m */; };
+		187E494A1D78076C00A29CF6 /* ProjectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E49491D78076C00A29CF6 /* ProjectVC.m */; };
+		187E494D1D780A2E00A29CF6 /* ProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E494C1D780A2E00A29CF6 /* ProjectCell.m */; };
 		1880C9981D6F283E0042733E /* DashBoardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880C9971D6F283E0042733E /* DashBoardCell.m */; };
 		1882BE3A1CA253B900D25D68 /* RAJDHANI-LIGHT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE361CA253B900D25D68 /* RAJDHANI-LIGHT.TTF */; };
 		1882BE3B1CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE371CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF */; };
@@ -151,6 +153,10 @@
 		1866708A1CACEA68001C349A /* testing2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = testing2.m; path = ../testing2.m; sourceTree = "<group>"; };
 		1866708C1CAD209B001C349A /* NOTOKPiechartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NOTOKPiechartVC.h; path = ../NOTOKPiechartVC.h; sourceTree = "<group>"; };
 		1866708D1CAD209B001C349A /* NOTOKPiechartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NOTOKPiechartVC.m; path = ../NOTOKPiechartVC.m; sourceTree = "<group>"; };
+		187E49481D78076C00A29CF6 /* ProjectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectVC.h; sourceTree = "<group>"; };
+		187E49491D78076C00A29CF6 /* ProjectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectVC.m; sourceTree = "<group>"; };
+		187E494B1D780A2E00A29CF6 /* ProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectCell.h; sourceTree = "<group>"; };
+		187E494C1D780A2E00A29CF6 /* ProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectCell.m; sourceTree = "<group>"; };
 		1880C9961D6F283E0042733E /* DashBoardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardCell.h; sourceTree = "<group>"; };
 		1880C9971D6F283E0042733E /* DashBoardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardCell.m; sourceTree = "<group>"; };
 		1882BE361CA253B900D25D68 /* RAJDHANI-LIGHT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-LIGHT.TTF"; path = "Custome Fonts/RAJDHANI-LIGHT.TTF"; sourceTree = "<group>"; };
@@ -365,6 +371,10 @@
 				18D163D41D77039E003EBAE2 /* ProjectMgtCell.m */,
 				18D163D61D770DD0003EBAE2 /* ProjectTask.h */,
 				18D163D71D770DD0003EBAE2 /* ProjectTask.m */,
+				187E49481D78076C00A29CF6 /* ProjectVC.h */,
+				187E49491D78076C00A29CF6 /* ProjectVC.m */,
+				187E494B1D780A2E00A29CF6 /* ProjectCell.h */,
+				187E494C1D780A2E00A29CF6 /* ProjectCell.m */,
 				1863D5D31CA10D7700D2F625 /* Images.xcassets */,
 				CED1B5521CCDFC61001D54B3 /* Icon-40.png */,
 				CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */,
@@ -597,8 +607,10 @@
 				188E6AEE1D746075001A3D71 /* ScrapDetailVC.m in Sources */,
 				186173B91CA4F89A002A51DA /* MCPieChartView.m in Sources */,
 				CE801B311D76DA88007BCC58 /* TrainingCell.m in Sources */,
+				187E494D1D780A2E00A29CF6 /* ProjectCell.m in Sources */,
 				1863D5FE1CA13A5500D2F625 /* HOMEVC.m in Sources */,
 				CE8680C51D745C1300463967 /* ProductionDetilCell.m in Sources */,
+				187E494A1D78076C00A29CF6 /* ProjectVC.m in Sources */,
 				1866708B1CACEA68001C349A /* testing2.m in Sources */,
 				18EC562D1D758E9200516CA8 /* QuoteMgtcell.m in Sources */,
 				1880C9981D6F283E0042733E /* DashBoardCell.m in Sources */,

@@ -1,34 +1,32 @@
 //
-//  ProjectMgtVC.m
+//  ProjectVC.m
 //  Yazaki
 //
-//  Created by APPLE on 31/08/16.
+//  Created by APPLE on 01/09/16.
 //  Copyright © 2016 apple. All rights reserved.
 //
 
-#import "ProjectMgtVC.h"
+#import "ProjectVC.h"
 #import "Common.h"
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
-#import "ProjectMgtCell.h"
-#import "ProjectTask.h"
+#import "ProjectCell.h"
 
-@interface ProjectMgtVC ()
+@interface ProjectVC ()
 {
     CustomNavigationVC * objCustomNavigation;
-    NSMutableArray * objProjectMgtArray;
+    NSMutableArray * objProjectArray;
 }
 
 @end
 
-@implementation ProjectMgtVC
+@implementation ProjectVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
-    objProjectMgtArray =[[NSMutableArray alloc]init];
-    [self webService];
-    // Do any additional setup after loading the view.
+    objProjectArray=[[NSMutableArray alloc]init];
+    [self webService:self.projectCode :self.taskStatus];
 }
 
 -(void)customnavigationmethod
@@ -49,9 +47,9 @@
     [self.navigationController pushViewController:initView animated:YES];
 }
 
--(void)webService
+-(void)webService :(NSString *) projectcode:(NSString *) taskstatus
 {
-    NSString * baseURL = [NSString stringWithFormat:@"%@/PROJECTMANAGEMENT/INITIALIZEPROJECTMANGEMENT",BaseURL];
+    NSString * baseURL = [NSString stringWithFormat:@"%@/PROJECTMANAGEMENT/FETCHPROJECTTASKDETAILSBYTASKSTATUS/%@/%@",BaseURL,projectcode,taskstatus];
     
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -62,7 +60,7 @@
     if (responseData != nil) {
         
         _serviceResponse=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-        objProjectMgtArray =   [_serviceResponse objectForKey:@"AllProjectDetails"];
+        objProjectArray =   [_serviceResponse objectForKey:@"ProjectTask"];
         
     }
     else{
@@ -87,7 +85,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [objProjectMgtArray count];
+    return [objProjectArray count];
     
 }
 
@@ -96,42 +94,33 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *MyIdentifier = @"ProjectMgtCell";
+    static NSString *MyIdentifier = @"ProjectCell";
     
-    ProjectMgtCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    ProjectCell * cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
     if (cell == nil)
     {
-        cell = [[ProjectMgtCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:MyIdentifier];
+        cell = [[ProjectCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                     reuseIdentifier:MyIdentifier];
     }
     
-    NSDictionary * ProjectDic =[objProjectMgtArray objectAtIndex:indexPath.row];
+    NSDictionary * ProjectDic =[objProjectArray objectAtIndex:indexPath.row];
     // NSDictionary * customername =[CustomerArray objectAtIndex:indexPath.row];
     
-    cell.lbl_projectcode.text =[ProjectDic valueForKey:@"PROJECTCODE"];
-    cell.lbl_projectname.text = [ProjectDic valueForKey:@"PROJECTNAME"];
-    cell.lbl_Customercode.text =[ProjectDic valueForKey:@"CUSTOMERNAME"];
-    cell.lbl_Startdate.text =[ProjectDic valueForKey:@"PROJECTSTARTDATE"];
-    cell.lbl_Enddate.text =[ProjectDic valueForKey:@"PROJECTENDDATE"];
-    cell.lbl_Totaltask.text =[ProjectDic valueForKey:@"TOTALTASK"];
-    cell.lbl_Completedtask.text =[ProjectDic valueForKey:@"COMPLETEDTASK"];
-    cell.lbl_Pendingtask.text =[ProjectDic valueForKey:@"PENDINGTASK"];
+    cell.lbl_phaseName.text =[ProjectDic valueForKey:@"PHASENAME"];
+    cell.lbl_Department.text = [ProjectDic valueForKey:@"DEPARTMENTNAME"];
+    cell.lbl_activity.text =[ProjectDic valueForKey:@"ACTIVITYCODE"];
+    cell.lbl_activityName.text =[ProjectDic valueForKey:@"ACTIVITYNAME"];
+    cell.lbl_Task.text =[ProjectDic valueForKey:@"TASKCODE"];
+    cell.lbl_TaskName.text =[ProjectDic valueForKey:@"TASKNAME"];
+    cell.lbl_ResponsEmployee.text =[ProjectDic valueForKey:@"RESEMPLOYEECODE"];
+    
     return cell;
 }
 
 - (void)tableView:( UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    ProjectTask * objQuoteAmount = [[ProjectTask alloc]init];
-    objQuoteAmount =  (ProjectTask *)[self.storyboard instantiateViewControllerWithIdentifier:@"ProjectTask"];
-    NSDictionary * AmountDic =[objProjectMgtArray objectAtIndex:indexPath.row];
-    objQuoteAmount.projectname=[AmountDic valueForKey:@"PROJECTNAME"];
-    objQuoteAmount.totalTask =[AmountDic valueForKey:@"TOTALTASK"];
-    objQuoteAmount.completedTask = [AmountDic valueForKey:@"COMPLETEDTASK"];
-    objQuoteAmount.pendingTask = [AmountDic valueForKey:@"PENDINGTASK"];
-    objQuoteAmount.objprojectcode=[AmountDic valueForKey:@"PROJECTCODE"];
-    [self.navigationController pushViewController:objQuoteAmount animated:YES];
     
     
 }
@@ -141,6 +130,7 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 
 - (void)didReceiveMemoryWarning {

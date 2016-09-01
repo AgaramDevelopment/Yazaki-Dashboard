@@ -7,14 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MCPieChartView.h"
 
 @interface ProjectTask : UIViewController
 
+@property (strong, nonatomic) NSDictionary *serviceResponse;
+
+@property (strong,nonatomic) NSString * objprojectcode;
+
 @property (nonatomic,strong) IBOutlet UILabel * project_lbl;
+
+@property (strong, nonatomic) NSMutableArray *values;
+
+@property (strong, nonatomic) IBOutlet MCPieChartView *pieChartView;
 
 @property (nonatomic,strong) IBOutlet UILabel * Totaltask_lbl;
 @property (nonatomic,strong) IBOutlet UILabel * pendingTask_lbl;
 @property (nonatomic,strong) IBOutlet UILabel * completedTask_lbl;
+@property (nonatomic,strong) IBOutlet UIButton * projecttask_Btn;
+@property (nonatomic,strong) IBOutlet UILabel *  task_lbl;
 
 @property (nonatomic,strong) NSString * projectname;
 @property (nonatomic,strong) NSString * totalTask;
