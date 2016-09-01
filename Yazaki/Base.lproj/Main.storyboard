@@ -86,6 +86,14 @@
             <string>Rajdhani-Bold</string>
             <string>Rajdhani-Bold</string>
             <string>Rajdhani-Bold</string>
+            <string>Rajdhani-Bold</string>
+            <string>Rajdhani-Bold</string>
+            <string>Rajdhani-Bold</string>
+            <string>Rajdhani-Bold</string>
+            <string>Rajdhani-Bold</string>
+            <string>Rajdhani-Bold</string>
+            <string>Rajdhani-Bold</string>
+            <string>Rajdhani-Bold</string>
         </mutableArray>
         <mutableArray key="RAJDHANI-MEDIUM.TTF">
             <string>Rajdhani-Medium</string>
@@ -111,6 +119,24 @@
             <string>Rajdhani-Medium</string>
         </mutableArray>
         <mutableArray key="RAJDHANI-SEMIBOLD.TTF">
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
             <string>Rajdhani-Semibold</string>
             <string>Rajdhani-Semibold</string>
             <string>Rajdhani-Semibold</string>
@@ -1424,6 +1450,328 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="go4-Eg-Rej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4806.5" y="-1052.5"/>
+        </scene>
+        <!--Gatepass CategoryVC-->
+        <scene sceneID="8yK-VN-Lql">
+            <objects>
+                <viewController storyboardIdentifier="GatepassCategoryvc" id="wqg-ht-aBt" customClass="GatepassCategoryVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EQF-et-L2B"/>
+                        <viewControllerLayoutGuide type="bottom" id="xc8-ml-uEN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1jS-sg-ofb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVl-iA-Jgv">
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbZ-8B-kaK">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TYPE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9j-Bc-NjQ">
+                                                <rect key="frame" x="10" y="5" width="150" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="CPh-MS-CGF"/>
+                                                    <constraint firstAttribute="width" constant="150" id="Wpf-jW-Sa6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-Ri-yZR">
+                                                <rect key="frame" x="215" y="5" width="150" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="VN7-r1-wzW"/>
+                                                    <constraint firstAttribute="height" constant="30" id="vEv-G0-D3N"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.70113146551724137" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="3Aw-1c-Q6N"/>
+                                            <constraint firstItem="CEz-Ri-yZR" firstAttribute="top" secondItem="HbZ-8B-kaK" secondAttribute="top" constant="5" id="6HT-DO-GQd"/>
+                                            <constraint firstItem="Y9j-Bc-NjQ" firstAttribute="top" secondItem="HbZ-8B-kaK" secondAttribute="top" constant="5" id="N3o-lu-NVO"/>
+                                            <constraint firstItem="Y9j-Bc-NjQ" firstAttribute="leading" secondItem="HbZ-8B-kaK" secondAttribute="leading" constant="10" id="TdZ-iV-JnZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="CEz-Ri-yZR" secondAttribute="trailing" constant="10" id="cLV-Bp-DF9"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ok2-ZJ-DIk">
+                                        <rect key="frame" x="0.0" y="40" width="375" height="562"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GPCategoryCell" rowHeight="60" id="rq5-60-mfp" customClass="GPCategoryCell">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rq5-60-mfp" id="q7U-0b-Sex">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaI-YW-boh">
+                                                            <rect key="frame" x="10" y="12" width="148" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="148" id="nxU-WP-h2A"/>
+                                                                <constraint firstAttribute="height" constant="35" id="u1Z-Kp-0FJ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R25-Ws-Rq7">
+                                                            <rect key="frame" x="218" y="12" width="147" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="147" id="dmI-6b-QMu"/>
+                                                                <constraint firstAttribute="height" constant="35" id="fP7-Lb-1fF"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="R25-Ws-Rq7" firstAttribute="top" secondItem="q7U-0b-Sex" secondAttribute="top" constant="12" id="0pP-sD-2ma"/>
+                                                        <constraint firstItem="UaI-YW-boh" firstAttribute="top" secondItem="q7U-0b-Sex" secondAttribute="top" constant="12" id="MiX-tY-BLp"/>
+                                                        <constraint firstItem="UaI-YW-boh" firstAttribute="leading" secondItem="q7U-0b-Sex" secondAttribute="leading" constant="10" id="QZU-Mb-Mbg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="R25-Ws-Rq7" secondAttribute="trailing" constant="10" id="pKh-Ft-c5U"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="objCount_lbl" destination="R25-Ws-Rq7" id="ds1-1F-SwY"/>
+                                                    <outlet property="objType_lbl" destination="UaI-YW-boh" id="YP0-8i-mxA"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="wqg-ht-aBt" id="T8I-od-fBx"/>
+                                            <outlet property="delegate" destination="wqg-ht-aBt" id="UWA-xS-ESI"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="HbZ-8B-kaK" firstAttribute="leading" secondItem="vVl-iA-Jgv" secondAttribute="leading" id="Bb3-QS-QAO"/>
+                                    <constraint firstItem="Ok2-ZJ-DIk" firstAttribute="top" secondItem="HbZ-8B-kaK" secondAttribute="bottom" id="Lo5-eX-y0x"/>
+                                    <constraint firstItem="Ok2-ZJ-DIk" firstAttribute="leading" secondItem="vVl-iA-Jgv" secondAttribute="leading" id="NEz-pg-xTY"/>
+                                    <constraint firstAttribute="trailing" secondItem="HbZ-8B-kaK" secondAttribute="trailing" id="QOx-WX-qM6"/>
+                                    <constraint firstItem="HbZ-8B-kaK" firstAttribute="top" secondItem="vVl-iA-Jgv" secondAttribute="top" id="isR-gy-Bz3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ok2-ZJ-DIk" secondAttribute="trailing" id="vYH-ah-cGh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ok2-ZJ-DIk" secondAttribute="bottom" id="xbf-Yb-nAd"/>
+                                    <constraint firstItem="Ok2-ZJ-DIk" firstAttribute="top" secondItem="HbZ-8B-kaK" secondAttribute="bottom" id="z91-q8-0if"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vVl-iA-Jgv" firstAttribute="top" secondItem="EQF-et-L2B" secondAttribute="bottom" constant="45" id="1Yd-VJ-21d"/>
+                            <constraint firstItem="xc8-ml-uEN" firstAttribute="top" secondItem="vVl-iA-Jgv" secondAttribute="bottom" id="Z4I-jR-x3T"/>
+                            <constraint firstItem="vVl-iA-Jgv" firstAttribute="leading" secondItem="1jS-sg-ofb" secondAttribute="leading" id="ei5-16-MSA"/>
+                            <constraint firstAttribute="trailing" secondItem="vVl-iA-Jgv" secondAttribute="trailing" id="uHC-tt-FWD"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="objCategory_tbl" destination="Ok2-ZJ-DIk" id="HZ8-NU-LAv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K88-Dr-HX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5089.5" y="-1806.5"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="0ta-Kl-h3o">
+            <objects>
+                <viewController storyboardIdentifier="GPDetailvc" id="A15-9G-42U" customClass="GPDetailVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MAT-gt-oaP"/>
+                        <viewControllerLayoutGuide type="bottom" id="MW0-3H-wU4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pmm-Nk-6my">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PHS-wN-xGq">
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="199" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YSQ-f1-dKL">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="601"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GPDetailCell" rowHeight="199" id="AXC-zU-GTa" customClass="GPDetailCell">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="199"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AXC-zU-GTa" id="hJh-ek-6hu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVp-3l-RTa">
+                                                            <rect key="frame" x="10" y="5" width="130" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="130" id="rSU-rv-ZHf"/>
+                                                                <constraint firstAttribute="height" constant="30" id="tC7-r7-KgS"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6R-Q7-FnB">
+                                                            <rect key="frame" x="180" y="5" width="185" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="185" id="c8G-3E-ADL"/>
+                                                                <constraint firstAttribute="height" constant="30" id="dvV-4G-PYk"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdP-2z-350">
+                                                            <rect key="frame" x="10" y="40" width="130" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="hfS-rh-9eL"/>
+                                                                <constraint firstAttribute="width" constant="130" id="kla-Bf-fhP"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DA-da-8rU">
+                                                            <rect key="frame" x="180" y="40" width="185" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="FiT-rn-NY2"/>
+                                                                <constraint firstAttribute="width" constant="185" id="vM7-N4-aTH"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFg-U4-yEy">
+                                                            <rect key="frame" x="10" y="75" width="130" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="130" id="UtL-w4-1re"/>
+                                                                <constraint firstAttribute="height" constant="30" id="zkW-ox-Sm0"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4a-4g-Xx2">
+                                                            <rect key="frame" x="180" y="75" width="185" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="185" id="525-k5-0cS"/>
+                                                                <constraint firstAttribute="height" constant="30" id="oII-H2-bj8"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CompanyName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kid-Gb-kEQ">
+                                                            <rect key="frame" x="10" y="110" width="130" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="NfW-gT-eyk"/>
+                                                                <constraint firstAttribute="width" constant="130" id="ivp-1p-4aj"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cld-C0-SUD">
+                                                            <rect key="frame" x="180" y="110" width="185" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="185" id="5jd-7L-MIt"/>
+                                                                <constraint firstAttribute="height" constant="30" id="Wdv-Hq-hqw"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purpose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NT-JO-Dc7">
+                                                            <rect key="frame" x="10" y="145" width="130" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="RN2-Ue-vtd"/>
+                                                                <constraint firstAttribute="width" constant="130" id="ah1-wh-Tix"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOJ-Sd-R3x">
+                                                            <rect key="frame" x="180" y="145" width="185" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="HUh-yY-Itp"/>
+                                                                <constraint firstAttribute="width" constant="185" id="eIk-DH-c8d"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="5DA-da-8rU" firstAttribute="top" secondItem="P6R-Q7-FnB" secondAttribute="bottom" constant="5" id="8uL-Ux-1Lu"/>
+                                                        <constraint firstItem="Kid-Gb-kEQ" firstAttribute="leading" secondItem="hJh-ek-6hu" secondAttribute="leading" constant="10" id="BN1-Zw-UFu"/>
+                                                        <constraint firstItem="cld-C0-SUD" firstAttribute="top" secondItem="n4a-4g-Xx2" secondAttribute="bottom" constant="5" id="E9R-Ki-w5Y"/>
+                                                        <constraint firstItem="Kid-Gb-kEQ" firstAttribute="top" secondItem="rFg-U4-yEy" secondAttribute="bottom" constant="5" id="GA7-gR-c8x"/>
+                                                        <constraint firstItem="3NT-JO-Dc7" firstAttribute="leading" secondItem="hJh-ek-6hu" secondAttribute="leading" constant="10" id="KPZ-07-QvH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="P6R-Q7-FnB" secondAttribute="trailing" constant="10" id="Nh0-r9-H59"/>
+                                                        <constraint firstItem="n4a-4g-Xx2" firstAttribute="top" secondItem="5DA-da-8rU" secondAttribute="bottom" constant="5" id="PMK-MQ-Sai"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cld-C0-SUD" secondAttribute="trailing" constant="10" id="Q6X-2h-nlH"/>
+                                                        <constraint firstItem="tdP-2z-350" firstAttribute="leading" secondItem="hJh-ek-6hu" secondAttribute="leading" constant="10" id="TTh-Jx-uYy"/>
+                                                        <constraint firstItem="rFg-U4-yEy" firstAttribute="leading" secondItem="hJh-ek-6hu" secondAttribute="leading" constant="10" id="cw2-g0-bk2"/>
+                                                        <constraint firstItem="P6R-Q7-FnB" firstAttribute="top" secondItem="hJh-ek-6hu" secondAttribute="top" constant="5" id="dlH-6h-Xrh"/>
+                                                        <constraint firstItem="rFg-U4-yEy" firstAttribute="top" secondItem="tdP-2z-350" secondAttribute="bottom" constant="5" id="fTe-eV-8Is"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TOJ-Sd-R3x" secondAttribute="trailing" constant="10" id="fpH-4e-9WN"/>
+                                                        <constraint firstItem="RVp-3l-RTa" firstAttribute="leading" secondItem="hJh-ek-6hu" secondAttribute="leading" constant="10" id="gUg-HW-lcn"/>
+                                                        <constraint firstItem="RVp-3l-RTa" firstAttribute="top" secondItem="hJh-ek-6hu" secondAttribute="top" constant="5" id="mQd-yw-RPe"/>
+                                                        <constraint firstItem="TOJ-Sd-R3x" firstAttribute="top" secondItem="cld-C0-SUD" secondAttribute="bottom" constant="5" id="nxn-Ld-Jaw"/>
+                                                        <constraint firstItem="tdP-2z-350" firstAttribute="top" secondItem="RVp-3l-RTa" secondAttribute="bottom" constant="5" id="rQV-pP-32l"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5DA-da-8rU" secondAttribute="trailing" constant="10" id="vg9-uC-Buv"/>
+                                                        <constraint firstItem="3NT-JO-Dc7" firstAttribute="top" secondItem="Kid-Gb-kEQ" secondAttribute="bottom" constant="5" id="vuE-gF-hgH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="n4a-4g-Xx2" secondAttribute="trailing" constant="10" id="xrL-ri-v1q"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="companyName_lbl" destination="cld-C0-SUD" id="yFs-Ph-glY"/>
+                                                    <outlet property="gate_lbl" destination="P6R-Q7-FnB" id="lCS-in-aQq"/>
+                                                    <outlet property="name_lbl" destination="n4a-4g-Xx2" id="69z-CF-zCX"/>
+                                                    <outlet property="plant_lbl" destination="5DA-da-8rU" id="Onb-Eh-hJ8"/>
+                                                    <outlet property="purpose_lbl" destination="TOJ-Sd-R3x" id="dHC-Dn-jb0"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="A15-9G-42U" id="NQk-CU-Pwo"/>
+                                            <outlet property="delegate" destination="A15-9G-42U" id="d8l-8M-ltQ"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="YSQ-f1-dKL" secondAttribute="trailing" id="0C6-i3-m9X"/>
+                                    <constraint firstAttribute="bottom" secondItem="YSQ-f1-dKL" secondAttribute="bottom" constant="1" id="7BO-q4-lEA"/>
+                                    <constraint firstItem="YSQ-f1-dKL" firstAttribute="leading" secondItem="PHS-wN-xGq" secondAttribute="leading" id="kHx-11-bAb"/>
+                                    <constraint firstItem="YSQ-f1-dKL" firstAttribute="top" secondItem="PHS-wN-xGq" secondAttribute="top" id="lf7-vY-NXo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MW0-3H-wU4" firstAttribute="top" secondItem="PHS-wN-xGq" secondAttribute="bottom" id="Bla-rm-cLX"/>
+                            <constraint firstItem="PHS-wN-xGq" firstAttribute="leading" secondItem="pmm-Nk-6my" secondAttribute="leading" id="JEA-R7-hH2"/>
+                            <constraint firstItem="PHS-wN-xGq" firstAttribute="top" secondItem="MAT-gt-oaP" secondAttribute="bottom" constant="45" id="MrA-0N-abo"/>
+                            <constraint firstAttribute="trailing" secondItem="PHS-wN-xGq" secondAttribute="trailing" id="qrG-Zg-pvU"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="Detail_tbl" destination="YSQ-f1-dKL" id="gzm-X3-gPx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5m-GA-jih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5489.5" y="-1806.5"/>
         </scene>
         <!--ProjectVC-->
         <scene sceneID="6tv-8b-zWy">
@@ -5150,7 +5498,7 @@
                                                     <constraint firstAttribute="width" constant="159" id="zkh-US-nwq"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfP-2b-7D5">
@@ -5160,7 +5508,7 @@
                                                     <constraint firstAttribute="width" constant="165" id="gLE-RF-api"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -5191,7 +5539,7 @@
                                                                 <constraint firstAttribute="height" constant="52" id="dpl-Nc-dtL"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFQ-kJ-16B">
@@ -5201,7 +5549,7 @@
                                                                 <constraint firstAttribute="width" constant="182" id="tna-Hn-xt7"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -5286,7 +5634,7 @@
                                                     <constraint firstAttribute="height" constant="35" id="gvl-Zw-hPx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCESSTIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUg-tz-igg">
@@ -5296,7 +5644,7 @@
                                                     <constraint firstAttribute="width" constant="146" id="Yog-jv-RwP"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAz-0Z-JtH">
@@ -5306,7 +5654,7 @@
                                                     <constraint firstAttribute="height" constant="36" id="cad-z4-KZc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -5340,7 +5688,7 @@
                                                                 <constraint firstAttribute="width" constant="45" id="iTo-zk-yGN"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxK-AZ-lX4">
@@ -5350,7 +5698,7 @@
                                                                 <constraint firstAttribute="width" constant="159" id="OIr-WL-sOm"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="15"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSG-vU-x30">
@@ -5360,7 +5708,7 @@
                                                                 <constraint firstAttribute="width" constant="151" id="it6-lw-UoL"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="15"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -5392,7 +5740,7 @@
                                             <constraint firstAttribute="height" constant="27" id="fUc-16-fY0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Rajdhani-Bold" family="Rajdhani" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCz-XW-dAE">
@@ -5402,7 +5750,7 @@
                                             <constraint firstAttribute="height" constant="27" id="kmh-9M-k6f"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

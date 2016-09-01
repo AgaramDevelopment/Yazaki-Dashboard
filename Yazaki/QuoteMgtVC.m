@@ -264,7 +264,7 @@
             self.custom_lbl.text=[plantDic valueForKey:@"CUSTOMERNAME"];
             self.customCodeStr=[plantDic valueForKey:@"CUSTOMERCODE"];
         }
-        
+        self.tbl_select.hidden=YES;
     }
     
 }

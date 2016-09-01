@@ -42,6 +42,10 @@
 		1866708E1CAD209B001C349A /* NOTOKPiechartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866708D1CAD209B001C349A /* NOTOKPiechartVC.m */; };
 		187E494A1D78076C00A29CF6 /* ProjectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E49491D78076C00A29CF6 /* ProjectVC.m */; };
 		187E494D1D780A2E00A29CF6 /* ProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E494C1D780A2E00A29CF6 /* ProjectCell.m */; };
+		187E49501D7845F300A29CF6 /* GatepassCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E494F1D7845F300A29CF6 /* GatepassCategoryVC.m */; };
+		187E49531D784C1A00A29CF6 /* GPCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E49521D784C1A00A29CF6 /* GPCategoryCell.m */; };
+		187E49561D78593600A29CF6 /* GPDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E49551D78593600A29CF6 /* GPDetailVC.m */; };
+		187E49591D785A2D00A29CF6 /* GPDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E49581D785A2D00A29CF6 /* GPDetailCell.m */; };
 		1880C9981D6F283E0042733E /* DashBoardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880C9971D6F283E0042733E /* DashBoardCell.m */; };
 		1882BE3A1CA253B900D25D68 /* RAJDHANI-LIGHT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE361CA253B900D25D68 /* RAJDHANI-LIGHT.TTF */; };
 		1882BE3B1CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE371CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF */; };
@@ -161,6 +165,14 @@
 		187E49491D78076C00A29CF6 /* ProjectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectVC.m; sourceTree = "<group>"; };
 		187E494B1D780A2E00A29CF6 /* ProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectCell.h; sourceTree = "<group>"; };
 		187E494C1D780A2E00A29CF6 /* ProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectCell.m; sourceTree = "<group>"; };
+		187E494E1D7845F300A29CF6 /* GatepassCategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GatepassCategoryVC.h; sourceTree = "<group>"; };
+		187E494F1D7845F300A29CF6 /* GatepassCategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GatepassCategoryVC.m; sourceTree = "<group>"; };
+		187E49511D784C1A00A29CF6 /* GPCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPCategoryCell.h; sourceTree = "<group>"; };
+		187E49521D784C1A00A29CF6 /* GPCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPCategoryCell.m; sourceTree = "<group>"; };
+		187E49541D78593600A29CF6 /* GPDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPDetailVC.h; sourceTree = "<group>"; };
+		187E49551D78593600A29CF6 /* GPDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPDetailVC.m; sourceTree = "<group>"; };
+		187E49571D785A2D00A29CF6 /* GPDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPDetailCell.h; sourceTree = "<group>"; };
+		187E49581D785A2D00A29CF6 /* GPDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPDetailCell.m; sourceTree = "<group>"; };
 		1880C9961D6F283E0042733E /* DashBoardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardCell.h; sourceTree = "<group>"; };
 		1880C9971D6F283E0042733E /* DashBoardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardCell.m; sourceTree = "<group>"; };
 		1882BE361CA253B900D25D68 /* RAJDHANI-LIGHT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-LIGHT.TTF"; path = "Custome Fonts/RAJDHANI-LIGHT.TTF"; sourceTree = "<group>"; };
@@ -395,6 +407,14 @@
 				187E49491D78076C00A29CF6 /* ProjectVC.m */,
 				187E494B1D780A2E00A29CF6 /* ProjectCell.h */,
 				187E494C1D780A2E00A29CF6 /* ProjectCell.m */,
+				187E494E1D7845F300A29CF6 /* GatepassCategoryVC.h */,
+				187E494F1D7845F300A29CF6 /* GatepassCategoryVC.m */,
+				187E49511D784C1A00A29CF6 /* GPCategoryCell.h */,
+				187E49521D784C1A00A29CF6 /* GPCategoryCell.m */,
+				187E49541D78593600A29CF6 /* GPDetailVC.h */,
+				187E49551D78593600A29CF6 /* GPDetailVC.m */,
+				187E49571D785A2D00A29CF6 /* GPDetailCell.h */,
+				187E49581D785A2D00A29CF6 /* GPDetailCell.m */,
 				1863D5D31CA10D7700D2F625 /* Images.xcassets */,
 				CED1B5521CCDFC61001D54B3 /* Icon-40.png */,
 				CE67D9C11CD341F20042E4DB /* Icon-83.5@2x.png */,
@@ -599,6 +619,7 @@
 				186230D31CABDFE3001088C3 /* testingvc.m in Sources */,
 				CE75629C1D75B3FA00C7056D /* EffeciencyCell.m in Sources */,
 				CEC1C45B1D77FEC40008FCCB /* GiftDetailsCell.m in Sources */,
+				187E49591D785A2D00A29CF6 /* GPDetailCell.m in Sources */,
 				CE801B341D76F2B3007BCC58 /* GiftVCViewController.m in Sources */,
 				186173B81CA4F89A002A51DA /* MCNewCustomLayeredView.m in Sources */,
 				CE801B2B1D76B66D007BCC58 /* TrainningPieChartVC.m in Sources */,
@@ -609,9 +630,11 @@
 				18EC562A1D757E5F00516CA8 /* QuoteMgtVC.m in Sources */,
 				18EC56301D75B22800516CA8 /* ScrapCell.m in Sources */,
 				CE8680BC1D74422900463967 /* ProductionVC.m in Sources */,
+				187E49561D78593600A29CF6 /* GPDetailVC.m in Sources */,
 				CE801B2E1D76C6C4007BCC58 /* TrainningDetailsVC.m in Sources */,
 				1882BE421CA2911600D25D68 /* HomeMonthVC.m in Sources */,
 				1863D5EE1CA10F0800D2F625 /* LoginVC.m in Sources */,
+				187E49531D784C1A00A29CF6 /* GPCategoryCell.m in Sources */,
 				18D163C61D76B57F003EBAE2 /* QuoteVarientVC.m in Sources */,
 				CE8680BF1D74496000463967 /* ProdcutionCell.m in Sources */,
 				186173C41CA53FFD002A51DA /* testpie.m in Sources */,
@@ -641,6 +664,7 @@
 				1863D5C91CA10D7700D2F625 /* main.m in Sources */,
 				186230D61CABF13D001088C3 /* CatdetailsTableViewCell.m in Sources */,
 				186173BA1CA4F89A002A51DA /* MCSliceLayer.m in Sources */,
+				187E49501D7845F300A29CF6 /* GatepassCategoryVC.m in Sources */,
 				186173A91CA4F796002A51DA /* PieChartTest.m in Sources */,
 				18D163CC1D76EEB2003EBAE2 /* QuoteAmount.m in Sources */,
 				CEC1C4551D77FE8E0008FCCB /* GiftDetailsVC.m in Sources */,

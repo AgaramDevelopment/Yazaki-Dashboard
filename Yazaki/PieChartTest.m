@@ -13,6 +13,7 @@
 #import "DashboardVC.h"
 #import "ScrapDetailVC.h"
 #import "Common.h"
+#import "GatepassCategoryVC.h"
 
 
 @interface PieChartTest ()
@@ -48,6 +49,13 @@
     {
         baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPAREA/%@/%@/%@/%@",BaseURL,_selectPlantCode,self.selectAvoidablecode,str1,str2];
     }
+    else if ([self.selectType isEqualToString:@"8"])
+    {
+        _selectPlantCode=([_selectPlantCode isEqualToString:@"''"])?@"select":_selectPlantCode;
+        baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/VISITORSSESSION/%@/select/%@/%@",BaseURL,_selectPlantCode,str1,str2];
+    }
+
+    
     [self webServicemethod:baseURL];
     
     
@@ -107,6 +115,31 @@
             [self EmptyDataResponse];
         }
 
+    }
+    if([self.selectType isEqualToString:@"8"])
+    {
+        NSArray *temp =   [responseData objectForKey:@"Values"];
+        if( [responseData objectForKey:@"Values"] == nil ||
+           [[responseData objectForKey:@"Values"] isEqual:[NSNull null]] ||  temp.count ==0){
+            // value is unavailable
+            [self EmptyDataResponse];
+        }else
+        {
+            NSArray *temp =   [responseData objectForKey:@"Values"];
+            if ([temp isKindOfClass:[NSArray class]] && temp.count !=0)
+            {            // value is available
+                [self.values removeAllObjects];
+                self.values = [NSMutableArray new];
+                int i;
+                
+                for (i=0; i<[temp count]; i++) {
+                    
+                    NSDictionary*test=[temp objectAtIndex:i];
+                    NSString*add=[test objectForKey:@"CountValue"];
+                    [self.values addObject:add];
+                }
+            }
+        }
     }
     
     self.pieChartView.dataSource = self;
@@ -308,6 +341,29 @@
         [self.navigationController pushViewController:objScrapDetailVC animated:YES];
         
     }
+       
+    else if ([self.selectType isEqualToString:@"8"])
+    {
+        
+        
+        GatepassCategoryVC * objGatepassCategoryVC =  (GatepassCategoryVC*)[storyboard instantiateViewControllerWithIdentifier:@"GatepassCategoryvc"];
+        
+        self.values =   [_serviceResponse objectForKey:@"Values"];
+        // //destViewController = [CategoryVC.destViewController objectAtIndex:0];
+        NSDictionary *sample=[self.values objectAtIndex:index];
+        NSString * item=[sample objectForKey:@"SessionValue"];
+        
+        
+        //destViewController.category = item;
+        objGatepassCategoryVC.vistorType =item;
+        objGatepassCategoryVC.fromDate=str1;
+        objGatepassCategoryVC.Todate=str2;
+        objGatepassCategoryVC.plantCode=_selectPlantCode;
+        objGatepassCategoryVC.GateCode =@"Select";
+        [self.navigationController pushViewController:objGatepassCategoryVC animated:YES];
+        
+    }
+
     
  });
 }

@@ -139,7 +139,8 @@
     
     else if ([self.selectType isEqualToString: @"8"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/INITIALIZEGATEENTRYDASHBOARD/''/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        plancode =([plancode isEqualToString:@"''"])?@"select":plancode;
+        baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/INITIALIZEGATEENTRYDASHBOARD/%@/select/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
@@ -267,6 +268,22 @@
   
     else if ([selectOptionType isEqualToString: @"8"])
     {
+        NSArray *temp =   [responsData objectForKey:@"Visitors"];
+        if(temp.count == 1)
+        {
+            self.redCircle_view.hidden=YES;
+            self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+        }
+        NSDictionary *myslot=[temp objectAtIndex:0];
+        
+//        NSArray *temp1 =   [responsData objectForKey:@"Initialize_NotOk"];
+//        NSDictionary *myslot1=[temp1 objectAtIndex:0];
+        
+        self.ok_lbl.text=@"TotalVisitor";
+        //self.notOk_lbl.text=[myslot1 objectForKey:@"NAME"];
+        self.CountValues_Green_lbl.text=[myslot objectForKey:@"TotalVisitor"];
+        //self.CountValues_Red_lbl.text=[myslot1 objectForKey:@"COUNTVALUE"];
+        _planArray=[responsData objectForKey:@"Plants"];
     }
     
     else if ([selectOptionType isEqualToString: @"9"])
@@ -548,6 +565,22 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
        [self.navigationController pushViewController:initView animated:YES];
         
     }
+    
+    if([self.selectType isEqualToString: @"8"]){
+        
+        PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
+        NSString * plancode =(selectPlantCode == nil)?@"select":selectPlantCode;
+        initView.str1 = userUpdate;
+        initView.str2 = userUpdate1;
+        initView.selectPlantCode=plancode;
+        initView.selectType     =self.selectType;
+        NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
+        initView.dictObject = test;
+        
+        [self.navigationController pushViewController:initView animated:YES];
+        
+    }
+
     
 //
     
