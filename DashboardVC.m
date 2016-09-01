@@ -89,29 +89,33 @@
     cell.iconName_Lbl.text = [list valueForKey:@"DISPLAYNAME"];
     
     cell.common_View.layer.cornerRadius=10;
-    cell.common_View.backgroundColor=[UIColor colorWithRed:(223/255.0f) green:(37/255.0f) blue:(13/255.0f) alpha:1.0f];
+    //cell.common_View.backgroundColor=[UIColor colorWithRed:(223/255.0f) green:(37/255.0f) blue:(13/255.0f) alpha:1.0f];
     NSString *imgName_Str;
     
     if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"2"])
     {
         
         imgName_Str = @"canteenImg";
+        cell.common_View.backgroundColor=[UIColor colorWithRed:239/255.0 green:83/255.0 blue:66/255.0 alpha:1.0];
     }
     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"3"])
     {
         
         imgName_Str = @"productionImg";
+         cell.common_View.backgroundColor=[UIColor colorWithRed:148/255.0 green:89/255.0 blue:167/255.0 alpha:1.0];
     }
     
     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"4"])
     {
                imgName_Str = @"scrapImg";
+         cell.common_View.backgroundColor=[UIColor colorWithRed:74/255.0 green:175/255.0 blue:93/255.0 alpha:1.0];
     }
 
     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"5"])
     {
         
         imgName_Str = @"efficiencyImg";
+         cell.common_View.backgroundColor=[UIColor colorWithRed:55/255.0 green:68/255.0 blue:77/255.0 alpha:1.0];
     }
     
     
@@ -119,6 +123,7 @@
     {
         
         imgName_Str = @"quoteIMg";
+         cell.common_View.backgroundColor=[UIColor colorWithRed:43/255.0 green:183/255.0 blue:240/255.0 alpha:1.0];
     }
     
     
@@ -126,29 +131,34 @@
     {
         
         imgName_Str = @"trainingImg";
+         cell.common_View.backgroundColor=[UIColor colorWithRed:65/255.0 green:82/255.0 blue:175/255.0 alpha:1.0];
     }
     
     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"8"])
     {
         
         imgName_Str = @"gatepassImg";
+         cell.common_View.backgroundColor=[UIColor colorWithRed:11/255.0 green:161/255.0 blue:89/255.0 alpha:1.0];
     }
     
     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"9"])
     {
         
         imgName_Str = @"giftImg";
+         cell.common_View.backgroundColor=[UIColor colorWithRed:45/255.0 green:137/255.0 blue:190/255.0 alpha:1.0];
     }
     
     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"10"])
     {
         
         imgName_Str = @"projectImg";
+         cell.common_View.backgroundColor=[UIColor colorWithRed:255/255.0 green:144/255.0 blue:54/255.0 alpha:1.0];
     }
     
     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"12"])
     {
         imgName_Str = @"attendanceImg";
+         cell.common_View.backgroundColor=[UIColor colorWithRed:21/255.0 green:188/255.0 blue:175/255.0 alpha:1.0];
     }
 
     
@@ -238,7 +248,7 @@
 {
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
     [self.view addSubview:objCustomNavigation.view];
-    objCustomNavigation.lbl_titleName.text=@"CANTEEN";
+    objCustomNavigation.lbl_titleName.text=@"DASHBOARD";
     [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
     
 }

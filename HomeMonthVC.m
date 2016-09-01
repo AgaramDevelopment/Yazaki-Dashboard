@@ -452,6 +452,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     
     
    else if([self.selectType isEqualToString: @"5"]){
+         if (![self.CountValues_Green_lbl.text  isEqual: @"0"])
+         {
         
         EfficiencyLineVC *initView =  (EfficiencyLineVC*)[storyboard instantiateViewControllerWithIdentifier:@"effeciencyLine"];
         NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
@@ -459,7 +461,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         initView.tostr = userUpdate1;
         initView.selectPlantCode=plancode;
       [self.navigationController pushViewController:initView animated:YES];
-        
+         }
+       
     }
     
     
@@ -540,12 +543,15 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     
     
     if([self.selectType isEqualToString: @"3"]){
+        if (![self.CountValues_Green_lbl.text  isEqual: @"0"])
+        {
         
         ProductionVC *initView =  (ProductionVC*)[storyboard instantiateViewControllerWithIdentifier:@"Productionvc"];
         initView.FromStr = userUpdate;
         initView.ToStr = userUpdate1;
         initView.selectPlantCode=selectPlantCode;
        [self.navigationController pushViewController:initView animated:YES];
+        }
         
     }
     
