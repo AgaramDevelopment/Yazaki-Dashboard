@@ -178,7 +178,8 @@
 }
 - (IBAction)Green_btn:(id)sender {
     
-    
+    if (![self.display_greenCountValue_lbl.text  isEqual: @"0"])
+    {
     
       GiftType =(GiftType == nil)?@"''":GiftType;
    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -187,6 +188,6 @@
    
     [self.navigationController pushViewController:initView animated:YES];
     
-    
+    }
 }
 @end

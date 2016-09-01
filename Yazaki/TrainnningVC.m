@@ -86,10 +86,13 @@
 
 - (IBAction)traingTouch_btn:(id)sender {
    // UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    if (![self.traingDisplay_lbl.text  isEqual: @"0"])
+    {
     TrainningPieChartVC *initView = [[TrainningPieChartVC alloc]init];
     initView =  (TrainningPieChartVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"TrainningChart"];
     [self.navigationController pushViewController:initView animated:YES];
     
-    
+    }
 }
 @end
