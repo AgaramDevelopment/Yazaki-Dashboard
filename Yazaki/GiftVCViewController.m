@@ -10,18 +10,22 @@
 #import "CustomNavigationVC.h"
 #import "Common.h"
 #import "DashboardVC.h"
+#import "GiftProcessVC.h"
 
 @interface GiftVCViewController ()
 {CustomNavigationVC *objCustomNavigation;
+    
    
 }
 @property(nonatomic,strong)NSMutableArray*purposeArray;
 @property(nonatomic,strong) NSDictionary * puposeDict;
+@property(nonatomic,strong) NSString* GiftType;
 @end
 
 @implementation GiftVCViewController
 @synthesize purposeArray;
 @synthesize puposeDict;
+@synthesize GiftType;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
@@ -109,13 +113,13 @@
     UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     self.select_purpose_lbl.text =cell.textLabel.text;
     puposeDict=[purposeArray objectAtIndex:indexPath.row];
-    NSString* selectPlantCode= self.select_purpose_lbl.text;
-    selectPlantCode=[puposeDict valueForKey:@"LOCATIONCODE"];
+    GiftType= self.select_purpose_lbl.text;
+    GiftType=[puposeDict valueForKey:@"LOCATIONCODE"];
     
     self.tablview.hidden=YES;
     
-        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
-    NSString *baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTPROCESSTYPECHANGED/%@",BaseURL,plancode];
+       GiftType =(GiftType == nil)?@"''":GiftType;
+    NSString *baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTPROCESSTYPECHANGED/%@",BaseURL,GiftType];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -173,5 +177,16 @@
         self.tablview.hidden=YES;
 }
 - (IBAction)Green_btn:(id)sender {
+    
+    
+    
+      GiftType =(GiftType == nil)?@"''":GiftType;
+   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    GiftProcessVC *initView =  (GiftProcessVC*)[storyboard instantiateViewControllerWithIdentifier:@"GiftProcess"];
+    initView.GiftType = GiftType;
+   
+    [self.navigationController pushViewController:initView animated:YES];
+    
+    
 }
 @end
