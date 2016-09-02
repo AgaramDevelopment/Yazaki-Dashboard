@@ -755,6 +755,7 @@
                                             <constraint firstAttribute="width" constant="194" id="EFR-7l-y4b"/>
                                             <constraint firstAttribute="height" constant="87" id="KC6-ZF-0UO"/>
                                         </constraints>
+                                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="dataSource" destination="R9T-sj-6wA" id="uO1-ZX-wia"/>
                                             <outlet property="delegate" destination="R9T-sj-6wA" id="Brf-pS-SSf"/>
@@ -2564,19 +2565,6 @@
                                             <action selector="didClickClearBtnAction:" destination="qAT-c5-zLg" eventType="touchUpInside" id="8Da-SU-wBS"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DJK-KZ-xZX">
-                                        <rect key="frame" x="175" y="50" width="185" height="110"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="110" id="nh2-Eh-6Aw"/>
-                                            <constraint firstAttribute="width" constant="185" id="rLN-t3-uBb"/>
-                                        </constraints>
-                                        <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="qAT-c5-zLg" id="uhn-dP-neT"/>
-                                            <outlet property="delegate" destination="qAT-c5-zLg" id="YCH-xk-wTD"/>
-                                        </connections>
-                                    </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofe-2D-KPN">
                                         <rect key="frame" x="0.0" y="172" width="375" height="70"/>
                                         <subviews>
@@ -2656,6 +2644,20 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DJK-KZ-xZX">
+                                        <rect key="frame" x="170" y="47" width="194" height="91"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="91" id="nh2-Eh-6Aw"/>
+                                            <constraint firstAttribute="width" constant="194" id="rLN-t3-uBb"/>
+                                        </constraints>
+                                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="qAT-c5-zLg" id="uhn-dP-neT"/>
+                                            <outlet property="delegate" destination="qAT-c5-zLg" id="YCH-xk-wTD"/>
+                                        </connections>
+                                    </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bc6-XN-7dF">
                                         <rect key="frame" x="0.0" y="242" width="375" height="360"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2732,7 +2734,7 @@
                                     <constraint firstItem="Bc6-XN-7dF" firstAttribute="trailing" secondItem="Ofe-2D-KPN" secondAttribute="trailing" id="CD6-xS-IdQ"/>
                                     <constraint firstItem="tGv-SP-NZg" firstAttribute="top" secondItem="AiW-06-5T6" secondAttribute="top" id="CFa-wX-dT1"/>
                                     <constraint firstAttribute="trailing" secondItem="AiW-06-5T6" secondAttribute="trailing" constant="11" id="Cqb-UV-BcM"/>
-                                    <constraint firstItem="DJK-KZ-xZX" firstAttribute="top" secondItem="AiW-06-5T6" secondAttribute="bottom" constant="4" id="Dpb-p1-Ebx"/>
+                                    <constraint firstItem="DJK-KZ-xZX" firstAttribute="top" secondItem="AiW-06-5T6" secondAttribute="bottom" constant="1" id="Dpb-p1-Ebx"/>
                                     <constraint firstItem="tGv-SP-NZg" firstAttribute="leading" secondItem="Rxz-Lz-gL0" secondAttribute="leading" id="Ewq-6G-M7M"/>
                                     <constraint firstItem="Bc6-XN-7dF" firstAttribute="leading" secondItem="Epr-GL-KIc" secondAttribute="leading" id="Gj0-1e-UYB"/>
                                     <constraint firstAttribute="trailing" secondItem="Ofe-2D-KPN" secondAttribute="trailing" id="GtX-wz-a4P"/>
@@ -2740,7 +2742,7 @@
                                     <constraint firstAttribute="trailing" secondItem="smB-GQ-T30" secondAttribute="trailing" constant="11" id="KjW-5L-uUy"/>
                                     <constraint firstAttribute="trailing" secondItem="A5n-i8-Ofl" secondAttribute="trailing" constant="21" id="MBs-GS-bqt"/>
                                     <constraint firstItem="tGv-SP-NZg" firstAttribute="leading" secondItem="Epr-GL-KIc" secondAttribute="leading" constant="15" id="Uff-X2-Ask"/>
-                                    <constraint firstAttribute="trailing" secondItem="DJK-KZ-xZX" secondAttribute="trailing" constant="15" id="VC5-Ax-SAR"/>
+                                    <constraint firstAttribute="trailing" secondItem="DJK-KZ-xZX" secondAttribute="trailing" constant="11" id="VC5-Ax-SAR"/>
                                     <constraint firstItem="tGv-SP-NZg" firstAttribute="trailing" secondItem="Rxz-Lz-gL0" secondAttribute="trailing" id="Y8Q-YL-F2u"/>
                                     <constraint firstItem="A5n-i8-Ofl" firstAttribute="leading" secondItem="BmG-Zl-fN0" secondAttribute="trailing" constant="17" id="YaD-pD-g9L"/>
                                     <constraint firstItem="Bc6-XN-7dF" firstAttribute="top" secondItem="Ofe-2D-KPN" secondAttribute="bottom" id="am6-jh-jn3"/>
@@ -2793,7 +2795,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYn-KX-CG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3638.5" y="-93.5"/>
+            <point key="canvasLocation" x="4070.5" y="914.5"/>
         </scene>
         <!--Quote VarientVC-->
         <scene sceneID="IWf-sl-vld">
@@ -3500,6 +3502,7 @@
                                                     <constraint firstAttribute="height" constant="87" id="Rqc-CN-QPo"/>
                                                     <constraint firstAttribute="width" constant="194" id="v80-22-CTv"/>
                                                 </constraints>
+                                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="Zoa-Yd-cGX" id="4re-5N-9w4"/>
                                                     <outlet property="delegate" destination="Zoa-Yd-cGX" id="jYM-hr-pgq"/>
@@ -5426,12 +5429,13 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2vD-ee-Ne5">
-                                <rect key="frame" x="173" y="114" width="194" height="128"/>
+                                <rect key="frame" x="173" y="114" width="194" height="75"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="5v9-Sw-HPX"/>
+                                    <constraint firstAttribute="height" constant="75" id="5v9-Sw-HPX"/>
                                     <constraint firstAttribute="width" constant="194" id="r0m-2j-m2p"/>
                                 </constraints>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="MDb-5H-OdQ" id="ESG-e3-aiB"/>
                                     <outlet property="delegate" destination="MDb-5H-OdQ" id="UvE-u4-VKZ"/>

@@ -32,7 +32,8 @@
     self.green_outelet_tbtn.layer.cornerRadius=105;
     self.green_outelet_tbtn.layer.masksToBounds=YES;
     self.display_greenCountValue_lbl.text=@"0";
-    
+    self.tablview.layer.borderWidth = 2.0;
+    self.tablview.layer.borderColor = [UIColor colorWithRed:(223/255.0f) green:(37/255.0f) blue:(13/255.0f) alpha:1.0f].CGColor;
     [self.tablview setHidden:YES];
     NSString *baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTINITIALIZE",BaseURL];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];

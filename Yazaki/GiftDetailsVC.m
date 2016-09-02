@@ -32,7 +32,7 @@
     self.category_lbl.text=categoryname;
     GiftDetailsArray =[[NSMutableArray alloc]init];
     
-    
+
     
     NSString *baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTPROCESSDETAILED/%@/%@",BaseURL,GiftType,categoryID];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
