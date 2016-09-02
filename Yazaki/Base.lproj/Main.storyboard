@@ -113,14 +113,14 @@
             <string>Rajdhani-Medium</string>
             <string>Rajdhani-Medium</string>
             <string>Rajdhani-Medium</string>
-            <string>Rajdhani-Medium</string>
-            <string>Rajdhani-Medium</string>
-            <string>Rajdhani-Medium</string>
-            <string>Rajdhani-Medium</string>
-            <string>Rajdhani-Medium</string>
-            <string>Rajdhani-Medium</string>
         </mutableArray>
         <mutableArray key="RAJDHANI-SEMIBOLD.TTF">
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
+            <string>Rajdhani-Semibold</string>
             <string>Rajdhani-Semibold</string>
             <string>Rajdhani-Semibold</string>
             <string>Rajdhani-Semibold</string>
@@ -3006,12 +3006,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDb-sW-RLE">
                                 <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="310" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="az9-oK-Pk4">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="279" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="az9-oK-Pk4">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="602"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProjectMgtCell" rowHeight="290" id="rtR-Bi-Aly" customClass="ProjectMgtCell">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="290"/>
+                                                <rect key="frame" x="0.0" y="1" width="375" height="290"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rtR-Bi-Aly" id="wOK-sD-AaD">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="289"/>
@@ -3023,7 +3023,7 @@
                                                                 <constraint firstAttribute="width" constant="130" id="6Uz-Mm-gyc"/>
                                                                 <constraint firstAttribute="height" constant="30" id="IyE-iR-BQX"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3033,17 +3033,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="E4p-QS-nnp"/>
                                                                 <constraint firstAttribute="width" constant="130" id="xdQ-v2-KTJ"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNF-OO-R7d">
-                                                            <rect key="frame" x="185" y="40" width="176" height="30"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="176" id="Pkb-i7-970"/>
-                                                                <constraint firstAttribute="height" constant="30" id="RhY-Uo-DRE"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3053,7 +3043,17 @@
                                                                 <constraint firstAttribute="width" constant="130" id="F9V-9h-hhG"/>
                                                                 <constraint firstAttribute="height" constant="30" id="cxs-Zd-cSa"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNF-OO-R7d">
+                                                            <rect key="frame" x="185" y="40" width="176" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="176" id="Pkb-i7-970"/>
+                                                                <constraint firstAttribute="height" constant="30" id="RhY-Uo-DRE"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3063,7 +3063,7 @@
                                                                 <constraint firstAttribute="width" constant="176" id="38U-o1-wgz"/>
                                                                 <constraint firstAttribute="height" constant="30" id="b7K-gJ-pQy"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3073,7 +3073,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="el5-1H-uXO"/>
                                                                 <constraint firstAttribute="width" constant="130" id="why-u9-KA8"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3083,7 +3083,7 @@
                                                                 <constraint firstAttribute="width" constant="176" id="Mg6-5d-xUh"/>
                                                                 <constraint firstAttribute="height" constant="30" id="yKm-7T-bBf"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3093,7 +3093,7 @@
                                                                 <constraint firstAttribute="width" constant="130" id="Cou-qk-Ol6"/>
                                                                 <constraint firstAttribute="height" constant="30" id="Pm3-Hm-EB5"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3103,7 +3103,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="E8d-G5-wQO"/>
                                                                 <constraint firstAttribute="width" constant="176" id="pfZ-wq-myc"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3113,7 +3113,7 @@
                                                                 <constraint firstAttribute="width" constant="130" id="O3I-bc-bhk"/>
                                                                 <constraint firstAttribute="height" constant="30" id="kZB-gn-iMy"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3123,7 +3123,7 @@
                                                                 <constraint firstAttribute="width" constant="176" id="7mP-Tt-RKI"/>
                                                                 <constraint firstAttribute="height" constant="30" id="9Uy-cj-Js7"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3133,7 +3133,7 @@
                                                                 <constraint firstAttribute="width" constant="130" id="2MO-bW-AyE"/>
                                                                 <constraint firstAttribute="height" constant="30" id="tli-me-Rhe"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3143,7 +3143,7 @@
                                                                 <constraint firstAttribute="width" constant="176" id="p3p-o7-EqJ"/>
                                                                 <constraint firstAttribute="height" constant="30" id="qaP-Dv-S5Y"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3153,7 +3153,7 @@
                                                                 <constraint firstAttribute="width" constant="130" id="3wy-Pi-rYQ"/>
                                                                 <constraint firstAttribute="height" constant="30" id="59u-gu-Ueq"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3163,7 +3163,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="GQw-Uq-Urq"/>
                                                                 <constraint firstAttribute="width" constant="176" id="khd-ox-aDw"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -3173,7 +3173,7 @@
                                                                 <constraint firstAttribute="width" constant="176" id="SR6-AQ-Cbc"/>
                                                                 <constraint firstAttribute="height" constant="30" id="qVr-eA-sGd"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="13"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -4143,7 +4143,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="78" id="nOq-wA-8uf"/>
                                             <constraint firstAttribute="height" constant="20" id="sgA-g0-OYy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="10"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgZ-CV-qbk">
@@ -4154,7 +4154,7 @@
                                             <constraint firstAttribute="width" constant="66" id="UZR-Ie-izZ"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="vnj-og-Nxt"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="10"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break Fast" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykK-0H-kGW">
@@ -4165,7 +4165,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="78" id="QO5-cJ-jHL"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="pyk-nn-RqK"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="10"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWa-jx-wV0">
@@ -4174,7 +4174,7 @@
                                             <constraint firstAttribute="height" constant="20" id="RPc-Vg-SPB"/>
                                             <constraint firstAttribute="width" constant="78" id="b9c-Bf-6LF"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="10"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4192,7 +4192,7 @@
                                             <constraint firstAttribute="width" constant="60" id="5Jc-fv-o6Z"/>
                                             <constraint firstAttribute="height" constant="20" id="W0j-rN-qcw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="10"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4204,7 +4204,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="ZFr-BH-dCw"/>
                                             <constraint firstAttribute="height" constant="20" id="fmF-nk-oWX"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Rajdhani-Medium" family="Rajdhani" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Rajdhani-Semibold" family="Rajdhani" pointSize="10"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

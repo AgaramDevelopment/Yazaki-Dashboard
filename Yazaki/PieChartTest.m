@@ -70,7 +70,7 @@
         baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPAREA/%@/%@/%@/%@",BaseURL,_selectPlantCode,self.selectAvoidablecode,str1,str2];
         
         self.Status_lbl.text=@"Scrap Type";
-        self.Ok_lbl.text=self.selectAvoidablecode;
+        self.Ok_lbl.text=self.selectValuetype;
         _Heading_lbl.text=@"Scrap Area";
     }
     else if ([self.selectType isEqualToString:@"8"])

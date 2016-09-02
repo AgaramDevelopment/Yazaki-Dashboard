@@ -19,6 +19,7 @@
 @property(strong,nonatomic)NSString *selectPlantCode;
 @property(strong,nonatomic)NSString *selectType;
 @property (strong,nonatomic) NSString * selectAvoidablecode;
+@property (strong,nonatomic) NSString * selectValuetype;
 @property (weak, nonatomic) IBOutlet UIView *legend_ok_view;
 @property (strong, nonatomic) IBOutlet UILabel *lbl_name1;
 @property (strong, nonatomic) IBOutlet UILabel *lbl_name2;

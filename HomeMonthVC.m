@@ -538,6 +538,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
                NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
             initView.selectPlantCode=plancode;
             initView.selectType     =self.selectType;
+            initView.selectValuetype=self.ok_lbl.text;
            
             NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
             initView.dictObject = test;
