@@ -260,12 +260,14 @@
             NSDictionary * plantDic = [Plantarray objectAtIndex:indexPath.row];
             self.plant_lbl.text=[plantDic valueForKey:@"PLANTNAME"];
             self.plantCodeStr  =[plantDic valueForKey:@"PLANTCODE"];
+            isPlantTbl=NO;
         }
-        else
+        else if(isCustomerTbl==YES)
         {
             NSDictionary * plantDic = [CustomerArray objectAtIndex:indexPath.row];
             self.custom_lbl.text=[plantDic valueForKey:@"CUSTOMERNAME"];
             self.customCodeStr=[plantDic valueForKey:@"CUSTOMERCODE"];
+            isCustomerTbl=NO;
         }
         self.tbl_select.hidden=YES;
     }
@@ -278,6 +280,9 @@
     
     self.customCodeStr=([self.customCodeStr isEqualToString:@""] || self.customCodeStr==nil)?@"''":self.customCodeStr;
     [self webService:self.plantCodeStr : self.customCodeStr];
+    
+    [self.Quote_tbl reloadData];
+    
 }
 
 -(IBAction)didClickClearBtnAction:(id)sender

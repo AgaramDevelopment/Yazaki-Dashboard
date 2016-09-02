@@ -236,6 +236,20 @@
     
     else if ([selectOptionType isEqualToString: @"8"])
     {
+        
+        NSArray *temp =   [responsData objectForKey:@"Visitors"];
+        if(temp.count == 1)
+        {
+            self.redCircle_view.hidden=YES;
+            self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+        }
+        NSDictionary *myslot=[temp objectAtIndex:0];
+        
+        self.Ok_lbl.text=@"TotalVisitor";
+        
+        self.CountValues_Green_lbl.text=[myslot objectForKey:@"TotalVisitor"];
+        
+        _planArray=[responsData objectForKey:@"Plants"];
     }
     
     else if ([selectOptionType isEqualToString: @"9"])
@@ -447,6 +461,23 @@
          }
         
     }
+    
+    
+    if([self.selectType isEqualToString: @"8"]){
+        
+        PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
+        NSString * plancode =(selectPlantCode == nil)?@"select":selectPlantCode;
+        initView.str1 = userUpdate;
+        initView.str2 = userUpdate1;
+        initView.selectPlantCode=plancode;
+        initView.selectType     =self.selectType;
+        NSString *test =[NSString stringWithFormat:@"%@",[self.Ok_lbl text]];
+        initView.dictObject = test;
+        
+        [self.navigationController pushViewController:initView animated:YES];
+        
+    }
+
     
     
     
