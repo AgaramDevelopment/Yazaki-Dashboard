@@ -188,6 +188,7 @@
     self.pieChartView.sliceColor = [UIColor whiteColor];
     self.pieChartView.borderColor = [UIColor clearColor];
     self.pieChartView.selectedSliceColor = [MCUtil flatSunFlowerColor];
+        
     self.pieChartView.textColor = [UIColor blackColor];
     self.pieChartView.selectedTextColor = [UIColor whiteColor];
     self.pieChartView.borderPercentage = 0.01;
