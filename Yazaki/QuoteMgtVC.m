@@ -235,7 +235,7 @@
         NSDictionary * customername =[CustomerArray objectAtIndex:indexPath.row];
         
         cell.textLabel.text =(isPlantTbl == YES)?[plan valueForKey:@"PLANTNAME"]:[customername valueForKey:@"CUSTOMERNAME"];
-        //cell.customername_lbl.text = [customername valueForKey:@"CUSTOMERNAME"];
+       cell.textLabel.font=[UIFont fontWithName:@"RAJDHANI-BOLD" size:cell.textLabel.font.pointSize];
         return cell;
     }
 }

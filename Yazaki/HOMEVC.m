@@ -543,6 +543,8 @@
     
     _planDict=[_planArray objectAtIndex:indexPath.row];
     cell.textLabel.text =[_planDict objectForKey:@"PLANTNAME"];
+    
+     cell.textLabel.font=[UIFont fontWithName:@"RAJDHANI-BOLD" size:cell.textLabel.font.pointSize];
     return cell;
 }
 

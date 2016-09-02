@@ -105,6 +105,7 @@
     
   puposeDict=[purposeArray objectAtIndex:indexPath.row];
     cell.textLabel.text =[puposeDict valueForKey:@"LOCATIONNAME"];
+    cell.textLabel.font=[UIFont fontWithName:@"RAJDHANI-BOLD" size:cell.textLabel.font.pointSize];
     return cell;
 }
 
