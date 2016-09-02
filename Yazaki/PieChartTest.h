@@ -20,9 +20,21 @@
 @property(strong,nonatomic)NSString *selectType;
 @property (strong,nonatomic) NSString * selectAvoidablecode;
 @property (weak, nonatomic) IBOutlet UIView *legend_ok_view;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_name1;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_name2;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_name3;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_name4;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_name5;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_name6;
 - (IBAction)BreakFast_btn:(id)sender;
 - (IBAction)Dinner_btn:(id)sender;
 - (IBAction)Lunch_btn:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *btn_selectColor5;
+@property (strong, nonatomic) IBOutlet UIButton *btn_selectColor6;
+@property (strong, nonatomic) IBOutlet UIButton *btn_selectColor1;
+@property (strong, nonatomic) IBOutlet UIButton *btn_selectColor2;
+@property (strong, nonatomic) IBOutlet UIButton *btn_selectColor3;
+@property (strong, nonatomic) IBOutlet UIButton *btn_selectColor4;
 
 - (IBAction)Supper_btn:(id)sender;
 

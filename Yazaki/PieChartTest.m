@@ -1,4 +1,4 @@
-//
+ //
 //  PieChartTest.m
 //  Yazaki
 //
@@ -40,17 +40,49 @@
     [super viewDidLoad];
     
     [self customnavigationmethod];
+    
+    self.lbl_name5.hidden=YES;
+    self.lbl_name6.hidden=YES;
+    self.btn_selectColor5.hidden=YES;
+    self.btn_selectColor6.hidden=YES;
+    
     NSString *baseURL;
+    
     if([self.selectType isEqualToString:@"2"])
     {
        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/SESSION/%@/%@/%@/%@",BaseURL,dictObject,_selectPlantCode,str1,str2];
     }
     else if ([self.selectType isEqualToString:@"4"])
     {
+        self.lbl_name5.hidden=NO;
+        self.lbl_name6.hidden=NO;
+        
+        self.btn_selectColor5.hidden=NO;
+        self.btn_selectColor6.hidden=NO;
+        
+        self.lbl_name1.text =@"ASSEMBLY";
+        self.lbl_name2.text =@"AUTOCUTTING";
+        self.lbl_name3.text =@"BATTERYCABLE";
+        self.lbl_name4.text =@"MANUAL";
+        self.lbl_name5.text =@"TWISTING";
+        self.lbl_name6.text =@"WELDING";
+        
         baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPAREA/%@/%@/%@/%@",BaseURL,_selectPlantCode,self.selectAvoidablecode,str1,str2];
     }
     else if ([self.selectType isEqualToString:@"8"])
     {
+        self.lbl_name1.text =@"WITH APPOINTMENT";
+        self.lbl_name2.text =@"WITHOUT APPOINTMENT";
+        self.lbl_name3.hidden=YES;
+        self.lbl_name4.hidden=YES;
+        self.lbl_name5.hidden=YES;
+        self.lbl_name6.hidden=YES;
+        
+        self.btn_selectColor3.hidden=YES;
+        self.btn_selectColor4.hidden=YES;
+        self.btn_selectColor5.hidden=YES;
+        self.btn_selectColor6.hidden=YES;
+        
         _selectPlantCode=([_selectPlantCode isEqualToString:@"''"])?@"select":_selectPlantCode;
         baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/VISITORSSESSION/%@/select/%@/%@",BaseURL,_selectPlantCode,str1,str2];
     }
