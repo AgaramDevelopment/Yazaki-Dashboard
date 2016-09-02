@@ -91,10 +91,7 @@
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
     
     [self CommonWebserviceMethod:userUpdate :userUpdate1];
-    
-    
 
-    
     
 }
 
@@ -254,10 +251,7 @@
             self.ok_lbl.text=@"TOTAL EFFICIENCY";
             
             self.CountValues_Green_lbl.text=@"0";
-            
         
-        
-       
     }
     
     
@@ -409,9 +403,6 @@ DashboardVC *initView = [[DashboardVC alloc]init];
 initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
 [self.navigationController pushViewController:initView animated:YES];
 }
-
-
-
 - (IBAction)red_Month_btn:(id)sender {
     NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
     NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
@@ -440,8 +431,6 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
 //        
 //        [self.navigationController pushViewController:initView animated:YES];
 //    }
-    
-    
     
 }
 
@@ -501,12 +490,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         if (responseData != nil) {
             
             
-            self.redCircle_view.hidden=NO;
+
             isScrap=YES;
-            
-            self.redib_btn.backgroundColor=[UIColor colorWithRed:(40/255.0f) green:(113/255.0f) blue:(42/255.0f) alpha:1.0f];
-            
-            self.greenviewXposition.constant=13;
             
             ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
             NSArray *temp =   [ResultHolderDict objectForKey:@"Avoidable"];
@@ -514,6 +499,10 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
             if(temp.count > 0)
             {
                myslot=[temp objectAtIndex:0];
+               self.redCircle_view.hidden=NO;
+               self.redib_btn.backgroundColor=[UIColor colorWithRed:(40/255.0f) green:(113/255.0f) blue:(42/255.0f) alpha:1.0f];
+                
+               self.greenviewXposition.constant=13;
             }
             NSArray *temp1 =   [ResultHolderDict objectForKey:@"unAvoidable"];
             NSDictionary *myslot1=[temp1 objectAtIndex:0];
@@ -574,6 +563,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     
     if([self.selectType isEqualToString: @"8"]){
         
+        if(![self.CountValues_Green_lbl.text isEqualToString:@"0"])
+        {
         PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
         NSString * plancode =(selectPlantCode == nil)?@"select":selectPlantCode;
         initView.str1 = userUpdate;
@@ -584,13 +575,9 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         initView.dictObject = test;
         
         [self.navigationController pushViewController:initView animated:YES];
+        }
         
     }
-
-    
-//
-    
-    
 }
 
 - (IBAction)touch_plant_btn:(id)sender {
