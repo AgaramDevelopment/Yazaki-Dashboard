@@ -32,6 +32,9 @@
     [super viewDidLoad];
     [self customnavigationmethod];
     self.tableView.hidden=YES;
+    self.tableView.layer.borderWidth = 2.0;
+    self.tableView.layer.borderColor = [UIColor colorWithRed:(223/255.0f) green:(37/255.0f) blue:(13/255.0f) alpha:1.0f].CGColor;
+    
     datepicker=[[UIDatePicker alloc]init];
     datepicker1=[[UIDatePicker alloc]init];
     datepicker.datePickerMode=UIDatePickerModeDate;
@@ -540,6 +543,8 @@
     
     _planDict=[_planArray objectAtIndex:indexPath.row];
     cell.textLabel.text =[_planDict objectForKey:@"PLANTNAME"];
+    
+     cell.textLabel.font=[UIFont fontWithName:@"RAJDHANI-BOLD" size:cell.textLabel.font.pointSize];
     return cell;
 }
 

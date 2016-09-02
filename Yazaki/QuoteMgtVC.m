@@ -35,6 +35,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
+    self.tbl_select.layer.borderWidth = 2.0;
+    self.tbl_select.layer.borderColor = [UIColor colorWithRed:(223/255.0f) green:(37/255.0f) blue:(13/255.0f) alpha:1.0f].CGColor;
+    
     objQUMArray=[[NSMutableArray alloc]init];
     Plantarray  =[[NSMutableArray alloc]init];
      DetailsArray  =[[NSMutableArray alloc]init];
@@ -232,7 +235,7 @@
         NSDictionary * customername =[CustomerArray objectAtIndex:indexPath.row];
         
         cell.textLabel.text =(isPlantTbl == YES)?[plan valueForKey:@"PLANTNAME"]:[customername valueForKey:@"CUSTOMERNAME"];
-        //cell.customername_lbl.text = [customername valueForKey:@"CUSTOMERNAME"];
+       cell.textLabel.font=[UIFont fontWithName:@"RAJDHANI-BOLD" size:cell.textLabel.font.pointSize];
         return cell;
     }
 }
