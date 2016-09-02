@@ -35,7 +35,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *btn_selectColor2;
 @property (strong, nonatomic) IBOutlet UIButton *btn_selectColor3;
 @property (strong, nonatomic) IBOutlet UIButton *btn_selectColor4;
+@property (strong, nonatomic) IBOutlet UILabel *Status_lbl;
+@property (strong, nonatomic) IBOutlet UILabel *Ok_lbl;
 
 - (IBAction)Supper_btn:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *Heading_lbl;
 
 @end

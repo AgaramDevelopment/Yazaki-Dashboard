@@ -68,6 +68,10 @@
         self.lbl_name6.text =@"WELDING";
         
         baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPAREA/%@/%@/%@/%@",BaseURL,_selectPlantCode,self.selectAvoidablecode,str1,str2];
+        
+        self.Status_lbl.text=@"Scrap Type";
+        self.Ok_lbl.text=self.selectAvoidablecode;
+        _Heading_lbl.text=@"Scrap Area";
     }
     else if ([self.selectType isEqualToString:@"8"])
     {
@@ -78,10 +82,17 @@
         self.lbl_name5.hidden=YES;
         self.lbl_name6.hidden=YES;
         
+        
+        self.Status_lbl.hidden=YES;
+        self.Ok_lbl.hidden=YES;
+        _Heading_lbl.text=@"Visitor Type Count";
+        
         self.btn_selectColor3.hidden=YES;
         self.btn_selectColor4.hidden=YES;
         self.btn_selectColor5.hidden=YES;
         self.btn_selectColor6.hidden=YES;
+        
+        
         
         _selectPlantCode=([_selectPlantCode isEqualToString:@"''"])?@"select":_selectPlantCode;
         baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/VISITORSSESSION/%@/select/%@/%@",BaseURL,_selectPlantCode,str1,str2];
