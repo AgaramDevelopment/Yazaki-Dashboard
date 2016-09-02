@@ -292,6 +292,18 @@
     else if (index == 3){
         return [UIColor colorWithRed:112/255.0 green:66/255.0 blue:178/255.0 alpha:1.0];
     }
+    
+    
+    
+    else if (index == 4){
+        return [UIColor colorWithRed:218/255.0 green:61/255.0 blue:67/255.0 alpha:1.0];
+    }
+    
+    
+    else if (index == 5){
+        return [UIColor colorWithRed:96/255.0 green:154/255.0 blue:78/255.0 alpha:1.0];
+    }
+    
     else {
         return [UIColor colorWithRed:112/255.0 green:66/255.0 blue:178/255.0 alpha:1.0];
     }

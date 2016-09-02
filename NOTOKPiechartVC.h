@@ -18,7 +18,7 @@
 @property(strong,nonatomic)NSString *str2;
 @property(strong,nonatomic)NSString *dictObject;
 @property(strong,nonatomic)NSString *selectPlantCode;
-
+@property(strong,nonatomic)NSString *selectType;
 @property (weak, nonatomic) IBOutlet UIView *lgendNotOk_view;
 
 @end
