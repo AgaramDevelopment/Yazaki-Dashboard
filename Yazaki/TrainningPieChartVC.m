@@ -260,6 +260,8 @@
     else if (index == 3){
         return [UIColor colorWithRed:112/255.0 green:66/255.0 blue:178/255.0 alpha:1.0];
     }
+    
+    
     else {
         return [UIColor colorWithRed:112/255.0 green:66/255.0 blue:178/255.0 alpha:1.0];
     }

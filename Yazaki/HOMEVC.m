@@ -427,9 +427,14 @@
         PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-    initView.selectPlantCode=selectPlantCode;
+      NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+    initView.selectPlantCode=plancode;
+     initView.selectType     =self.selectType;
     NSString *test =[NSString stringWithFormat:@"%@",[self.Ok_lbl text]];
     initView.dictObject = test;
+         
+   
+         
     [self.navigationController pushViewController:initView animated:YES];
      }
     
@@ -491,7 +496,12 @@
     NOTOKPiechartVC *initView =  (NOTOKPiechartVC*)[storyboard instantiateViewControllerWithIdentifier:@"NOTOKPIE"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-             initView.selectPlantCode=selectPlantCode;
+         
+         NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+         initView.selectPlantCode=plancode;
+         initView.selectType     =self.selectType;
+         
+         
         NSString *test =[NSString stringWithFormat:@"%@",[self.notOk_lbl text]];
     initView.dictObject = test;
        [self.navigationController pushViewController:initView animated:YES];
