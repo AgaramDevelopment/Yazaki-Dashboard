@@ -24,6 +24,7 @@
 {
     CustomNavigationVC * objCustomNavigation;
     NSMutableArray * dashBoard_Array;
+    NSString  * SelectItemTittle;
 }
 @end
 
@@ -174,16 +175,22 @@
     
     NSString * selectOptionTye= [list valueForKey:@"DASHBOARDID"];
     
+     SelectItemTittle= [list valueForKey:@"DISPLAYNAME"];
+    
     if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"2"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"3"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"4"] ||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"5"]||[[list valueForKey:@"DASHBOARDID"] isEqualToString: @"8"])
     {
+        
+       
     
     UITabBarController *initView =  (UITabBarController*)[self.storyboard instantiateViewControllerWithIdentifier:@"Homevc"];
 
      HomeMonthVC * destViewController = [initView.viewControllers objectAtIndex:0];
      destViewController.selectType = selectOptionTye;
+        destViewController.Tittle=SelectItemTittle;
    
     HOMEVC *destViewController1 =[initView.viewControllers objectAtIndex:1];
     destViewController1.selectType = selectOptionTye;
+        destViewController1.Tittle=SelectItemTittle;
     
     [self.navigationController pushViewController:initView animated:YES];
     }
@@ -192,6 +199,7 @@
     {
         QuoteMgtVC * objQuoteMgtVC =  (QuoteMgtVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"QuoteMgtvc"];
         objQuoteMgtVC.selectType =selectOptionTye;
+        objQuoteMgtVC.Tittle   =SelectItemTittle;
         [self.navigationController pushViewController:objQuoteMgtVC animated:YES];
     }
     
@@ -199,6 +207,7 @@
     {
         TrainnningVC * objtrainVC =  (TrainnningVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Trainningid"];
         objtrainVC.selectType =selectOptionTye;
+        objtrainVC.Tittle  =SelectItemTittle;
         [self.navigationController pushViewController:objtrainVC animated:YES];
     }
     
@@ -207,6 +216,7 @@
         
         GiftVCViewController * objGiftVC =  (GiftVCViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"GiftID"];
         objGiftVC.selectType =selectOptionTye;
+        objGiftVC.Tittle =SelectItemTittle;
         [self.navigationController pushViewController:objGiftVC animated:YES];
     }
     
@@ -214,16 +224,10 @@
     else if ([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"10"])
     {
         ProjectMgtVC * objProjectMgtVC =  (ProjectMgtVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"ProjectMgtvc"];
+        objProjectMgtVC.Tittle =SelectItemTittle;
        
         [self.navigationController pushViewController:objProjectMgtVC animated:YES];
     }
-     else if([[list valueForKey:@"DASHBOARDID"] isEqualToString: @"9"])
-     {
-         GiftVCViewController * objtrainVC =  (GiftVCViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"GiftID"];
-         objtrainVC.selectType =selectOptionTye;
-         [self.navigationController pushViewController:objtrainVC animated:YES];
-
-     }
     
     
 }

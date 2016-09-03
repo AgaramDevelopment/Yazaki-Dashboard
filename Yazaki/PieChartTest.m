@@ -289,7 +289,22 @@
 {
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
     [self.view addSubview:objCustomNavigation.view];
-    objCustomNavigation.lbl_titleName.text=@"";
+    
+    NSString * tittleStr;
+    if([self.Tittle isEqualToString:@"Canteen"])
+    {
+        tittleStr=[NSString stringWithFormat:@"%@_session",self.Tittle];
+    }
+    else if([self.Tittle isEqualToString:@"Scrap"])
+    {
+        tittleStr=[NSString stringWithFormat:@"%@_Scrap Type",self.Tittle];
+    }
+    else  if([self.Tittle isEqualToString:@"Gate Pass"])
+    {
+        tittleStr=[NSString stringWithFormat:@"%@_Visitor Type",self.Tittle];
+
+    }
+    objCustomNavigation.lbl_titleName.text=tittleStr;
     [objCustomNavigation.Logout_Btn setHidden:YES];
     [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];
@@ -373,6 +388,7 @@
     destViewController.fromDate=str1;
     destViewController.Todate=str2;
      destViewController.selectPlantCode=_selectPlantCode;
+        destViewController.title =self.title;
    [self.navigationController pushViewController:destViewController animated:YES];
     }
     else if ([self.selectType isEqualToString:@"4"])

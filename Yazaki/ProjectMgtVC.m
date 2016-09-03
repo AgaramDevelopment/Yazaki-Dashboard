@@ -26,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customnavigationmethod];
+    
     objProjectMgtArray =[[NSMutableArray alloc]init];
     [self webService];
     // Do any additional setup after loading the view.
@@ -35,7 +36,7 @@
 {
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
     [self.view addSubview:objCustomNavigation.view];
-    objCustomNavigation.lbl_titleName.text=@"";
+    objCustomNavigation.lbl_titleName.text=self.Tittle;
     [objCustomNavigation.Logout_Btn setHidden:YES];
     [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];

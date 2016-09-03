@@ -10,6 +10,9 @@
 #import "CatdetailsTableViewCell.h"
 #import "PieChartTest.h"
 @interface testingvc : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic,strong) NSString * tittle;
+
 @property(strong,nonatomic)NSString *category;
 @property(strong,nonatomic)NSString *STATUS;
 @property(strong,nonatomic)NSString *fromDate;

@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface EfficiencyLineVC : UIViewController
+
+@property (nonatomic,strong) NSString *Tittle;
+
+
 @property (strong, nonatomic) IBOutlet UITableView *tablview;
 
 

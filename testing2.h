@@ -10,6 +10,9 @@
 #import "testingvc.h"
 #import "NOTOKPiechartVC.h"
 @interface testing2 : UIViewController
+
+@property(nonatomic,strong) NSString * tittle;
+
 @property(strong,nonatomic)NSString *passcatID;
 @property(strong,nonatomic)NSString *passSTATUS ;
 @property(strong,nonatomic)NSString *passcategory;

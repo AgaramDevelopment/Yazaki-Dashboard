@@ -122,6 +122,7 @@
     test.passfromDate=fromDate;
     test.passTodate= Todate;
     test.selectPlantCode=_selectPlantCode;
+    test.title =self.title;
 
  [self.navigationController pushViewController:test animated:YES];
 //[[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -132,7 +133,8 @@
 {
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
     [self.view addSubview:objCustomNavigation.view];
-    objCustomNavigation.lbl_titleName.text=@"";
+    
+    objCustomNavigation.lbl_titleName.text=[NSString stringWithFormat:@"Canteen_Category"];
     [objCustomNavigation.Logout_Btn setHidden:YES];
     [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];

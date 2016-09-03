@@ -15,6 +15,7 @@
 }
 
 @property(nonatomic,strong) NSString *selectType;
+@property (nonatomic,strong) NSString *Tittle;
 
 @property (weak, nonatomic) IBOutlet UIImageView *fromdate_img;
 @property (weak, nonatomic) IBOutlet UITextField *Fromdate_txt;

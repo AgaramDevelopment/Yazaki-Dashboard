@@ -10,6 +10,8 @@
 
 @interface TrainnningVC : UIViewController
 @property (strong,nonatomic) NSString * selectType;
+@property (nonatomic,strong) NSString *Tittle;
+
 @property (strong, nonatomic) IBOutlet UIButton *trainning_Outletbtn;
 - (IBAction)traingTouch_btn:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *traingDisplay_lbl;

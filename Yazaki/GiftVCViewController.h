@@ -11,6 +11,8 @@
 @interface GiftVCViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong,nonatomic) NSString * selectType;
+@property (nonatomic,strong) NSString *Tittle;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *validFrom_lbl;
 @property (strong, nonatomic) IBOutlet UILabel *validTo_lbl;

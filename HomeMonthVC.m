@@ -389,7 +389,7 @@
 {
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
     [self.view addSubview:objCustomNavigation.view];
-    objCustomNavigation.lbl_titleName.text=@"";
+    objCustomNavigation.lbl_titleName.text=self.Tittle;
     [objCustomNavigation.Logout_Btn setHidden:YES];
     [objCustomNavigation.Btn_Back addTarget:self action:@selector(Back_BtnAction:) forControlEvents:UIControlEventTouchUpInside];
       [objCustomNavigation.Home_Btn addTarget:self action:@selector(Home_Btn:) forControlEvents:UIControlEventTouchUpInside];
@@ -452,6 +452,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     initView.str2 = userUpdate1;
     initView.selectPlantCode=plancode;
     initView.selectType     =self.selectType;
+          initView.Tittle         =self.Tittle;
     NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
     initView.dictObject = test;
     
@@ -469,6 +470,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         initView.fromstr = userUpdate;
         initView.tostr = userUpdate1;
         initView.selectPlantCode=plancode;
+             initView.Tittle =self.Tittle;
       [self.navigationController pushViewController:initView animated:YES];
          }
        
@@ -543,7 +545,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
             NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
             initView.dictObject = test;
             initView.selectAvoidablecode =([test isEqualToString:@"Avoidable"])?@"1":@"0";
-            
+            initView.Tittle =self.Tittle;
             [self.navigationController pushViewController:initView animated:YES];
             
         }
@@ -560,6 +562,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         initView.FromStr = userUpdate;
         initView.ToStr = userUpdate1;
         initView.selectPlantCode=selectPlantCode;
+            initView.Tittle =self.Tittle;
        [self.navigationController pushViewController:initView animated:YES];
         }
         
@@ -577,6 +580,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         initView.selectType     =self.selectType;
         NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];
         initView.dictObject = test;
+            initView.Tittle =self.Tittle;
         
         [self.navigationController pushViewController:initView animated:YES];
         }

@@ -13,6 +13,9 @@
 @interface PieChartTest : UIViewController<MCPieChartViewDataSource, MCPieChartViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MCPieChartView *pieChartView;
+@property (nonatomic,strong) NSString *Tittle;
+
+
 @property(strong,nonatomic)NSString *str1;
 @property(strong,nonatomic)NSString *str2;
 @property(strong,nonatomic)NSString *dictObject;

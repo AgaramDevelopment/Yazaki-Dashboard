@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ProductionVC : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic,strong) NSString *Tittle;
+
+
 @property(strong,nonatomic)NSString *FromStr;
 @property(strong,nonatomic)NSString *ToStr;
 @property(strong,nonatomic)NSString *selectPlantCode;

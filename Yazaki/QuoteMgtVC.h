@@ -14,6 +14,8 @@
     UIDatePicker * datepicker1;
 }
 
+@property (nonatomic,strong) NSString *Tittle;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *FromMonth_txt;
 @property (weak, nonatomic) IBOutlet UITextField *Tomonth_txt;

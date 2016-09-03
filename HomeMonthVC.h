@@ -16,6 +16,7 @@
 }
 
 @property(nonatomic,strong) NSString *selectType;
+@property (nonatomic,strong) NSString *Tittle;
 
 @property (weak, nonatomic) IBOutlet UIView *FromMonth_view;
 @property (weak, nonatomic) IBOutlet UIView *TomonthView;

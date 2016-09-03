@@ -10,6 +10,9 @@
 
 @interface ProjectMgtVC : UIViewController
 
+@property (nonatomic,strong) NSString *Tittle;
+
+
 @property (strong, nonatomic) IBOutlet UITableView * projectmgt_tbl;
 @property (strong, nonatomic) NSDictionary *serviceResponse;
 
