@@ -101,7 +101,7 @@
 -(void)CommonWebserviceMethod:(NSString *)userUpdate :(NSString *)userUpdate1
 {
     NSString * baseURL;
-    NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+    NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
     if([self.selectType isEqualToString: @"2"])
     {
         baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
@@ -338,7 +338,7 @@
     if ([_selectType isEqualToString: @"5"]) {
     //    EFFICIENCY/PLANTEFFICIENCY/{PLANTCODE}/{FROMDATE}/{TODATE}
         NSString * baseURL;
-        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
         
         baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
         
@@ -447,7 +447,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
       if([self.selectType isEqualToString: @"2"]){
     
     PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
-          NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+          NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
     initView.selectPlantCode=plancode;
@@ -465,7 +465,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
          {
         
         EfficiencyLineVC *initView =  (EfficiencyLineVC*)[storyboard instantiateViewControllerWithIdentifier:@"effeciencyLine"];
-        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
         initView.fromstr = userUpdate;
         initView.tostr = userUpdate1;
         initView.selectPlantCode=plancode;
@@ -478,7 +478,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     else if ([self.selectType isEqualToString:@"4"])
     {
         NSString * baseURL;
-        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
         
         if(isScrap == NO)
         {
@@ -535,7 +535,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
             PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
             initView.str1 = userUpdate;
             initView.str2 = userUpdate1;
-               NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+               NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
             initView.selectPlantCode=plancode;
             initView.selectType     =self.selectType;
             initView.selectValuetype=self.ok_lbl.text;
@@ -570,7 +570,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         if(![self.CountValues_Green_lbl.text isEqualToString:@"0"])
         {
         PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
-        NSString * plancode =(selectPlantCode == nil)?@"select":selectPlantCode;
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
         initView.str1 = userUpdate;
         initView.str2 = userUpdate1;
         initView.selectPlantCode=plancode;

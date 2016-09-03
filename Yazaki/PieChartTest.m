@@ -94,7 +94,7 @@
         
         
         
-        _selectPlantCode=([_selectPlantCode isEqualToString:@"''"])?@"select":_selectPlantCode;
+        _selectPlantCode=([_selectPlantCode isEqualToString:@"SELECT"])?@"SELECT":_selectPlantCode;
         baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/VISITORSSESSION/%@/select/%@/%@",BaseURL,_selectPlantCode,str1,str2];
     }
 

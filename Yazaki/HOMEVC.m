@@ -348,7 +348,7 @@
     else if ([self.selectType isEqualToString: @"5"])
     {
         NSString * baseURL;
-        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
         
         baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
         
@@ -427,7 +427,7 @@
         PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
-      NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+      NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
     initView.selectPlantCode=plancode;
      initView.selectType     =self.selectType;
     NSString *test =[NSString stringWithFormat:@"%@",[self.Ok_lbl text]];
@@ -458,7 +458,7 @@
          {
         
         EfficiencyLineVC *initView =  (EfficiencyLineVC*)[storyboard instantiateViewControllerWithIdentifier:@"effeciencyLine"];
-        NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
         initView.fromstr = userUpdate;
         initView.tostr = userUpdate1;
         initView.selectPlantCode=plancode;
@@ -471,7 +471,7 @@
     if([self.selectType isEqualToString: @"8"]){
         
         PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
-        NSString * plancode =(selectPlantCode == nil)?@"select":selectPlantCode;
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
         initView.str1 = userUpdate;
         initView.str2 = userUpdate1;
         initView.selectPlantCode=plancode;
@@ -497,7 +497,7 @@
     initView.str1 = userUpdate;
     initView.str2 = userUpdate1;
          
-         NSString * plancode =(selectPlantCode == nil)?@"''":selectPlantCode;
+         NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
          initView.selectPlantCode=plancode;
          initView.selectType     =self.selectType;
          

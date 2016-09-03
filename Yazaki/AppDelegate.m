@@ -37,9 +37,13 @@
 }
 
 -(void)showLoading {
+    
+
+    
+    
     mySpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    mySpinner.transform = CGAffineTransformMakeScale(1.5, 1.5);
-    mySpinner.color=[UIColor blueColor];
+    mySpinner.transform = CGAffineTransformMakeScale(2, 2);
+    mySpinner.color=[UIColor redColor];
     mySpinner.center = self.window.center;
     mySpinner.hidesWhenStopped = YES;
     [self.window addSubview:mySpinner];
