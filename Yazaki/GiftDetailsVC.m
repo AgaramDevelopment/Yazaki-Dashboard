@@ -11,11 +11,14 @@
 #import "Common.h"
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
+#import "AppDelegate.h"
+#import "Theme.h"
 
 
 @interface GiftDetailsVC ()
 {
     CustomNavigationVC *objCustomNavigation;
+    AppDelegate * appDelegate;
 }
 @property (strong, nonatomic) NSMutableArray*GiftDetailsArray;
 @end
@@ -31,9 +34,8 @@
     
     self.category_lbl.text=categoryname;
     GiftDetailsArray =[[NSMutableArray alloc]init];
-    
-
-    
+    Theme * theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     NSString *baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTPROCESSDETAILED/%@/%@",BaseURL,GiftType,categoryID];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -55,6 +57,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 

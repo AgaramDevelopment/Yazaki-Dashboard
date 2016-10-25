@@ -12,9 +12,13 @@
 #import "Common.h"
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
+#import "AppDelegate.h"
+#import "Theme.h"
+
 @interface GiftProcessVC ()
 {
     CustomNavigationVC *objCustomNavigation;
+    AppDelegate * appDelegate;
 }
 @property (strong, nonatomic) NSMutableArray*GiftProcessArray;
 @end
@@ -27,9 +31,9 @@
     [self customnavigationmethod];
     
     GiftProcessArray =[[NSMutableArray alloc]init];
+    Theme * theme =[[Theme alloc]init];
     
-
-    
+    [theme loadingIcon:self.view];
     NSString *baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTPROCESSCATEGORY/%@",BaseURL,GiftType];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -51,6 +55,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 

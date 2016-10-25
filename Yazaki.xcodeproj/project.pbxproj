@@ -47,6 +47,7 @@
 		187E49561D78593600A29CF6 /* GPDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E49551D78593600A29CF6 /* GPDetailVC.m */; };
 		187E49591D785A2D00A29CF6 /* GPDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E49581D785A2D00A29CF6 /* GPDetailCell.m */; };
 		1880C9981D6F283E0042733E /* DashBoardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880C9971D6F283E0042733E /* DashBoardCell.m */; };
+		188197971DB7E955003897F7 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 188197961DB7E955003897F7 /* Theme.m */; };
 		1882BE3A1CA253B900D25D68 /* RAJDHANI-LIGHT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE361CA253B900D25D68 /* RAJDHANI-LIGHT.TTF */; };
 		1882BE3B1CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE371CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF */; };
 		1882BE3C1CA253B900D25D68 /* RAJDHANI-REGULAR.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1882BE381CA253B900D25D68 /* RAJDHANI-REGULAR.TTF */; };
@@ -175,6 +176,8 @@
 		187E49581D785A2D00A29CF6 /* GPDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPDetailCell.m; sourceTree = "<group>"; };
 		1880C9961D6F283E0042733E /* DashBoardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardCell.h; sourceTree = "<group>"; };
 		1880C9971D6F283E0042733E /* DashBoardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardCell.m; sourceTree = "<group>"; };
+		188197951DB7E955003897F7 /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
+		188197961DB7E955003897F7 /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
 		1882BE361CA253B900D25D68 /* RAJDHANI-LIGHT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-LIGHT.TTF"; path = "Custome Fonts/RAJDHANI-LIGHT.TTF"; sourceTree = "<group>"; };
 		1882BE371CA253B900D25D68 /* RAJDHANI-MEDIUM.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-MEDIUM.TTF"; path = "Custome Fonts/RAJDHANI-MEDIUM.TTF"; sourceTree = "<group>"; };
 		1882BE381CA253B900D25D68 /* RAJDHANI-REGULAR.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RAJDHANI-REGULAR.TTF"; path = "Custome Fonts/RAJDHANI-REGULAR.TTF"; sourceTree = "<group>"; };
@@ -321,6 +324,7 @@
 		1863D5C51CA10D7700D2F625 /* Yazaki */ = {
 			isa = PBXGroup;
 			children = (
+				188197941DB7E919003897F7 /* Theme */,
 				CE7CD44C1D6FFD6500EBA627 /* CustomNavigationVC.h */,
 				CE7CD44D1D6FFD6500EBA627 /* CustomNavigationVC.m */,
 				CE7CD44E1D6FFD6500EBA627 /* CustomNavigationVC.xib */,
@@ -476,6 +480,15 @@
 			name = IMAGES;
 			sourceTree = "<group>";
 		};
+		188197941DB7E919003897F7 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				188197951DB7E955003897F7 /* Theme.h */,
+				188197961DB7E955003897F7 /* Theme.m */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
 		1882BE351CA2538D00D25D68 /* Custom Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -624,6 +637,7 @@
 				186173B81CA4F89A002A51DA /* MCNewCustomLayeredView.m in Sources */,
 				CE801B2B1D76B66D007BCC58 /* TrainningPieChartVC.m in Sources */,
 				1866708E1CAD209B001C349A /* NOTOKPiechartVC.m in Sources */,
+				188197971DB7E955003897F7 /* Theme.m in Sources */,
 				CE7CD44F1D6FFD6500EBA627 /* CustomNavigationVC.m in Sources */,
 				1863D5CC1CA10D7700D2F625 /* AppDelegate.m in Sources */,
 				CE8680C21D74516600463967 /* ProductionDetailsVC.m in Sources */,
@@ -800,13 +814,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Annamalai T (L5S8VPA4A5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Yazaki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agaraminfotech.yazaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "32b840de-e60c-4b32-89c4-781f3812c1a0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -816,13 +831,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Annamalai T (L5S8VPA4A5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Yazaki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agaraminfotech.yazaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "32b840de-e60c-4b32-89c4-781f3812c1a0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -918,13 +934,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Annamalai T (L5S8VPA4A5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Yazaki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agaraminfotech.yazaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "32b840de-e60c-4b32-89c4-781f3812c1a0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;

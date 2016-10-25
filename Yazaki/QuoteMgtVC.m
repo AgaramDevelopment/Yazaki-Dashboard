@@ -12,6 +12,8 @@
 #import "QuoteMgtcell.h"
 #import "QuoteVarientVC.h"
 #import "DashboardVC.h"
+#import "Theme.h"
+
 
 @interface QuoteMgtVC ()
 {
@@ -22,8 +24,10 @@
     NSMutableArray *Plantarray;
     BOOL isPlantTbl;
     BOOL isCustomerTbl;
+    Theme * theme;
     
 }
+
 
 @property (nonatomic,strong) NSString * plantCodeStr;
 
@@ -82,6 +86,8 @@
 
 -(void)webService:(NSString *) Plantcode : (NSString *)customercode
 {
+    theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     NSString * baseURL = [NSString stringWithFormat:@"%@/QUOTEMANAGEMENT/COSTINGINITIALIZE/%@/%@",BaseURL,Plantcode,customercode];
     
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -110,6 +116,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
 
 }
 
@@ -195,7 +202,16 @@
     }//count number of row from counting array hear cataGorry is An Array
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if( self.tbl_select .hidden == YES)
+  {
+    
+        return 350;
+  }
+    return 44;
+    
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -219,6 +235,11 @@
     cell.customername_lbl.text = [DetailsDic valueForKey:@"CUSTOMERNAME"];
     cell.startproject_lbl.text = [DetailsDic valueForKey:@"STARTOFPROJECT"];
     cell.endproject_lbl.text    = [DetailsDic valueForKey:@"ENDOFPROJECT"];
+    cell.programname_lbl.text   =[DetailsDic valueForKey:@"PROGRAMNAME"];
+    cell.RFQdate_lbl.text       = [DetailsDic valueForKey:@"RFQDATE"];
+    cell.TargetDate_lbl.text    =[DetailsDic valueForKey:@"TARGETDATE"];
+    cell.RFQStatus_lbl.text    =[DetailsDic valueForKey:@"RFQSTATUS"];
+        
     return cell;
     }
     else

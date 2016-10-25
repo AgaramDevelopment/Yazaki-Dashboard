@@ -12,11 +12,14 @@
 #import "DashboardVC.h"
 #import "ProjectMgtCell.h"
 #import "ProjectTask.h"
+#import "Theme.h"
+
 
 @interface ProjectMgtVC ()
 {
     CustomNavigationVC * objCustomNavigation;
     NSMutableArray * objProjectMgtArray;
+    Theme * theme;
 }
 
 @end
@@ -52,6 +55,8 @@
 
 -(void)webService
 {
+    theme =[[Theme alloc]init];
+    [theme  loadingIcon:self.view];
     NSString * baseURL = [NSString stringWithFormat:@"%@/PROJECTMANAGEMENT/INITIALIZEPROJECTMANGEMENT",BaseURL];
     
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -72,6 +77,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{

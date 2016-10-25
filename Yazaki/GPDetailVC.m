@@ -11,11 +11,14 @@
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
 #import "GPDetailCell.h"
+#import "AppDelegate.h"
+#import "Theme.h"
 
 @interface GPDetailVC ()
 {
     CustomNavigationVC * objCustomNavigation;
     NSMutableArray * detaliArray;
+    Theme * theme;
 }
 
 @end
@@ -49,6 +52,8 @@
 
 -(void)webService
 {
+    theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     NSString * baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/FETCHVISITORSINDIVIDUALDETAILS/%@/%@/%@/%@/%@/%@",BaseURL,self.plantCode,self.GateCode,self.fromDate,self.Todate,self.vistorType,self.vistorID];
     
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -69,6 +74,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{

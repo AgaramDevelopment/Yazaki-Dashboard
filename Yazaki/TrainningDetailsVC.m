@@ -11,10 +11,14 @@
 #import "Common.h"
 #import "DashboardVC.h"
 #import "TrainingCell.h"
+#import "Theme.h"
+
 
 @interface TrainningDetailsVC ()
 {
     CustomNavigationVC *objCustomNavigation;
+    Theme * theme;
+    
 }
 @property (strong, nonatomic) NSMutableArray *TrainnigArray;
 @end
@@ -27,8 +31,9 @@
     [self customnavigationmethod];
     
     TrainnigArray =[[NSMutableArray alloc]init];
+    theme =[[Theme alloc]init];
     
-    
+    [theme loadingIcon:self.view];
     NSString *baseURL = [NSString stringWithFormat:@"%@/TRAINING/TRAININGDASHBOARDDETAILSLIST/%@",BaseURL,VersionStatus];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -50,6 +55,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 

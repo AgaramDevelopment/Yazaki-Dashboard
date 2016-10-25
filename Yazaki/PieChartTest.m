@@ -14,11 +14,14 @@
 #import "ScrapDetailVC.h"
 #import "Common.h"
 #import "GatepassCategoryVC.h"
+#import "Theme.h"
 
 
 @interface PieChartTest ()
 {
- CustomNavigationVC *objCustomNavigation;
+   CustomNavigationVC *objCustomNavigation;
+    Theme * theme;
+    
 }
 @property (strong, nonatomic) NSMutableArray *values;
 @property (strong, nonatomic) NSMutableArray *testARYY;
@@ -264,6 +267,8 @@
 
 -(void)webServicemethod:(NSString *)URL
 {
+    theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     NSURL *url = [NSURL URLWithString:[URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -282,6 +287,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
 
 }
 

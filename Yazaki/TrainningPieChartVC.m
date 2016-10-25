@@ -11,11 +11,15 @@
 #import "Common.h"
 #import "DashboardVC.h"
 #import "TrainningDetailsVC.h"
+#import "Theme.h"
+
 
 
 @interface TrainningPieChartVC ()
 {
     CustomNavigationVC *objCustomNavigation;
+    Theme * theme;
+    
 }
 @property (strong, nonatomic) NSMutableArray *values;
 @property (strong, nonatomic) NSMutableArray *testARYY;
@@ -35,6 +39,8 @@
 - (void)viewDidLoad {
     [self customnavigationmethod];
     
+    theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     NSString *baseURL = [NSString stringWithFormat:@"%@/TRAINING/TRAININGDASHBOARDPIE",BaseURL];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -190,7 +196,7 @@
         self.pieChartView.textColor = [UIColor blackColor];
         self.pieChartView.selectedTextColor = [UIColor whiteColor];
         self.pieChartView.borderPercentage = 0.01;
-
+       
         
         
     }
@@ -200,6 +206,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 

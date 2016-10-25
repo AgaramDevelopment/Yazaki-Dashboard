@@ -11,10 +11,13 @@
 #import "ProductionDetilCell.h"
 #import "DashboardVC.h"
 #import "Common.h"
+#import "Theme.h"
+
 @interface ProductionDetailsVC ()
 
 {
     CustomNavigationVC *objCustomNavigation;
+    Theme * theme;
 }
 
 @property (strong, nonatomic) NSMutableArray *productionDetailArray;
@@ -40,7 +43,10 @@
     
     
     productionDetailArray =[[NSMutableArray alloc]init];
-    
+   
+    theme =[[Theme alloc]init];
+   
+    [theme loadingIcon:self.view];
     NSString *baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXDETAILEDPART/%@/%@/%@/%@",BaseURL,PlantCode,lineCode,FromStr,ToStr];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -62,6 +68,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 

@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *greenib_btn;
 @property (weak, nonatomic) IBOutlet UIButton *redib_btn;
 @property (weak, nonatomic) IBOutlet UILabel *CountValues_Green_lbl;
+@property (strong, nonatomic) IBOutlet UIView *mainView;
 
 @property (weak, nonatomic) IBOutlet UILabel *CountValues_Red_lbl;
 - (IBAction)Green_Month_btn:(id)sender;

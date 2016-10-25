@@ -12,10 +12,14 @@
 #import "DashboardVC.h"
 #import "GPCategoryCell.h"
 #import "GPDetailVC.h"
+#import "AppDelegate.h"
+#import "Theme.h"
+
 @interface GatepassCategoryVC ()
 {
     CustomNavigationVC * objCustomNavigation;
     NSMutableArray * CategoryArray;
+    AppDelegate * appDelegate;
 }
 
 @end
@@ -48,6 +52,8 @@
 
 -(void)webService
 {
+    Theme * theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     NSString * baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/GATEENTRYCATEGORY/%@/%@/%@/%@/%@",BaseURL,self.plantCode,self.GateCode,self.fromDate,self.Todate,self.vistorType];
     
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -68,6 +74,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{

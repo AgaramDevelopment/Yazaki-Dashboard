@@ -10,11 +10,14 @@
 #import "CustomNavigationVC.h"
 #import "Common.h"
 #import "ScrapCell.h"
+#import "Theme.h"
+
 
 @interface ScrapDetailVC ()
 {
     CustomNavigationVC * objCustomNavigation;
     NSMutableArray * objCatagory;
+    Theme * theme;
 }
 
 @end
@@ -25,6 +28,10 @@
     [super viewDidLoad];
     [self customnavigationmethod];
     objCatagory=[[NSMutableArray alloc]init];
+   
+    theme =[[Theme alloc]init];
+   
+    [theme loadingIcon:self.view];
    NSString * baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPDETAILED/%@/%@/%@/%@/%@",BaseURL,self.selectplancode,self.SelectareaCode,self.STATUS,self.fromDate,self.Todate];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -46,7 +53,7 @@
         
     }
 
-    
+    [theme removeLoadingIcon];
 }
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{
     UIAlertView *alertDialog = [[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];

@@ -11,9 +11,12 @@
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
 #import "Common.h"
+#import "Theme.h"
+
 @interface testing2 ()
 {
     CustomNavigationVC *objCustomNavigation;
+    Theme * theme;
 }
 
 @property (strong, nonatomic) NSMutableArray *TestingArray;
@@ -30,7 +33,9 @@
     [super viewDidLoad];
     [self customnavigationmethod];
     
-   
+    theme =[[Theme alloc]init];
+    
+    [theme loadingIcon:self.view];
     NSString *baseURL = [NSString stringWithFormat:@"%@/CANTEEN/EMPLOYEEDETAILS/%@/%@/%@/%@/%@/%@",BaseURL,_selectPlantCode,passSTATUS,passcategory,passcatID,passfromDate,passTodate];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -53,7 +58,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
-    
+    [theme removeLoadingIcon];
 }
 
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{

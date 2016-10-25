@@ -11,11 +11,15 @@
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
 #import "ProjectCell.h"
+#import "Theme.h"
+
 
 @interface ProjectVC ()
 {
     CustomNavigationVC * objCustomNavigation;
     NSMutableArray * objProjectArray;
+    Theme * theme;
+    
 }
 
 @end
@@ -49,6 +53,8 @@
 
 -(void)webService :(NSString *) projectcode:(NSString *) taskstatus
 {
+    theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     NSString * baseURL = [NSString stringWithFormat:@"%@/PROJECTMANAGEMENT/FETCHPROJECTTASKDETAILSBYTASKSTATUS/%@/%@",BaseURL,projectcode,taskstatus];
     
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -69,6 +75,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{

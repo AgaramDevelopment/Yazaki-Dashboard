@@ -12,10 +12,13 @@
 #import "DashboardVC.h"
 #import "MCPieChartView.h"
 #import "ProjectVC.h"
+#import "Theme.h"
+
 
 @interface ProjectTask ()<MCPieChartViewDelegate,MCPieChartViewDataSource>
 {
     CustomNavigationVC * objCustomNavigation;
+    Theme * theme;
 }
 
 @end
@@ -51,6 +54,8 @@
 
 -(void)webService
 {
+    theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     NSString * baseURL = [NSString stringWithFormat:@"%@/PROJECTMANAGEMENT/FETCHPROJECTTASKDETAILSBYPROJECT/%@",BaseURL,self.objprojectcode];
     
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -176,6 +181,8 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    
+    [theme removeLoadingIcon];
     
 }
 

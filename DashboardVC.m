@@ -72,7 +72,7 @@
 {
     if(IS_IPHONE5)
     {
-        return UIEdgeInsetsMake(20,10, 10, 20);
+        return UIEdgeInsetsMake(20,25, 10, 25);
     }
     else
     {

@@ -11,10 +11,15 @@
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
 #import "EffeciencyCell.h"
+#import "AppDelegate.h"
+#import "Theme.h"
 
 @interface EfficiencyLineVC ()
 {
-CustomNavigationVC *objCustomNavigation;
+   CustomNavigationVC *objCustomNavigation;
+    AppDelegate * appDelegate;
+    Theme * theme;
+    
 }
 @property (strong, nonatomic) NSMutableArray*LineDetailArray;
 @end
@@ -30,12 +35,45 @@ CustomNavigationVC *objCustomNavigation;
     
     [self customnavigationmethod];
     
-   
-    
-    
     LineDetailArray =[[NSMutableArray alloc]init];
-
+    theme =[[Theme alloc]init];
     
+    [theme loadingIcon:self.view];
+    //[appDelegate showLoading];
+//    NSString *baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/LINEEFFICIENCY/%@/%@/%@",BaseURL,selectPlantCode,fromstr,tostr];
+//    NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    NSURLResponse *response;
+//    NSError *error;
+//    NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+//    if (responseData != nil) {
+//        
+//        NSDictionary *serviceResponse=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+//        LineDetailArray=[serviceResponse objectForKey:@"efficiencyLines"];
+//        
+//        
+//    }
+//    else{
+//        
+//        
+//        [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
+//        
+//    }
+//      [theme removeLoadingIcon];
+    
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+[NSTimer scheduledTimerWithTimeInterval:0.5
+                                     target:self
+                                   selector:@selector(loadingWebservice)
+                                   userInfo:nil
+                                    repeats:NO];
+}
+
+-(void)loadingWebservice
+{
     NSString *baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/LINEEFFICIENCY/%@/%@/%@",BaseURL,selectPlantCode,fromstr,tostr];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -46,21 +84,19 @@ CustomNavigationVC *objCustomNavigation;
         
         NSDictionary *serviceResponse=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
         LineDetailArray=[serviceResponse objectForKey:@"efficiencyLines"];
-        
+        [self.tablview reloadData];
+        [theme removeLoadingIcon];
         
     }
-    
-    
     else{
         
         
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
-    
+    [theme removeLoadingIcon];
+
 }
-
-
 
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{
     UIAlertView *alertDialog = [[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -95,13 +131,6 @@ CustomNavigationVC *objCustomNavigation;
     return cell;
 }
 
-
-
-
-
-
-
-
 -(void)customnavigationmethod
 {
     objCustomNavigation=[[CustomNavigationVC alloc] initWithNibName:@"CustomNavigationVC" bundle:nil];
@@ -123,19 +152,39 @@ CustomNavigationVC *objCustomNavigation;
     initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"Dashboardvc"];
     [self.navigationController pushViewController:initView animated:YES];
 }
+
+
+-(void)loadingIcon
+{
+    UIView * loadingview = [[UIView alloc] initWithFrame:CGRectMake((self.view.frame.size.width)/2, (self.view.frame.size.height)/2, 37, 37)];
+    
+    [loadingview.layer setCornerRadius:5.0];
+    
+    [loadingview setBackgroundColor:[UIColor redColor]];
+    
+    //Enable maskstobound so that corner radius would work.
+    
+    [loadingview.layer setMasksToBounds:YES];
+    
+    //Set the corner radius
+    
+    UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    [activityView setFrame:CGRectMake(7, 7, 37, 37)];
+    
+    [activityView setHidesWhenStopped:YES];
+    
+    [activityView startAnimating];
+    
+    [loadingview addSubview:activityView];
+    [self.view addSubview:loadingview];
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

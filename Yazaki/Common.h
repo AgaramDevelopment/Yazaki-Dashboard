@@ -15,6 +15,6 @@
 #define IS_OS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
 #define IS_OS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define IS_OS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-#define BaseURL  @"http://192.168.1.49:8097/YazakiService.svc"
+#define BaseURL  @"http://14.142.88.68:9000/YazakiService.svc"
 
 @end

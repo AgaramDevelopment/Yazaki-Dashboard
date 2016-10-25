@@ -31,6 +31,7 @@
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     navigationController.navigationBarHidden = YES;
     _window.rootViewController = navigationController;
+  navigationController.navigationBar.translucent = YES;
     //[_window addSubview:navigationController.view];
     [self.window makeKeyAndVisible];
     return YES;

@@ -11,11 +11,13 @@
 #import "Common.h"
 #import "DashboardVC.h"
 #import "GiftProcessVC.h"
+#import "AppDelegate.h"
+#import "Theme.h"
 
 @interface GiftVCViewController ()
-{CustomNavigationVC *objCustomNavigation;
-    
-   
+{
+    CustomNavigationVC *objCustomNavigation;
+    Theme * theme;
 }
 @property(nonatomic,strong)NSMutableArray*purposeArray;
 @property(nonatomic,strong) NSDictionary * puposeDict;
@@ -35,6 +37,9 @@
     self.tablview.layer.borderWidth = 2.0;
     self.tablview.layer.borderColor = [UIColor colorWithRed:(223/255.0f) green:(37/255.0f) blue:(13/255.0f) alpha:1.0f].CGColor;
     [self.tablview setHidden:YES];
+     theme =[[Theme alloc]init];
+    
+    [theme loadingIcon:self.view];
     NSString *baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTINITIALIZE",BaseURL];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -49,6 +54,7 @@
       
         
     }
+    [theme removeLoadingIcon];
 }
 
 
@@ -121,6 +127,10 @@
     self.tablview.hidden=YES;
     
        GiftType =(GiftType == nil)?@"''":GiftType;
+    
+   
+    [theme loadingIcon:self.view];
+    
     NSString *baseURL = [NSString stringWithFormat:@"%@/GIFT/GIFTPROCESSTYPECHANGED/%@",BaseURL,GiftType];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -148,7 +158,7 @@
         
         
     }
-    
+    [theme removeLoadingIcon];
     
 }
 

@@ -14,10 +14,16 @@
 #import "Common.h"
 #import "ProductionVC.h"
 #import "EfficiencyLineVC.h"
+#import "Theme.h"
+
+
+
 @interface HOMEVC ()
 {
     CustomNavigationVC *objCustomNavigation;
       NSString *selectPlantCode;
+    Theme * theme;
+    
 }
 @property (nonatomic,strong) NSMutableArray *planArray;
 @property (nonatomic,strong) NSDictionary *myslot;
@@ -134,7 +140,8 @@
 
 -(void)WebserviceMethod:(NSString *)URL
 {
-    
+    theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     NSURL *url = [NSURL URLWithString:[URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -156,6 +163,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 
@@ -217,14 +225,26 @@
     else if ([selectOptionType isEqualToString: @"5"])
     {
         
+        NSArray *temp =   [responsData objectForKey:@"EfficiencyTotalEfficiencyDetails"];
+        NSDictionary *myslot=[temp objectAtIndex:0];
+        
+        //NSArray *temp1 =   [responsData objectForKey:@"Initialize_NotOk"];
+       // NSDictionary *myslot1=[temp1 objectAtIndex:0];
+        
+        self.Ok_lbl.text = @"DIRECTEFFICIENCY";                      //[myslot objectForKey:@"NAME"];
+        self.notOk_lbl.text= @"INDIRECTEFFICIENCY";                   //[myslot1 objectForKey:@"NAME"];
+        self.CountValues_Green_lbl.text=[myslot objectForKey:@"DIRECTEFFICIENCY"];
+        self.CountValues_Red_lbl.text=[myslot objectForKey:@"INDIRECTEFFICIENCY"];
+        
+        
         _planArray=[responsData objectForKey:@"PlantDetails"];
         
-        self.redCircle_view.hidden=YES;
-        self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+        self.redCircle_view.hidden=NO;
+        self.greenviewXposition.constant= 20;  //(self.view.frame.size.width)/3;
         
-        self.Ok_lbl.text=@"TOTAL EFFICIENCY";
+       // self.Ok_lbl.text=@"TOTAL EFFICIENCY";
         
-        self.CountValues_Green_lbl.text=@"0";
+        //self.CountValues_Green_lbl.text=@"0";
         
     }
     
@@ -349,7 +369,9 @@
     {
         NSString * baseURL;
         NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+        theme =[[Theme alloc]init];
         
+        [theme loadingIcon:self.view];
         baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
         
         NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -378,6 +400,7 @@
             }
             
         }
+        [theme removeLoadingIcon];
     }
     
     else if ([self.selectType isEqualToString: @"6"])

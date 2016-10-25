@@ -12,9 +12,14 @@
 #import "CustomNavigationVC.h"
 #import "DashboardVC.h"
 #import "Common.h"
+#import "Theme.h"
+
+
 @interface NOTOKPiechartVC ()
 {
     CustomNavigationVC *objCustomNavigation;
+    Theme * theme;
+   
 }
 @property (strong, nonatomic) NSMutableArray *values;
 @property (strong, nonatomic) NSMutableArray *testARYY;
@@ -36,6 +41,9 @@
     [super viewDidLoad];
     [self customnavigationmethod];
     
+    theme =[[Theme alloc]init];
+    
+    [theme loadingIcon:self.view];
     NSString *baseURL = [NSString stringWithFormat:@"%@/CANTEEN/SESSION/%@/%@/%@/%@",BaseURL,dictObject,_selectPlantCode,str1,str2];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -200,7 +208,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
-    
+    [theme removeLoadingIcon];
 }
 
 

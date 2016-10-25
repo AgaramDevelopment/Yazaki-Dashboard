@@ -11,9 +11,13 @@
 #import "DashboardVC.h"
 #import "Common.h"
 #import "TrainningPieChartVC.h"
+#import "Theme.h"
+
 
 @interface TrainnningVC ()
-{CustomNavigationVC *objCustomNavigation;
+{
+    CustomNavigationVC *objCustomNavigation;
+    Theme * theme;
 }
 @property(nonatomic,strong)NSMutableArray*TrainningArray;
 
@@ -30,6 +34,8 @@
     self.trainning_Outletbtn.layer.masksToBounds=YES;
     
     TrainningArray=[[NSMutableArray alloc]init];
+    theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     
     NSString *baseURL = [NSString stringWithFormat:@"%@/TRAINING/TRAININGDASHBOARDINITIALIZE",BaseURL];
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -47,6 +53,7 @@
              self.traingDisplay_lbl.text=  [NSString stringWithFormat:@"%@",test];
         
     }
+    [theme removeLoadingIcon];
 
 
 }

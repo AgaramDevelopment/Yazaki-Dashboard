@@ -12,11 +12,14 @@
 #import "Common.h"
 #import "QuoteAmount.h"
 #import "DashboardVC.h"
+#import "Theme.h"
+
 
 @interface QuoteVarientVC ()
 {
     CustomNavigationVC * objCustomNavigation;
     NSMutableArray * objVarientArray;
+    Theme * theme;
 }
 
 @end
@@ -49,6 +52,8 @@
 }
 -(void)webService:(NSString *) Plantcode : (NSString *) customercode:  (NSString *) programname
 {
+    theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
     NSString * baseURL = [NSString stringWithFormat:@"%@/QUOTEMANAGEMENT/COSTINGVARIANT/%@/%@/%@",BaseURL,Plantcode,customercode,programname];
     
     NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -69,6 +74,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
+    [theme removeLoadingIcon];
     
 }
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{

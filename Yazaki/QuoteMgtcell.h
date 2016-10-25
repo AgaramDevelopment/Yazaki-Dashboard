@@ -14,4 +14,8 @@
 @property (nonatomic,strong) IBOutlet UILabel * customername_lbl;
 @property (nonatomic,strong) IBOutlet UILabel * startproject_lbl;
 @property (nonatomic,strong) IBOutlet UILabel * endproject_lbl;
+@property (nonatomic,strong) IBOutlet UILabel * programname_lbl;
+@property (nonatomic,strong) IBOutlet UILabel * RFQdate_lbl;
+@property (nonatomic,strong) IBOutlet UILabel * TargetDate_lbl;
+@property (nonatomic,strong) IBOutlet UILabel * RFQStatus_lbl;
 @end
