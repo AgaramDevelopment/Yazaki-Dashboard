@@ -20,4 +20,8 @@
 
 @property (nonatomic,strong) IBOutlet UILabel * purpose_lbl;
 
+@property (nonatomic,strong) IBOutlet UILabel * inTime_lbl;
+
+@property (nonatomic,strong) IBOutlet UILabel * outtime_lbl;
+
 @end

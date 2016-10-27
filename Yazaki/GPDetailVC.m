@@ -117,7 +117,8 @@
      cell.name_lbl.text = [ProjectDic valueForKey:@"Name"];
      cell.companyName_lbl.text = [ProjectDic valueForKey:@"CompanyName"];
      cell.purpose_lbl.text = [ProjectDic valueForKey:@"Purpose"];
-    
+    cell.inTime_lbl.text  = [ProjectDic valueForKey:@"In"];
+    cell.outtime_lbl.text  = [ProjectDic valueForKey:@"Out"];
     return cell;
 }
 
