@@ -225,27 +225,51 @@
     else if ([selectOptionType isEqualToString: @"5"])
     {
         
-        NSArray *temp =   [responsData objectForKey:@"EfficiencyTotalEfficiencyDetails"];
-        NSDictionary *myslot=[temp objectAtIndex:0];
-        
-        //NSArray *temp1 =   [responsData objectForKey:@"Initialize_NotOk"];
-       // NSDictionary *myslot1=[temp1 objectAtIndex:0];
-        
-        self.Ok_lbl.text = @"DIRECTEFFICIENCY";                      //[myslot objectForKey:@"NAME"];
-        self.notOk_lbl.text= @"INDIRECTEFFICIENCY";                   //[myslot1 objectForKey:@"NAME"];
-        self.CountValues_Green_lbl.text=[myslot objectForKey:@"DIRECTEFFICIENCY"];
-        self.CountValues_Red_lbl.text=[myslot objectForKey:@"INDIRECTEFFICIENCY"];
-        
+//        NSArray *temp =   [responsData objectForKey:@"EfficiencyTotalEfficiencyDetails"];
+//        NSDictionary *myslot=[temp objectAtIndex:0];
+//        
+//        //NSArray *temp1 =   [responsData objectForKey:@"Initialize_NotOk"];
+//       // NSDictionary *myslot1=[temp1 objectAtIndex:0];
+//        
+//        self.Ok_lbl.text = @"DIRECTEFFICIENCY";                      //[myslot objectForKey:@"NAME"];
+//        self.notOk_lbl.text= @"INDIRECTEFFICIENCY";                   //[myslot1 objectForKey:@"NAME"];
+//        self.CountValues_Green_lbl.text=[myslot objectForKey:@"DIRECTEFFICIENCY"];
+//        self.CountValues_Red_lbl.text=[myslot objectForKey:@"INDIRECTEFFICIENCY"];
+//        
         
         _planArray=[responsData objectForKey:@"PlantDetails"];
         
-        self.redCircle_view.hidden=NO;
-        self.greenviewXposition.constant= 20;  //(self.view.frame.size.width)/3;
+//        self.redCircle_view.hidden=NO;
+//        self.greenviewXposition.constant= 20;  //(self.view.frame.size.width)/3;
+        NSString *userUpdate =[NSString stringWithFormat:@"%@",[_Fromdate_txt text]];
+        NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Todate_txt text]];
+        NSString * baseURL;
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
         
-       // self.Ok_lbl.text=@"TOTAL EFFICIENCY";
+        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
         
-        //self.CountValues_Green_lbl.text=@"0";
+        NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSURLResponse *response;
+        NSError *error;
         
+        NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if (responseData != nil) {
+            
+            ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+            
+            NSArray *temp =   [ResultHolderDict objectForKey:@"EfficiencyTotalEfficiencyDetails"];
+            
+            NSDictionary * myslot=[temp objectAtIndex:0];
+            
+            self.Ok_lbl.text= @"DIRECTEFFICIENCY";          //[myslot objectForKey:@"NAME"];
+            self.notOk_lbl.text= @"INDIRECTEFFICIENCY";                          //[myslot1 objectForKey:@"NAME"];
+            self.CountValues_Green_lbl.text= [NSString stringWithFormat:@"%@",[myslot objectForKey:@"DIRECTEFFICIENCY"]];
+            self.CountValues_Red_lbl.text=[myslot objectForKey:@"INDIRECTEFFICIENCY"];
+            self.redCircle_view.hidden=NO;
+            self.greenviewXposition.constant= 20; //(self.view.frame.size.width)/4;
+            
+        }
     }
     
     else if ([selectOptionType isEqualToString: @"6"])
@@ -384,21 +408,17 @@
             
             ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
             
-            NSArray *temp =   [ResultHolderDict objectForKey:@"plantEfficiencyes"];
+            NSArray *temp =   [ResultHolderDict objectForKey:@"EfficiencyTotalEfficiencyDetails"];
             
-            if(temp.count == 1)
-            {
-                self.redCircle_view.hidden=YES;
-                self.greenviewXposition.constant=(self.view.frame.size.width)/3;
-            }
-            if(temp.count>0)
-            {
-                NSDictionary *myslot=[temp objectAtIndex:0];
-                self.Ok_lbl.text=@"TOTAL EFFICIENCY";
-                
-                self.CountValues_Green_lbl.text=[myslot valueForKey:@"AVG"];
-            }
+            NSDictionary * myslot=[temp objectAtIndex:0];
             
+            self.Ok_lbl.text= @"DIRECTEFFICIENCY";          //[myslot objectForKey:@"NAME"];
+            self.notOk_lbl.text= @"INDIRECTEFFICIENCY";                          //[myslot1 objectForKey:@"NAME"];
+            self.CountValues_Green_lbl.text= [NSString stringWithFormat:@"%@",[myslot objectForKey:@"DIRECTEFFICIENCY"]];
+            self.CountValues_Red_lbl.text=[myslot objectForKey:@"INDIRECTEFFICIENCY"];
+            self.redCircle_view.hidden=NO;
+            self.greenviewXposition.constant= 20; //(self.view.frame.size.width)/4;
+
         }
         [theme removeLoadingIcon];
     }
