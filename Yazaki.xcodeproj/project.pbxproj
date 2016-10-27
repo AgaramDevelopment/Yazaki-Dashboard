@@ -822,7 +822,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.agaraminfotech.yazaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -839,7 +839,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.agaraminfotech.yazaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -942,7 +942,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.agaraminfotech.yazaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "32b840de-e60c-4b32-89c4-781f3812c1a0";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
 		};
