@@ -80,22 +80,24 @@
     
     
     NSString *baseURL;
+    NSString * strSelect =@"select";
  
     if([self.selectType isEqualToString: @"2"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,strSelect,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"3"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+    
+        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/%@/%@/%@",BaseURL,strSelect,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"4"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/%@/%@/%@",BaseURL,strSelect,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
@@ -349,13 +351,13 @@
     if([self.selectType isEqualToString: @"2"])
     {
         
-        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,selectPlantCode,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,(selectPlantCode == nil)?@"SELECT":selectPlantCode,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"3"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/%@/%@/%@",BaseURL,selectPlantCode,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/%@/%@/%@",BaseURL,(selectPlantCode == nil)?@"SELECT":selectPlantCode,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     

@@ -39,6 +39,7 @@
     
     theme =[[Theme alloc]init];
     [theme loadingIcon:self.view];
+    selectPlantCode=(selectPlantCode==nil)?@"select":selectPlantCode;
  NSString *baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXDETAILED/%@/%@/%@",BaseURL,selectPlantCode,FromStr,ToStr];
  NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
