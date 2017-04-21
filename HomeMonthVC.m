@@ -313,8 +313,49 @@
        
             _planArray=[responsData objectForKey:@"PlantDetails"];
         
+        NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
+        NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
+        NSString * baseURL;
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+        
+        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
+        
+        NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSURLResponse *response;
+        NSError *error;
+        
+        NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if (responseData != nil) {
+            
+            ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+            
+            NSArray *temp =   [ResultHolderDict objectForKey:@"EfficiencyTotalEfficiencyDetails"];
+            
+            NSDictionary * myslot=[temp objectAtIndex:0];
+            
+            // NSArray *temp1 =   [responsData objectForKey:@"Initialize_NotOk"];
+            //NSDictionary *myslot1=[temp1 objectAtIndex:0];
+            
+            self.ok_lbl.text= @"DIRECTEFFICIENCY";          //[myslot objectForKey:@"NAME"];
+            self.notOk_lbl.text= @"INDIRECTEFFICIENCY";                          //[myslot1 objectForKey:@"NAME"];
+            self.CountValues_Green_lbl.text= [NSString stringWithFormat:@"%@",[myslot objectForKey:@"DIRECTEFFICIENCY"]];
+            self.CountValues_Red_lbl.text=[myslot objectForKey:@"INDIRECTEFFICIENCY"];
             self.redCircle_view.hidden=NO;
             self.greenviewXposition.constant= 20; //(self.view.frame.size.width)/4;
+            
+            
+        }
+        else{
+            //handle received data
+            [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
+            
+        }
+
+        
+        
+//            self.redCircle_view.hidden=NO;
+//            self.greenviewXposition.constant= 20; //(self.view.frame.size.width)/4;
       
 //            self.ok_lbl.text=@"TOTAL EFFICIENCY";
 //            
