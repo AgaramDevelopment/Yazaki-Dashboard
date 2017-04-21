@@ -24,6 +24,8 @@
     BOOL isScrap;
     AppDelegate * appDelegate;
     Theme * theme;
+    NSString *fromDate;
+    NSString *endDate;
 }
 
 @property (nonatomic,strong) NSDictionary*ResultHolderDict;
@@ -95,12 +97,59 @@
     NSString *formattedDate = [dateFormatter stringFromDate:now];
     self.FromMonth_txt.text=[NSString stringWithFormat:@"%@",formattedDate];
     self.Tomonth_txt.text=[NSString stringWithFormat:@"%@",formattedDate];
-    NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
-    NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
+    //NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
+    //NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
     
-    [self CommonWebserviceMethod:userUpdate :userUpdate1];
+    
+    NSDate *curDate = now;
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* comps = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:curDate]; // Get necessary date components
+    
+    // set last of month
+    [comps setMonth:[comps month]];
+    [comps setDay:1];
+    NSDate *tDateMonth = [calendar dateFromComponents:comps];
+    NSLog(@"%@", tDateMonth);
+    
+    NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+    [dateformate setDateFormat:@"MM-dd-yyyy"]; // Date formater
+    NSString *date = [dateformate stringFromDate:tDateMonth]; // Convert date to string
+    NSLog(@"date :%@",date);
+    fromDate = date;
+    
+    
+    NSDate *curDate1 = [datepicker1 date];
+    NSCalendar* calendar1 = [NSCalendar currentCalendar];
+    NSDateComponents* comps1 = [calendar1 components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:curDate1]; // Get necessary date components
+    
+    // set last of month
+    [comps1 setMonth:[comps1 month]+1];
+    [comps1 setDay:0];
+    NSDate *tDateMonth1 = [calendar1 dateFromComponents:comps1];
+    NSLog(@"%@", tDateMonth1);
+    
+    
+    NSDateFormatter *dateformate1=[[NSDateFormatter alloc]init];
+    [dateformate1 setDateFormat:@"MM-dd-yyyy"]; // Date formater
+    NSString *date1 = [dateformate1 stringFromDate:tDateMonth1]; // Convert date to string
+    NSLog(@"date :%@",date1);
+    endDate =date1;
+    
+    [self CommonWebserviceMethod:fromDate :endDate];
 
     
+}
+- (NSDate *)returnDateForMonth:(NSInteger)month year:(NSInteger)year day:(NSInteger)day {
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    
+    [components setDay:day];
+    [components setMonth:month];
+    [components setYear:year];
+    
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    return [gregorian dateFromComponents:components];
 }
 
 -(void)CommonWebserviceMethod:(NSString *)userUpdate :(NSString *)userUpdate1
@@ -191,8 +240,8 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
-    [theme removeLoadingIcon];
-
+    
+[theme removeLoadingIcon];
 }
 
 -(void)ResponDataValue:(NSDictionary *) responsData:(NSString *) selectOptionType
@@ -251,16 +300,16 @@
     
     else if ([selectOptionType isEqualToString: @"5"])
     {
-        NSArray * temp =   [responsData objectForKey:@"EfficiencyTotalEfficiencyDetails"];
-        NSDictionary * myslot=[temp objectAtIndex:0];
         
-       // NSArray *temp1 =   [responsData objectForKey:@"Initialize_NotOk"];
-        //NSDictionary *myslot1=[temp1 objectAtIndex:0];
         
-        self.ok_lbl.text= @"DIRECTEFFICIENCY";          //[myslot objectForKey:@"NAME"];
-        self.notOk_lbl.text= @"INDIRECTEFFICIENCY";                          //[myslot1 objectForKey:@"NAME"];
-        self.CountValues_Green_lbl.text=[myslot objectForKey:@"DIRECTEFFICIENCY"];
-        self.CountValues_Red_lbl.text=[myslot objectForKey:@"INDIRECTEFFICIENCY"];
+//        NSArray * temp =   [responsData objectForKey:@"EfficiencyTotalEfficiencyDetails"];
+//        NSDictionary * myslot=[temp objectAtIndex:0];
+//        
+//
+//        self.ok_lbl.text= @"DIRECTEFFICIENCY";          //[myslot objectForKey:@"NAME"];
+//        self.notOk_lbl.text= @"INDIRECTEFFICIENCY";                          //[myslot1 objectForKey:@"NAME"];
+//        self.CountValues_Green_lbl.text=[myslot objectForKey:@"DIRECTEFFICIENCY"];
+//        self.CountValues_Red_lbl.text=[myslot objectForKey:@"INDIRECTEFFICIENCY"];
        
             _planArray=[responsData objectForKey:@"PlantDetails"];
         
@@ -270,6 +319,12 @@
 //            self.ok_lbl.text=@"TOTAL EFFICIENCY";
 //            
 //            self.CountValues_Green_lbl.text=@"0";
+        
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+        
+        NSString * baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,fromDate,endDate];
+        [self EffeciencyPlantdetailWebservice:baseURL];
+        
         
     }
     
@@ -315,6 +370,40 @@
     
 }
 
+-(void)EffeciencyPlantdetailWebservice:(NSString *) URL
+{
+    //theme=[[Theme alloc]init];
+    //[theme loadingIcon:self.view];
+    NSURL *url = [NSURL URLWithString:[URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLResponse *response;
+    NSError *error;
+    
+    NSData *responseData =[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    if (responseData != nil) {
+        
+        ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+        
+       // [self ResponDataValue :ResultHolderDict:self.selectType];
+        
+        NSArray * temp =   [ResultHolderDict objectForKey:@"EfficiencyTotalEfficiencyDetails"];
+        NSDictionary * myslot=[temp objectAtIndex:0];
+        
+        
+        self.ok_lbl.text= @"DIRECTEFFICIENCY";          //[myslot objectForKey:@"NAME"];
+        self.notOk_lbl.text= @"INDIRECTEFFICIENCY";                          //[myslot1 objectForKey:@"NAME"];
+        self.CountValues_Green_lbl.text=[myslot objectForKey:@"DIRECTEFFICIENCY"];
+        self.CountValues_Red_lbl.text=[myslot objectForKey:@"INDIRECTEFFICIENCY"];
+        
+    }
+    else{
+        //handle received data
+        [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
+        
+    }
+    [theme removeLoadingIcon];
+}
+
 
 -(void) showDialog:(NSString*) message andTitle:(NSString*) title{
     UIAlertView *alertDialog = [[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -326,8 +415,24 @@
 -(void) ShowSelectedDate
 {  NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"MM-YYY"];
+    
     self.FromMonth_txt.text=[NSString stringWithFormat:@"%@",[formatter stringFromDate:datepicker.date]];
     [self.FromMonth_txt resignFirstResponder];
+    NSDate *curDate = [datepicker date];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* comps = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:curDate]; // Get necessary date components
+    
+    // set last of month
+    [comps setMonth:[comps month]];
+    [comps setDay:1];
+    NSDate *tDateMonth = [calendar dateFromComponents:comps];
+    NSLog(@"%@", tDateMonth);
+    
+    NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+    [dateformate setDateFormat:@"MM-dd-yyyy"]; // Date formater
+    NSString *date = [dateformate stringFromDate:tDateMonth]; // Convert date to string
+    NSLog(@"date :%@",date);
+    fromDate = date;
 }
 
 //Another Dte Picker Tool for Toate Picker
@@ -336,6 +441,23 @@
     [formatter1 setDateFormat:@"MM-YYY"];
     self.Tomonth_txt.text=[NSString stringWithFormat:@"%@",[formatter1 stringFromDate:datepicker1.date]];
     [self.Tomonth_txt resignFirstResponder];
+    
+    NSDate *curDate = [datepicker1 date];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* comps = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:curDate]; // Get necessary date components
+    
+    // set last of month
+    [comps setMonth:[comps month]+1];
+    [comps setDay:0];
+    NSDate *tDateMonth = [calendar dateFromComponents:comps];
+    NSLog(@"%@", tDateMonth);
+    
+    
+    NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+    [dateformate setDateFormat:@"MM-dd-yyyy"]; // Date formater
+    NSString *date = [dateformate stringFromDate:tDateMonth]; // Convert date to string
+    NSLog(@"date :%@",date);
+    endDate =date;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -345,11 +467,9 @@
 
 
 - (IBAction)GenerateMonth_Btn:(id)sender {
-    NSString *userUpdate =[NSString stringWithFormat:@"%@",[_FromMonth_txt text]];
-    NSString *userUpdate1 =[NSString stringWithFormat:@"%@",[_Tomonth_txt text]];
-  
+
     
-    [self CommonWebserviceMethod :userUpdate :userUpdate1];
+    [self CommonWebserviceMethod :fromDate :endDate];
     
     if ([_selectType isEqualToString: @"5"]) {
     //    EFFICIENCY/PLANTEFFICIENCY/{PLANTCODE}/{FROMDATE}/{TODATE}
@@ -357,7 +477,7 @@
         NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
         theme =[[Theme alloc]init];
         [theme loadingIcon:self.view];
-        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,fromDate,endDate];
         
         NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -436,8 +556,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
             
             EfficiencyLineVC *initView =  (EfficiencyLineVC*)[storyboard instantiateViewControllerWithIdentifier:@"effeciencyLine"];
             NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
-            initView.fromstr = userUpdate;
-            initView.tostr = userUpdate1;
+            initView.fromstr = fromDate;
+            initView.tostr = endDate;
             initView.selectPlantCode=plancode;
             initView.Tittle =self.Tittle;
             [self.navigationController pushViewController:initView animated:YES];
@@ -452,9 +572,10 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     //if([self.selectType isEqualToString: @"2"]){
     
     NOTOKPiechartVC *initView =  (NOTOKPiechartVC*)[storyboard instantiateViewControllerWithIdentifier:@"NOTOKPIE"];
-    initView.str1 = userUpdate;
-    initView.str2 = userUpdate1;
-    initView.selectPlantCode=selectPlantCode;
+    initView.str1 = fromDate;
+    initView.str2 = endDate;
+    NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+    initView.selectPlantCode=plancode;
     NSString *test =[NSString stringWithFormat:@"%@",[self.notOk_lbl text]];
     initView.dictObject = test;
     
@@ -488,8 +609,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
     
     PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
           NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
-    initView.str1 = userUpdate;
-    initView.str2 = userUpdate1;
+    initView.str1 = fromDate;
+    initView.str2 = endDate;
     initView.selectPlantCode=plancode;
     initView.selectType     =self.selectType;
           initView.Tittle         =self.Tittle;
@@ -507,8 +628,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         
         EfficiencyLineVC *initView =  (EfficiencyLineVC*)[storyboard instantiateViewControllerWithIdentifier:@"effeciencyLine"];
         NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
-        initView.fromstr = userUpdate;
-        initView.tostr = userUpdate1;
+        initView.fromstr = fromDate;
+        initView.tostr = endDate;
         initView.selectPlantCode=plancode;
              initView.Tittle =self.Tittle;
       [self.navigationController pushViewController:initView animated:YES];
@@ -576,9 +697,9 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
             
             isScrap=NO;
             PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
-            initView.str1 = userUpdate;
-            initView.str2 = userUpdate1;
-               NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+            initView.str1 = fromDate;
+            initView.str2 = fromDate;
+            NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
             initView.selectPlantCode=plancode;
             initView.selectType     =self.selectType;
             initView.selectValuetype=self.ok_lbl.text;
@@ -600,9 +721,10 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         {
         
         ProductionVC *initView =  (ProductionVC*)[storyboard instantiateViewControllerWithIdentifier:@"Productionvc"];
-        initView.FromStr = userUpdate;
-        initView.ToStr = userUpdate1;
-        initView.selectPlantCode=selectPlantCode;
+        initView.FromStr = fromDate;
+        initView.ToStr = endDate;
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+        initView.selectPlantCode=plancode;
             initView.Tittle =self.Tittle;
        [self.navigationController pushViewController:initView animated:YES];
         }
@@ -615,8 +737,8 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         {
         PieChartTest *initView =  (PieChartTest*)[storyboard instantiateViewControllerWithIdentifier:@"piecharttest"];
         NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
-        initView.str1 = userUpdate;
-        initView.str2 = userUpdate1;
+        initView.str1 = fromDate;
+        initView.str2 = endDate;
         initView.selectPlantCode=plancode;
         initView.selectType     =self.selectType;
         NSString *test =[NSString stringWithFormat:@"%@",[self.ok_lbl text]];

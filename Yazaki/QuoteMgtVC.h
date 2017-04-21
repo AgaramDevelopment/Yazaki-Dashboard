@@ -36,5 +36,6 @@
 
 @property (strong,nonatomic) NSString * selectType;
 
+@property (weak, nonatomic) IBOutlet UILabel *lbl_norecord;
 @property (strong, nonatomic) NSDictionary *serviceResponse;
 @end

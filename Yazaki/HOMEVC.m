@@ -68,7 +68,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSDate *now = [NSDate date];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setDateFormat:@"YYY-MM-dd"];
+    [dateFormatter setDateFormat:@"MM-dd-YYY"];
     NSString *formattedDate = [dateFormatter stringFromDate:now];
     self.Fromdate_txt.text=[NSString stringWithFormat:@"%@",formattedDate];
     
@@ -83,19 +83,19 @@
  
     if([self.selectType isEqualToString: @"2"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/select/%@/%@",BaseURL,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"3"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/select/%@/%@",BaseURL,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"4"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/select/%@/%@",BaseURL,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
@@ -298,7 +298,7 @@
 
 -(void) ShowSelectedDate
 {  NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"YYY-MM-dd"];
+    [formatter setDateFormat:@"MM-dd-YYYY"];
     self.Fromdate_txt.text=[NSString stringWithFormat:@"%@",[formatter stringFromDate:datepicker.date]];
     [self.Fromdate_txt resignFirstResponder];
     
@@ -332,7 +332,7 @@
 //Another Dte Picker Tool for Todate Picker
 -(void) ShowSelectedDate1
 {  NSDateFormatter *formatter1=[[NSDateFormatter alloc]init];
-    [formatter1 setDateFormat:@"YYY-MM-dd"];
+    [formatter1 setDateFormat:@"MM-dd-YYYY"];
     self.Todate_txt.text=[NSString stringWithFormat:@"%@",[formatter1 stringFromDate:datepicker1.date]];
     [self.Todate_txt resignFirstResponder];
     
@@ -348,20 +348,24 @@
     NSString *baseURL;
     if([self.selectType isEqualToString: @"2"])
     {
-        
-        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,selectPlantCode,userUpdate,userUpdate1];
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"3"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/%@/%@/%@",BaseURL,selectPlantCode,userUpdate,userUpdate1];
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+
+        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"4"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+
+        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
@@ -384,20 +388,24 @@
             
             ResultHolderDict=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
             
-            NSArray *temp =   [ResultHolderDict objectForKey:@"plantEfficiencyes"];
+            NSArray *temp =   [ResultHolderDict objectForKey:@"EfficiencyTotalEfficiencyDetails"];
             
-            if(temp.count == 1)
-            {
-                self.redCircle_view.hidden=YES;
-                self.greenviewXposition.constant=(self.view.frame.size.width)/3;
-            }
-            if(temp.count>0)
-            {
+            //if(temp.count == 1)
+            //{
+                //self.redCircle_view.hidden=YES;
+               // self.greenviewXposition.constant=(self.view.frame.size.width)/3;
+            //}
+           // if(temp.count>0)
+           // {
                 NSDictionary *myslot=[temp objectAtIndex:0];
-                self.Ok_lbl.text=@"TOTAL EFFICIENCY";
-                
-                self.CountValues_Green_lbl.text=[myslot valueForKey:@"AVG"];
-            }
+                //self.Ok_lbl.text=@"TOTAL EFFICIENCY";
+                self.Ok_lbl.text=@"DIRECTEFFICIENCY";
+
+                self.notOk_lbl.text =@"INDIRECTEFFICIENCY";
+                self.CountValues_Green_lbl.text=[myslot valueForKey:@"DIRECTEFFICIENCY"];
+                self.CountValues_Red_lbl.text=[myslot valueForKey:@"INDIRECTEFFICIENCY"];
+
+           // }
             
         }
         [theme removeLoadingIcon];
@@ -405,13 +413,17 @@
     
     else if ([self.selectType isEqualToString: @"6"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/QUOTEMANAGEMENT/COSTINGINITIALIZE/''/''",BaseURL];
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+
+        baseURL = [NSString stringWithFormat:@"%@/QUOTEMANAGEMENT/COSTINGINITIALIZE/%@/%@",BaseURL,plancode,plancode];
         [self WebserviceMethod:baseURL];
     }
  
     else if ([self.selectType isEqualToString: @"8"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/INITIALIZEGATEENTRYDASHBOARD/''/''/%@/%@",BaseURL,userUpdate,userUpdate1];
+        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+
+        baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/INITIALIZEGATEENTRYDASHBOARD/%@/%@/%@/%@",BaseURL,plancode,plancode,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
@@ -485,6 +497,7 @@
         initView.fromstr = userUpdate;
         initView.tostr = userUpdate1;
         initView.selectPlantCode=plancode;
+        initView.Tittle =@"Efficiency";
         [self.navigationController pushViewController:initView animated:YES];
          }
         

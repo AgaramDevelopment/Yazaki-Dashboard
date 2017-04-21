@@ -47,7 +47,8 @@
      DetailsArray  =[[NSMutableArray alloc]init];
      CustomerArray  =[[NSMutableArray alloc]init];
     self.tbl_select.hidden=YES;
-    
+    self.lbl_norecord.text =@"No Record";
+    self.lbl_norecord.hidden =YES;
     [self webService:@"SELECT" :@"SELECT"];
     
     
@@ -207,7 +208,7 @@
   if( self.tbl_select .hidden == YES)
   {
     
-        return 350;
+        return 400;
   }
     return 44;
     
@@ -217,7 +218,8 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *MyIdentifier = @"QuoteMgtcell";
-    
+    NSDictionary * plan;
+    NSDictionary * customername;
     if(self.tbl_select .hidden == YES)
     {
     QuoteMgtcell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
@@ -252,9 +254,14 @@
                                        reuseIdentifier:MyIdentifier];
         }
         
-        NSDictionary * plan =[Plantarray objectAtIndex:indexPath.row];
-        NSDictionary * customername =[CustomerArray objectAtIndex:indexPath.row];
-        
+        if(isPlantTbl == YES)
+        {
+            plan =[Plantarray objectAtIndex:indexPath.row];
+        }
+        else
+        {
+            customername =[CustomerArray objectAtIndex:indexPath.row];
+        }
         cell.textLabel.text =(isPlantTbl == YES)?[plan valueForKey:@"PLANTNAME"]:[customername valueForKey:@"CUSTOMERNAME"];
        cell.textLabel.font=[UIFont fontWithName:@"RAJDHANI-BOLD" size:cell.textLabel.font.pointSize];
         return cell;
@@ -297,12 +304,23 @@
 
 -(IBAction)didClickGeneralBtnAction:(id)sender
 {
+   
     self.plantCodeStr=([self.plantCodeStr isEqualToString:@""] || self.plantCodeStr==nil)?@"''":self.plantCodeStr;
     
     self.customCodeStr=([self.customCodeStr isEqualToString:@""] || self.customCodeStr==nil)?@"''":self.customCodeStr;
     [self webService:self.plantCodeStr : self.customCodeStr];
-    
-    [self.Quote_tbl reloadData];
+    if(DetailsArray.count > 0)
+    {
+        self.Quote_tbl.hidden = NO;
+        self.lbl_norecord.hidden =YES;
+
+       [self.Quote_tbl reloadData];
+    }
+    else{
+        self.Quote_tbl.hidden = YES;
+        self.lbl_norecord.userInteractionEnabled=YES;
+        self.lbl_norecord.hidden =NO;
+    }
     
 }
 

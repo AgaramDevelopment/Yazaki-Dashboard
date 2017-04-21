@@ -49,11 +49,21 @@
     self.btn_selectColor5.hidden=YES;
     self.btn_selectColor6.hidden=YES;
     
+    theme =[[Theme alloc]init];
+    [theme loadingIcon:self.view];
+    
+    
+
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
     NSString *baseURL;
     
     if([self.selectType isEqualToString:@"2"])
     {
-       baseURL = [NSString stringWithFormat:@"%@/CANTEEN/SESSION/%@/%@/%@/%@",BaseURL,dictObject,_selectPlantCode,str1,str2];
+        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/SESSION/%@/%@/%@/%@",BaseURL,dictObject,_selectPlantCode,str1,str2];
     }
     else if ([self.selectType isEqualToString:@"4"])
     {
@@ -100,17 +110,12 @@
         _selectPlantCode=([_selectPlantCode isEqualToString:@"SELECT"])?@"SELECT":_selectPlantCode;
         baseURL = [NSString stringWithFormat:@"%@/GATEENTRY/VISITORSSESSION/%@/select/%@/%@",BaseURL,_selectPlantCode,str1,str2];
     }
-
+    
     
     [self webServicemethod:baseURL];
     
-    
-    
-    
 
-    
 }
-
 
 -(void)webserviceResponsemethod:(NSDictionary *) responseData
 {
@@ -267,8 +272,7 @@
 
 -(void)webServicemethod:(NSString *)URL
 {
-    theme =[[Theme alloc]init];
-    [theme loadingIcon:self.view];
+   
     NSURL *url = [NSURL URLWithString:[URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
