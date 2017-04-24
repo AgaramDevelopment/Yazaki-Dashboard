@@ -41,6 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     theme = [[Theme alloc]init];
     [self customnavigationmethod];
     
    self.tableView.layer.borderWidth = 2.0;
@@ -135,9 +136,18 @@
     NSLog(@"date :%@",date1);
     endDate =date1;
     
-    [self CommonWebserviceMethod:fromDate :endDate];
+    //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self CommonWebserviceMethod:fromDate :endDate];
+   // });
+    
 
     
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    
+
 }
 - (NSDate *)returnDateForMonth:(NSInteger)month year:(NSInteger)year day:(NSInteger)day {
     
@@ -220,7 +230,7 @@
 
 -(void)WebserviceMethod:(NSString *)URL
 {
-    theme=[[Theme alloc]init];
+    
     [theme loadingIcon:self.view];
     NSURL *url = [NSURL URLWithString:[URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -300,6 +310,8 @@
     
     else if ([selectOptionType isEqualToString: @"5"])
     {
+//        NSArray * temp =   [responsData objectForKey:@"EfficiencyTotalEfficiencyDetails"];
+//        NSDictionary * myslot=[temp objectAtIndex:0];
         
         
 //        NSArray * temp =   [responsData objectForKey:@"EfficiencyTotalEfficiencyDetails"];
@@ -361,9 +373,9 @@
 //            
 //            self.CountValues_Green_lbl.text=@"0";
         
-        NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
+       // NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
         
-        NSString * baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,fromDate,endDate];
+       // NSString * baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,fromDate,endDate];
         [self EffeciencyPlantdetailWebservice:baseURL];
         
         
@@ -413,8 +425,7 @@
 
 -(void)EffeciencyPlantdetailWebservice:(NSString *) URL
 {
-    //theme=[[Theme alloc]init];
-    //[theme loadingIcon:self.view];
+    
     NSURL *url = [NSURL URLWithString:[URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLResponse *response;
@@ -442,7 +453,7 @@
         [self showDialog:@"Please Check Your Internet Connection" andTitle:@"No Internet Connection"];
         
     }
-    [theme removeLoadingIcon];
+    //[theme removeLoadingIcon];
 }
 
 
@@ -516,8 +527,8 @@
     //    EFFICIENCY/PLANTEFFICIENCY/{PLANTCODE}/{FROMDATE}/{TODATE}
         NSString * baseURL;
         NSString * plancode =(selectPlantCode == nil)?@"SELECT":selectPlantCode;
-        theme =[[Theme alloc]init];
-        [theme loadingIcon:self.view];
+        
+        [theme loadingIcon:self.common_view];
         baseURL = [NSString stringWithFormat:@"%@/EFFICIENCY/PLANTEFFICIENCY/%@/%@/%@",BaseURL,plancode,fromDate,endDate];
         
         NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -686,7 +697,7 @@ initView =  (DashboardVC*)[self.storyboard instantiateViewControllerWithIdentifi
         
         if(isScrap == NO)
         {
-            theme = [[Theme alloc]init];
+           
             [theme loadingIcon:self.view];
         baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPTYPE/%@/%@/%@",BaseURL,plancode,userUpdate,userUpdate1];
         NSURL *url = [NSURL URLWithString:[baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];

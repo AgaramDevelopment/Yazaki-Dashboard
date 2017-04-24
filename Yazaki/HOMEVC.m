@@ -84,19 +84,20 @@
  
     if([self.selectType isEqualToString: @"2"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/select/%@/%@",BaseURL,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/CANTEEN/INITIALIZE/%@/%@/%@",BaseURL,strSelect,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"3"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/select/%@/%@",BaseURL,userUpdate,userUpdate1];
+    
+        baseURL = [NSString stringWithFormat:@"%@/PRODUCTION/BOXINITIALIZE/%@/%@/%@",BaseURL,strSelect,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     
     else if ([self.selectType isEqualToString: @"4"])
     {
-        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/select/%@/%@",BaseURL,userUpdate,userUpdate1];
+        baseURL = [NSString stringWithFormat:@"%@/SCRAP/SCRAPINITIALIZE/%@/%@/%@",BaseURL,strSelect,userUpdate,userUpdate1];
         [self WebserviceMethod:baseURL];
     }
     

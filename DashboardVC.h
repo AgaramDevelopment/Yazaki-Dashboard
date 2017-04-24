@@ -11,6 +11,7 @@
 @interface DashboardVC : UIViewController
 
 @property (nonatomic,strong) NSMutableArray *dashBoardList;
+@property (weak, nonatomic) IBOutlet UICollectionView *collection_view;
 
 @property (weak, nonatomic) IBOutlet UIView *CanteenVIew;
 @property (weak, nonatomic) IBOutlet UIImageView *CanteenImageVIew;

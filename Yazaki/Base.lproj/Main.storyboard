@@ -3568,6 +3568,7 @@
                         <outlet property="FromMonth_view" destination="Uii-j7-hRe" id="HFs-ef-Y9j"/>
                         <outlet property="TomonthView" destination="1RK-sV-0gi" id="zxx-hx-1Va"/>
                         <outlet property="Tomonth_txt" destination="QJd-LQ-sFf" id="H4c-Am-9to"/>
+                        <outlet property="common_view" destination="1Ut-C3-vFR" id="FQQ-sg-7b7"/>
                         <outlet property="greenCircle_view" destination="5o8-di-q5a" id="DsY-4P-UcA"/>
                         <outlet property="greenib_btn" destination="1fl-bB-gP0" id="jUz-de-Kjh"/>
                         <outlet property="greenviewXposition" destination="OUM-vV-Guj" id="pN8-48-VS7"/>
@@ -4236,6 +4237,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Mpj-qc-xMp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4422,6 +4424,7 @@
                         <outlet property="CanteenImageVIew" destination="wBU-Gb-yb9" id="CDz-R1-fKU"/>
                         <outlet property="CanteenVIew" destination="Msy-BH-4gg" id="DqO-Lm-Cb6"/>
                         <outlet property="Canteen_Label" destination="4mQ-L9-RTv" id="SWb-h5-kQg"/>
+                        <outlet property="collection_view" destination="ZDD-Wv-tkm" id="D3L-Jf-e19"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1e-gI-pXb" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -36,7 +36,7 @@
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(150, 225, 20, 30)];
     [spinner setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     spinner.color = [UIColor blackColor];
-    [self.view addSubview:spinner];
+    [self.collection_view addSubview:spinner];
     [self customnavigationmethod];
     [objCustomNavigation.Home_Btn setHidden:YES];
     [objCustomNavigation.Btn_Back setHidden:YES];

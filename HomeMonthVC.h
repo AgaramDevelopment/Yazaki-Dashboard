@@ -14,6 +14,7 @@
     UIDatePicker * datepicker;
     UIDatePicker * datepicker1;
 }
+@property (weak, nonatomic) IBOutlet UIView *common_view;
 
 @property(nonatomic,strong) NSString *selectType;
 @property (nonatomic,strong) NSString *Tittle;

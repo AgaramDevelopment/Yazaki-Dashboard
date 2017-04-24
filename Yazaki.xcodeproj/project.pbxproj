@@ -551,7 +551,7 @@
 					1863D5C21CA10D7700D2F625 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = L5S8VPA4A5;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					1863D5DB1CA10D7700D2F625 = {
 						CreatedOnToolsVersion = 6.4;
@@ -816,14 +816,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Annamalai T (L5S8VPA4A5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Annamalai T (L5S8VPA4A5)";
 				DEVELOPMENT_TEAM = L5S8VPA4A5;
 				INFOPLIST_FILE = Yazaki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.agaraminfotech.yazaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "995c04c6-e87c-4154-a917-57d77c572465";
+				PROVISIONING_PROFILE_SPECIFIER = YazakiDevelopment;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -834,14 +835,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Annamalai T (L5S8VPA4A5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Annamalai T (L5S8VPA4A5)";
 				DEVELOPMENT_TEAM = L5S8VPA4A5;
 				INFOPLIST_FILE = Yazaki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.agaraminfotech.yazaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "995c04c6-e87c-4154-a917-57d77c572465";
+				PROVISIONING_PROFILE_SPECIFIER = YazakiDevelopment;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -938,14 +940,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Annamalai T (L5S8VPA4A5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Annamalai T (L5S8VPA4A5)";
 				DEVELOPMENT_TEAM = L5S8VPA4A5;
 				INFOPLIST_FILE = Yazaki/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.agaraminfotech.yazaki;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "995c04c6-e87c-4154-a917-57d77c572465";
+				PROVISIONING_PROFILE_SPECIFIER = YazakiDevelopment;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Distribution;
